@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -83,6 +83,6 @@ auto_dir_categorize:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/sakkuntyo/sakkuntyo.github.io
+  repo: git:sakkuntyo/sakkuntyo.github.io
   branch: master
   message: hexo deploy!
