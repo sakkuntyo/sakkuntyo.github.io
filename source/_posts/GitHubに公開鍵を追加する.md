@@ -19,7 +19,7 @@ tags: [GitHub]
 
 # 手順
 
-## 1.秘密鍵・公開鍵を作成する
+## 秘密鍵・公開鍵を作成する
 
 ```bash
 $ ssh-keygen -t rsa
@@ -45,7 +45,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-## 2.鍵ファイルが出来た事を確認する
+## 鍵ファイルが出来た事を確認する
 
 ```bash
 $ ls
@@ -55,7 +55,7 @@ sakkuntyo-mint sakkuntyo-mint.pub
 .pubが付いているのが公開鍵
 ついていないのが秘密鍵
 
-## 3.GitHubに配置する
+## GitHubに配置する
 
 ### github.comのsettingsを開く
 
@@ -71,7 +71,7 @@ Titleは何でも大丈夫
 
 これで公開鍵が登録されました
 
-## 4.sshクライアントにgitの設定を追加
+## sshクライアントにgitの設定を追加
 
 ~/.ssh/configを編集し、以下の4行を追加
 
@@ -93,7 +93,7 @@ $ mv sakkuntyo-mint ~/.ssh/
 $ chmod 0600 ~/.ssh/sakkuntyo-mint
 ```
 
-## 5.プライベートリポジトリをcloneしてみる
+## プライベートリポジトリをcloneしてみる
 
 プライベートリポジトリをhttpでcloneしようとするとパスワードが求められますが
 sshを使ってcloneした場合にはパスワードは求められなくなります
