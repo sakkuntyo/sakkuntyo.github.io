@@ -411,11 +411,14 @@ echo "Something went badly wrong in the initramfs."
 panic "Please file a bug on initramfs-tools."
 ```
 
-またこのinitはルートファイルをマウントしていないため、ルートにある/binや/sbinを利用できません。
+またこのinitを実行するタイミングではルートファイルをマウントしていないため、ルートにある/binや/sbinを利用できません。
 
-initを実行するタイミングではinitrd内部の/binや/sbinを利用しています。
+代わりに、initrd内部の/binや/sbinを利用しています。
 
 そのため、ここにバイナリを配置しておく事で起動中に使用できる様になります。
+
+> **注意**
+> バイナリの実行のために、別途moduleの追加が必要だったりもします。
 
 ## initrdを作成する
 
