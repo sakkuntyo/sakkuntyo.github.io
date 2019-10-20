@@ -73,7 +73,7 @@ Titleは何でも大丈夫
 
 ## 4.sshクライアントにgitの設定を追加
 
-~/.ssh/configを編集し、以下の5行を追加
+~/.ssh/configを編集し、以下の4行を追加
 
 ```
 Host git
