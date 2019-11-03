@@ -75,6 +75,9 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# Google Analytics
+google_analytics: UA-151322980-1
+
 auto_dir_categorize:
   enable: true
   force: false
