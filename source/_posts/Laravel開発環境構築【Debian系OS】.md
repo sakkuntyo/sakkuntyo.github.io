@@ -45,6 +45,7 @@ source ~/.bash_profile
 
 ```bash
 $ laravel new test
+$ cd test
 $ php artisan --version
 $ php artisan serve --host 0.0.0.0
 Laravel development server started: http://0.0.0.0:8000
