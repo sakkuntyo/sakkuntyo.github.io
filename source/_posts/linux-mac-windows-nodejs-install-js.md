@@ -29,7 +29,7 @@ $ source ~/.nvm/nvm.sh
 $ echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
 ```
 
-### nodejsとnpmおインストール
+### nodejsとnpmをインストール
 
 ```bash
 $ nvm install --lts
