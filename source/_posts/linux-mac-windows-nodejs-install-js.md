@@ -35,3 +35,15 @@ $ echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
 $ nvm install --lts
 # バージョンを指定するのであれば --lts の代わりにバージョンを入力
 ```
+
+### nodejsのバージョンを確認
+
+```bash
+$ node -v
+```
+
+### npmのバージョンを確認
+
+```bash
+$ npm -v
+```
