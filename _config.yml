@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: next-sakkuntyo
 google_analytics: UA-151322980-1
 
 auto_dir_categorize:
