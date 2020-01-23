@@ -89,6 +89,8 @@ $ mkdir <ユーザー名>.github.io
 $ cd <ユーザー名>.github.io
 $ hub init
 $ hub create
+masterを空のブランチでpushしておく
+$ git commit --allow-empty -m "empty commit!"
 ```
 
 ## 編集用ブランチに切り替える
@@ -129,4 +131,5 @@ themesフォルダにeasybookという名前で保存される様、cloneしま�
 $ git clone https://github.com/Y4er/hugo-theme-easybook.git theme/easybook
 ```
 
+## 公開用ブランチをクローン
 
