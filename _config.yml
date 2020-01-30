@@ -91,5 +91,3 @@ deploy:
 ## sitemap
 sitemap:
   path: sitemap.xml
-  tag: false
-  category: false
