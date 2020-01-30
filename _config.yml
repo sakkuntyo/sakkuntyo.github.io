@@ -87,3 +87,9 @@ deploy:
   repo: git:sakkuntyo/sakkuntyo.github.io
   branch: master
   message: hexo deploy!
+
+## sitemap
+sitemap:
+  path: sitemap.xml
+  tag: false
+  category: false
