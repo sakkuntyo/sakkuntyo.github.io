@@ -48,6 +48,8 @@ INFO  5 files generated in 1.14 s
   - 記事毎のページが記載されたsitemap
 - tag-sitemap.xml
   - タグ毎のページが記載されたsitemap
+- sitemap.xml
+  - 内容見てもよくわからない(?)
 
 ## sitemapをサーチコンソールに登録
 
