@@ -42,6 +42,7 @@ Host github.com
 $ mkdir test-repository
 $ cd test-repository
 $ hub init
+以下のコマンドでgithubにリポジトリが作成されます、プライベートで作成する場合は-pオプションを付けます。
 $ hub create
 Updating origin
 created repository: sakkuntyo/test-repository
