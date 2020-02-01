@@ -38,5 +38,5 @@ $ express express-project
 $ npm install express-generator
 
 npxでプロジェクト内のexpressを実行
-$ npx express express-generator
+$ npx express express-project
 ```
