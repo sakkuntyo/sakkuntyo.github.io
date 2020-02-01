@@ -17,9 +17,15 @@ Goで作られているヘッドレスCMS
 
 - Go 1.13.5
 
-## 使い方
+# 使い方
 
-### ponzuプロジェクト作成
+## インストール
+
+```bash
+$ go get -u https://github.com/ponzu-cms/ponzu/...
+```
+
+## ponzuプロジェクト作成
 
 以下コマンドでGOPATH/src以下にプロジェクトが作成される
 
@@ -37,7 +43,7 @@ CONTRIBUTING.md  Dockerfile  LICENSE  README.md  addons  cmd  content  deploymen
 
 この後の操作はこのデイレクトリ内で行う
 
-### テンプレコードを作成
+## テンプレコードを作成
 
 ```bash
 テンプレートコード作成
@@ -46,14 +52,14 @@ $ ponzu generate content author name:string photo:string:file bio:string:richtex
 これでテンプレートコード(content/author.go)が作成される
 ```
 
-### ponzuをビルド
+## ponzuをビルド
 
 ```bash
 $ ponzu build
 これでponzu-server、及び実行に必要なライブラリ(cmd以下)が配置される
 ```
 
-### ponzu起動
+## ponzu起動
 
 ```bash
 $ ponzu run
@@ -66,15 +72,15 @@ Visit '/admin' to get started.
 
 起動中にlocalhost:8080/adminにアクセスする事でCMSのGUIが表示される
 
-## CMSで出来ること
+# CMSで出来ること
 
-### 記事の追加
+## 記事の追加
 
 左メニューからコンテンツを選び、NEWを選択する事で、記事が書ける
 
 SAVEをすると、内容がsystem.db(BoltDB)に保存される
 
-### 書いた記事の参照
+## 書いた記事の参照
 
 json形式で記事が参照できる、確認してみる
 
