@@ -2,7 +2,7 @@
 layout: post
 title: anyenvで各env系ツールをインストールする
 date: 2020-02-05 00:01:54
-tags: [anyenv,nodenv,goenv,pyenv,rbenv]
+tags: [anyenv]
 ---
 
 # 環境
