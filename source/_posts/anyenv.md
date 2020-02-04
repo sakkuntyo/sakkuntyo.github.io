@@ -23,7 +23,7 @@ $ git clone https://github.com/riywo/anyenv ~/.anyenv
 
 ```bash
 $ echo 'PATH=${PATH}:${HOME}/.anyenv/bin' >> ~/.bashrc
-$ echo 'eval $(anyenv init -)' >> ~/.bashrc
+$ echo 'eval "$(anyenv init -)"' >> ~/.bashrc
 $ source ~/.bashrc
 
 anyenv用のインストールフォルダを作成する
