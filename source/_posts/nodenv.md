@@ -7,7 +7,7 @@ tags: [nodejs]
 
 # 環境
 
-- LinuxMint19Mate
+- LinuxMint19 Mate
 
 # 手順
 
@@ -22,7 +22,7 @@ $ git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 ターミナル起動時にパスを通す様に設定
 
 ```bash
-$ echo 'PATH="${PATH}:${HOME}/.nodenv/bin"' >> ~/.bashrc
+$ echo 'PATH=${PATH}:${HOME}/.nodenv/bin' >> ~/.bashrc
 ```
 
 ## initする
