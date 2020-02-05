@@ -13,11 +13,13 @@ tags: [anyenv]
 
 ## anyenvをインストール
 
+### anyenvをclone
+
 ```bash
 $ git clone https://github.com/riywo/anyenv ~/.anyenv
 ```
 
-## パスを通す
+### パスを通す
 
 ターミナル起動時にanyenvのパスを通す設定を書く
 
