@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GitBashにgccを入れる
+title: GitBashにgccをインストール
 date: 2020-01-30 20:44:26
 tags: [Git,GitBash,gcc,mingw]
 ---

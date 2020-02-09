@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Neovim + vim-plug + vim-lspでLanguage Server Protocolを利用する
+title: Neovim + vim-plug + vim-lspでLanguage Server Protocolを利用
 date: 2020-02-02 23:59:14
 tags: [vim,Neovim,vim-plug,vim-lsp]
 ---

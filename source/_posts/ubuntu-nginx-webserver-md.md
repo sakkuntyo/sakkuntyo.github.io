@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UbuntuとNginxでウェブサーバを構築する
+title: UbuntuとNginxでウェブサーバを構築
 date: 2020-01-22 23:16:15
 tags: [nginx,Ubuntu]
 ---

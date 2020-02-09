@@ -1,5 +1,5 @@
 ---
-title: initrdを展開・編集・作成する
+title: initrdを展開・編集・作成
 date: 2019-10-20 15:25:37
 tags: [Linux,init]
 ---

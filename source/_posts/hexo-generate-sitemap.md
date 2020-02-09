@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hexoでsitemap.xmlを生成する
+title: Hexoでsitemap.xmlを生成
 date: 2020-01-30 23:41:11
 tags: [Hexo,sitemap.xml]
 ---

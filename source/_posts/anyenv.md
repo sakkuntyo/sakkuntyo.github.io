@@ -1,6 +1,6 @@
 ---
 layout: post
-title: anyenvで各env系ツールをインストールする
+title: anyenvで各env系ツールをインストール
 date: 2020-02-05 00:01:54
 tags: [anyenv]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UbuntuとApacheでウェブサーバを構築する
+title: UbuntuとApacheでウェブサーバを構築
 date: 2020-01-23 00:54:51
 tags: [Apache,Ubuntu]
 ---

@@ -1,5 +1,5 @@
 ---
-title: GitHubに公開鍵を追加する
+title: GitHubに公開鍵を追加
 date: 2019-10-20 12:42:45
 tags: [GitHub]
 ---

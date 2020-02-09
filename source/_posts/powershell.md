@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PowerShellをUbuntuにインストールする
+title: PowerShellをUbuntuにインストール
 date: 2020-02-08 00:15:47
 tags: [PowerShell]
 ---

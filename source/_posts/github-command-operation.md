@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GitHubをコマンド操作する
+title: GitHubをコマンド操作
 date: 2019-12-27 20:08:43
 tags: [GitHub,hub]
 ---
