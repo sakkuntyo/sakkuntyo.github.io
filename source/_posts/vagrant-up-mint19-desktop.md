@@ -1,5 +1,5 @@
 ---
-title: VagrantでMint19デスクトップ環境を立ち上げる
+title: VagrantでMint19デスクトップ環境を作成
 date: 2019-10-26 14:21:32
 tags: [vagrant]
 ---
