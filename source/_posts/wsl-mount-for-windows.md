@@ -7,6 +7,7 @@ tags: [wsl]
 
 # 環境
 
+- Windows10
 - Ubuntu 18.04(WSL)
 
 # 手順
@@ -19,11 +20,11 @@ tags: [wsl]
 
 ![1](./images/wsl-mount-for-windows1.png)
 
-## マウントしたいディレクトリを開き、アドレスをコピーする
+## マウントしたいディレクトリを開き、アドレスをコピー
 
 ![2](./images/wsl-mount-for-windows2.png)
 
-## マウントする
+## マウント
 
 「ネットワーク」を右クリックし、「ネットワークドライブの割り当て」を選択します。
 
@@ -38,3 +39,7 @@ tags: [wsl]
 「PC」のツリー上に表示される様になります。
 
 ![5](./images/wsl-mount-for-windows5.png)
+
+## アンマウント
+
+![6](./images/wsl-mount-for-windows6.png)
