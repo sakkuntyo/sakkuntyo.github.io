@@ -1,6 +1,6 @@
 ---
 layout: post
-title: WSLからWindowsのネットワークドライブをマウントする
+title: WSLからWindowsのドライブをマウントする
 date: 2020-02-12 02:20:50
 tags: [wsl]
 ---
