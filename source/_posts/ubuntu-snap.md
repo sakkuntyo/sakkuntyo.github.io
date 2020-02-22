@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ubuntuのパッケージ管理ツール「snap」
+title: 依存関係を気にしなくていいパッケージ管理ツール「snap」
 date: 2020-02-23 01:17:02
 tags: [Ubuntu,snap]
 ---
