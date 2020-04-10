@@ -2,7 +2,7 @@
 layout: post
 title: 楽天モバイルUN-LIMITをiPhoneで使ってみた
 date: 2020-04-10 22:56:19
-tags: [SIM,スマホ]
+tags: [SIM]
 ---
 
 # 楽天モバイルUN-LIMITって？
@@ -20,7 +20,7 @@ MNOは自前の回線を用いて運用します。
 
 - iOS 13.3.1
 
-![0](./images/rakuten-unlimit-iphone-0.png)
+![0](/images/rakuten-unlimit-iphone-0.png)
 
 # iPhoneで使えるの？ 
 
@@ -37,21 +37,21 @@ eSIMを使用する場合はnanoSIMとeSIMのデュアルシム運用が可能�
 
 [楽天モバイルUN-LIMIT](https://network.mobile.rakuten.co.jp/)の右上メニューにある「my楽天モバイル」から開けます。
 
-![1](./images/rakuten-unlimit-iphone-1.png)
+![1](/images/rakuten-unlimit-iphone-1.png)
 
 ## nanoSIMからeSIMに契約変更
 
 my楽天モバイルのログイン後のページから「右上メニュー」 -> 「my楽天モバイル」 -> 「契約プラン」
 
-![2](./images/rakuten-unlimit-iphone-2.png)
+![2](/images/rakuten-unlimit-iphone-2.png)
 
 「各種手続き」 -> 「SIMカード交換」　その後、SIMを変更する手続きを進めます。
 
-![3](./images/rakuten-unlimit-iphone-3.png)
+![3](/images/rakuten-unlimit-iphone-3.png)
 
 QRコードが表示されますので、このQRコードをiPhoneのカメラで読み取ります、すると、プロファイルがインストールされます。
 
-![4](./images/rakuten-unlimit-iphone-4.png)
+![4](/images/rakuten-unlimit-iphone-4.png)
 
 ## パートナー回線と楽天回線の切替
 
@@ -63,13 +63,13 @@ iPhoneにて設定アプリを開き「モバイル通信」 -> 楽天のモバ�
 
 VoLTEオフを選択します。
 
-![5](./images/rakuten-unlimit-iphone-6.png)
+![5](/images/rakuten-unlimit-iphone-6.png)
 
 ### パートナー回線を使用する
 
 VoLTEオンを選択します。
 
-![6](./images/rakuten-unlimit-iphone-5.png)
+![6](/images/rakuten-unlimit-iphone-5.png)
 
 # 速度比較
 
@@ -79,15 +79,15 @@ VoLTEオンを選択します。
 
 ## パートナー回線接続時の速度
 
-![7](./images/rakuten-unlimit-iphone-7.png)
+![7](/images/rakuten-unlimit-iphone-7.png)
 
 ## OCNモバイル接続時の速度
 
-![8](./images/rakuten-unlimit-iphone-8.png)
+![8](/images/rakuten-unlimit-iphone-8.png)
 
 ## Nuro 2G + IEEE802.11gへのWiFi接続時の速度
 
-![9](./images/rakuten-unlimit-iphone-9.png)
+![9](/images/rakuten-unlimit-iphone-9.png)
 
 ## 所感
 
