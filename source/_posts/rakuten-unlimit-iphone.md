@@ -63,13 +63,13 @@ iPhoneにて設定アプリを開き「モバイル通信」 -> 楽天のモバ�
 
 VoLTEオフを選択します。
 
-![5](./images/rakuten-unlimit-iphone-5.png)
+![5](./images/rakuten-unlimit-iphone-6.png)
 
 ### パートナー回線を使用する
 
 VoLTEオンを選択します。
 
-![6](./images/rakuten-unlimit-iphone-6.png)
+![6](./images/rakuten-unlimit-iphone-5.png)
 
 # 速度比較
 
