@@ -61,15 +61,19 @@ iPhoneにて設定アプリを開き「モバイル通信」 -> 楽天のモバ�
 
 ### 楽天回線を使用する
 
-VoLTEオフを選択します。
+~~VoLTEオフを選択します。~~
 
 ![5](/images/rakuten-unlimit-iphone-6.png)
+
+追記：VoLTEオンを選択して、iPhoneが楽天回線、パートナー回線を自動的に選択する様です。
 
 ### パートナー回線を使用する
 
 VoLTEオンを選択します。
 
 ![6](/images/rakuten-unlimit-iphone-5.png)
+
+追記：VoLTEオンを選択して、iPhoneが楽天回線、パートナー回線を自動的に選択する様です。
 
 # 速度比較
 
