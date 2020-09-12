@@ -201,6 +201,131 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/05/byobu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/05/byobu/" class="post-title-link" itemprop="url">ターミナルでタブみたいな機能が使える、byobuの使い方</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-05 23:54:39" itemprop="dateCreated datePublished" datetime="2020-02-05T23:54:39+09:00">2020-02-05</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://byobu.org/" target="_blank" rel="noopener">byobu</a>を使うと、一つのターミナルで複数のプロンプトが使えます。</p>
+<p>実行と同時にリソースの消費具合を確認したいから、右側にnmon、左側でvim、なんて事が出来る様になります。</p>
+<p>内部ではtmux(ターミナルマルチプレクサー)又はscreenが動いていて、<br>byobuはtmuxをショートカットベースで使いやすくしてくれます。</p>
+<p><img src="/images/byobu1.png" alt="byobu"></p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install byobu -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="byobuを起動する"><a href="#byobuを起動する" class="headerlink" title="byobuを起動する"></a>byobuを起動する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ byobu</span><br></pre></td></tr></table></figure>
+
+<p>以降の全てのショートカットはbyobuを起動した状態で行います。</p>
+<h2 id="画面を垂直に分割する"><a href="#画面を垂直に分割する" class="headerlink" title="画面を垂直に分割する"></a>画面を垂直に分割する</h2><p>トップの画像はターミナルを垂直に分割した物です。</p>
+<p>Ctrl-F2</p>
+<p><img src="/images/byobu-vertical.png" alt="垂直に分割"></p>
+<h2 id="画面を水平に分割する"><a href="#画面を水平に分割する" class="headerlink" title="画面を水平に分割する"></a>画面を水平に分割する</h2><p>Shift-F2</p>
+<p><img src="/images/byobu-horizon.png" alt="水平に分割"></p>
+<h2 id="分割された他のプロンプトにフォーカスを移動"><a href="#分割された他のプロンプトにフォーカスを移動" class="headerlink" title="分割された他のプロンプトにフォーカスを移動"></a>分割された他のプロンプトにフォーカスを移動</h2><p>操作するプロンプトを変更したい時に</p>
+<ul>
+<li>次へ<ul>
+<li>Ctrl-F4</li>
+</ul>
+</li>
+<li>前へ<ul>
+<li>Ctrl-F3</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/byobu-focus1.png" alt="フォーカス移動前"><br><img src="/images/byobu-focus2.png" alt="フォーカス移動後"></p>
+<h2 id="分割されたプロンプトの移動"><a href="#分割されたプロンプトの移動" class="headerlink" title="分割されたプロンプトの移動"></a>分割されたプロンプトの移動</h2><ul>
+<li>次へ<ul>
+<li>Shift-F4</li>
+</ul>
+</li>
+<li>前へ<ul>
+<li>Shift-F3</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/byobu-move1.png" alt="移動前"><br><img src="/images/byobu-move2.png" alt="移動後"></p>
+<h2 id="新しいウィンドウを作成"><a href="#新しいウィンドウを作成" class="headerlink" title="新しいウィンドウを作成"></a>新しいウィンドウを作成</h2><p>F2</p>
+<p><img src="/images/byobu-newindow.png" alt="新規ウィンドウ"></p>
+<h2 id="他のウィンドウに移動"><a href="#他のウィンドウに移動" class="headerlink" title="他のウィンドウに移動"></a>他のウィンドウに移動</h2><ul>
+<li>次へ<ul>
+<li>F4</li>
+</ul>
+</li>
+<li>前へ<ul>
+<li>F3</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/byobu-focus-window.png" alt="ウィンドウのフォーカス移動"><br><img src="/images/byobu-focus-window.png" alt="ウィンドウのフォーカス移動"></p>
+<h2 id="分割されたプロンプト-ウィンドウ-を終了"><a href="#分割されたプロンプト-ウィンドウ-を終了" class="headerlink" title="分割されたプロンプト(ウィンドウ)を終了"></a>分割されたプロンプト(ウィンドウ)を終了</h2><p>終了したいプロンプトにフォーカスし、exitします。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/byobu-exit1.png" alt="終了"><br><img src="/images/byobu-exit2.png" alt="終了後"></p>
+<h2 id="画面の共有"><a href="#画面の共有" class="headerlink" title="画面の共有"></a>画面の共有</h2><p>他の人と同じ所にSSHした状態でbyobuを起動すると、同じ画面(セッション)を共有できます。</p>
+<p>気になる方は試してみてください。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/05/anyenv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -977,101 +1102,11 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/23/ubuntu-apache-webserver/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="佐々木 大輔">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="skt workshop">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2020/01/23/ubuntu-apache-webserver/" class="post-title-link" itemprop="url">UbuntuとApacheでウェブサーバを構築</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              
-                
-              
-
-              <time title="作成日：2020-01-23 00:54:51" itemprop="dateCreated datePublished" datetime="2020-01-23T00:54:51+09:00">2020-01-23</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Ubuntu 16.04(KAGOYA VPS KVM)</li>
-</ul>
-<h1 id="Apacheって何"><a href="#Apacheって何" class="headerlink" title="Apacheって何"></a>Apacheって何</h1><ul>
-<li>ブログやホームページを公開するために使う事が出来るウェブサーバ</li>
-</ul>
-<h1 id="特徴"><a href="#特徴" class="headerlink" title="特徴"></a>特徴</h1><ul>
-<li>phpやCGIを用いた動的コンテンツの表示が出来る</li>
-<li>リバースプロキシとしても使用できる</li>
-<li>使われ始めてからの歴史が長い</li>
-</ul>
-<h1 id="初期ページを表示するまでの手順"><a href="#初期ページを表示するまでの手順" class="headerlink" title="初期ページを表示するまでの手順"></a>初期ページを表示するまでの手順</h1><h2 id="ポート解放とApacheのインストール、起動"><a href="#ポート解放とApacheのインストール、起動" class="headerlink" title="ポート解放とApacheのインストール、起動"></a>ポート解放とApacheのインストール、起動</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line"></span><br><span class="line">ufw(ファイアウォール)をインストール</span><br><span class="line">$ apt install ufw</span><br><span class="line"></span><br><span class="line">インストール直後はufwはファイアウォールとして指定されないためufwを有効化</span><br><span class="line">$ ufw enable</span><br><span class="line"></span><br><span class="line">「このコマンドを実行するとssh接続が切れるかも知れませんがいいですか？」と聞かれるので y を入力してEnter</span><br><span class="line"></span><br><span class="line">sshのポートを開く</span><br><span class="line">これを行わないとssh切断したあと接続出来なくなってしまいます！</span><br><span class="line">$ ufw allow 22</span><br><span class="line"></span><br><span class="line">Apacheが使用するポートを開く</span><br><span class="line">$ ufw allow 80</span><br><span class="line"></span><br><span class="line">Apacheをインストールする</span><br><span class="line">$ apt install apache2</span><br><span class="line"></span><br><span class="line">Apacheが稼働している事を確認する</span><br><span class="line">$ curl localhost &amp;&amp; echo success || echo failed</span><br><span class="line"></span><br><span class="line">successと表示されればApacheは起動出来ています。</span><br><span class="line">表示された長いhtmlはデフォルトページのhtmlソースです。</span><br><span class="line"></span><br><span class="line">自分のIPアドレスを確認する</span><br><span class="line">$ ifconfig | grep &quot;inet addr:&quot;</span><br><span class="line"></span><br><span class="line">192.168.1.xや127.0.0.1といったIPアドレスが表示されると思います</span><br><span class="line">これらはローカルIPや、グローバルIPと呼ばれます。</span><br><span class="line">127.0.0.1は、ループバックアドレスと呼ばれ、自分自身を表すIPアドレスとなります。</span><br></pre></td></tr></table></figure>
-
-<h2 id="実際にページを表示してみる"><a href="#実際にページを表示してみる" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、先ほど確認したローカルIP、又はグローバルIPをアドレスバーに入力します。</p>
-<p>このような画面が表示されると思います。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/3ffbc0f8-a777-8a56-1fdb-6d4a7d984857.png" alt="スクリーンショット 2018-07-02 2.04.52.png"><br>Apacheではこれが初期ページとして設定されています。</p>
-<h1 id="ページを追加、変更する"><a href="#ページを追加、変更する" class="headerlink" title="ページを追加、変更する"></a>ページを追加、変更する</h1><h2 id="ページを追加する"><a href="#ページを追加する" class="headerlink" title="ページを追加する"></a>ページを追加する</h2><p>Apacheがブラウザに送ってくれているhtmlは /var/www/html/ となっている様です。<br>ここを ドキュメントルート と呼びます。<br>ここにファイルを配置する事でApache経由で参照する事ができるようになります。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ドキュメントルートに移動する</span><br><span class="line">$ cd /var/www/html/</span><br><span class="line">新しいページのファイルを作成する、アクセスする際のページ名は「test.html」とします</span><br><span class="line">$ echo &quot;Hello World!&quot; &gt; ./test.html</span><br></pre></td></tr></table></figure>
-
-<h2 id="実際にページを表示してみる-1"><a href="#実際にページを表示してみる-1" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>他のPCからページを<br>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、下記のようにアドレスバーに入力します。</p>
-<pre><code class="IPアドレス/test.html"></code></pre>
-<p>この様な画面が表示されます。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/a7714f81-4a06-a4f4-4d12-09b361f9d3d1.png" alt="スクリーンショット 2018-07-02 0.07.53.png"><br>以上となります、Nginxが気になる方はこちら</p>
-<blockquote>
-<p><a href="https://qiita.com/noma3629/items/807f25f9eb13525eebef" target="_blank" rel="noopener">https://qiita.com/noma3629/items/807f25f9eb13525eebef</a></p>
-</blockquote>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
   </nav>
 
 
@@ -1116,7 +1151,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>

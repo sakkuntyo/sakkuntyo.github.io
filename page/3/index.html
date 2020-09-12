@@ -201,6 +201,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/23/ubuntu-apache-webserver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/01/23/ubuntu-apache-webserver/" class="post-title-link" itemprop="url">UbuntuとApacheでウェブサーバを構築</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-01-23 00:54:51" itemprop="dateCreated datePublished" datetime="2020-01-23T00:54:51+09:00">2020-01-23</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 16.04(KAGOYA VPS KVM)</li>
+</ul>
+<h1 id="Apacheって何"><a href="#Apacheって何" class="headerlink" title="Apacheって何"></a>Apacheって何</h1><ul>
+<li>ブログやホームページを公開するために使う事が出来るウェブサーバ</li>
+</ul>
+<h1 id="特徴"><a href="#特徴" class="headerlink" title="特徴"></a>特徴</h1><ul>
+<li>phpやCGIを用いた動的コンテンツの表示が出来る</li>
+<li>リバースプロキシとしても使用できる</li>
+<li>使われ始めてからの歴史が長い</li>
+</ul>
+<h1 id="初期ページを表示するまでの手順"><a href="#初期ページを表示するまでの手順" class="headerlink" title="初期ページを表示するまでの手順"></a>初期ページを表示するまでの手順</h1><h2 id="ポート解放とApacheのインストール、起動"><a href="#ポート解放とApacheのインストール、起動" class="headerlink" title="ポート解放とApacheのインストール、起動"></a>ポート解放とApacheのインストール、起動</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line"></span><br><span class="line">ufw(ファイアウォール)をインストール</span><br><span class="line">$ apt install ufw</span><br><span class="line"></span><br><span class="line">インストール直後はufwはファイアウォールとして指定されないためufwを有効化</span><br><span class="line">$ ufw enable</span><br><span class="line"></span><br><span class="line">「このコマンドを実行するとssh接続が切れるかも知れませんがいいですか？」と聞かれるので y を入力してEnter</span><br><span class="line"></span><br><span class="line">sshのポートを開く</span><br><span class="line">これを行わないとssh切断したあと接続出来なくなってしまいます！</span><br><span class="line">$ ufw allow 22</span><br><span class="line"></span><br><span class="line">Apacheが使用するポートを開く</span><br><span class="line">$ ufw allow 80</span><br><span class="line"></span><br><span class="line">Apacheをインストールする</span><br><span class="line">$ apt install apache2</span><br><span class="line"></span><br><span class="line">Apacheが稼働している事を確認する</span><br><span class="line">$ curl localhost &amp;&amp; echo success || echo failed</span><br><span class="line"></span><br><span class="line">successと表示されればApacheは起動出来ています。</span><br><span class="line">表示された長いhtmlはデフォルトページのhtmlソースです。</span><br><span class="line"></span><br><span class="line">自分のIPアドレスを確認する</span><br><span class="line">$ ifconfig | grep &quot;inet addr:&quot;</span><br><span class="line"></span><br><span class="line">192.168.1.xや127.0.0.1といったIPアドレスが表示されると思います</span><br><span class="line">これらはローカルIPや、グローバルIPと呼ばれます。</span><br><span class="line">127.0.0.1は、ループバックアドレスと呼ばれ、自分自身を表すIPアドレスとなります。</span><br></pre></td></tr></table></figure>
+
+<h2 id="実際にページを表示してみる"><a href="#実際にページを表示してみる" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、先ほど確認したローカルIP、又はグローバルIPをアドレスバーに入力します。</p>
+<p>このような画面が表示されると思います。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/3ffbc0f8-a777-8a56-1fdb-6d4a7d984857.png" alt="スクリーンショット 2018-07-02 2.04.52.png"><br>Apacheではこれが初期ページとして設定されています。</p>
+<h1 id="ページを追加、変更する"><a href="#ページを追加、変更する" class="headerlink" title="ページを追加、変更する"></a>ページを追加、変更する</h1><h2 id="ページを追加する"><a href="#ページを追加する" class="headerlink" title="ページを追加する"></a>ページを追加する</h2><p>Apacheがブラウザに送ってくれているhtmlは /var/www/html/ となっている様です。<br>ここを ドキュメントルート と呼びます。<br>ここにファイルを配置する事でApache経由で参照する事ができるようになります。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ドキュメントルートに移動する</span><br><span class="line">$ cd /var/www/html/</span><br><span class="line">新しいページのファイルを作成する、アクセスする際のページ名は「test.html」とします</span><br><span class="line">$ echo &quot;Hello World!&quot; &gt; ./test.html</span><br></pre></td></tr></table></figure>
+
+<h2 id="実際にページを表示してみる-1"><a href="#実際にページを表示してみる-1" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>他のPCからページを<br>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、下記のようにアドレスバーに入力します。</p>
+<pre><code class="IPアドレス/test.html"></code></pre>
+<p>この様な画面が表示されます。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/a7714f81-4a06-a4f4-4d12-09b361f9d3d1.png" alt="スクリーンショット 2018-07-02 0.07.53.png"><br>以上となります、Nginxが気になる方はこちら</p>
+<blockquote>
+<p><a href="https://qiita.com/noma3629/items/807f25f9eb13525eebef" target="_blank" rel="noopener">https://qiita.com/noma3629/items/807f25f9eb13525eebef</a></p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/22/ubuntu-nginx-webserver-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1020,169 +1110,11 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/12/git-howto-simple/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="佐々木 大輔">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="skt workshop">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/12/git-howto-simple/" class="post-title-link" itemprop="url">Gitの使い方</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              
-                
-              
-
-              <time title="作成日：2019-10-12 20:38:05" itemprop="dateCreated datePublished" datetime="2019-10-12T20:38:05+09:00">2019-10-12</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="必要な基礎知識"><a href="#必要な基礎知識" class="headerlink" title="必要な基礎知識"></a>必要な基礎知識</h1><ul>
-<li>リポジトリ<ul>
-<li>リモートリポジトリ<ul>
-<li>皆で操作するために作られる</li>
-</ul>
-</li>
-<li>ローカルリポジトリ<ul>
-<li>自分が操作するために作られる</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>ブランチ<ul>
-<li>リポジトリに含まれる機能</li>
-<li>デフォルトでmasterブランチが作られる</li>
-<li>ブランチ同士を突き合わせて差分を見てからマージを行う</li>
-</ul>
-</li>
-<li>ワーキングツリー<ul>
-<li>現在のファイルの状態</li>
-</ul>
-</li>
-<li>インデックス<ul>
-<li>現在のファイルの管理状態</li>
-<li>git add “ファイル名” と操作を行うと、指定したファイルがステージング状態(コミットに含まれる状態)となる</li>
-<li>インデックスをリセットしたい場合には、git resetする</li>
-<li>状態<ul>
-<li>ステージング<ul>
-<li>次のコミットに含まれる状態</li>
-</ul>
-</li>
-<li>非ステージング<ul>
-<li>次のコミットに含まれない状態</li>
-</ul>
-</li>
-<li>非トラッキング<ul>
-<li>ブランチ内で全く管理していない状態</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>コミット<ul>
-<li>ファイルの状態を確定する操作</li>
-<li>ログを見たり、以前の状態に戻す際に必要となる</li>
-</ul>
-</li>
-<li>プッシュ<ul>
-<li>ローカルで変更されたブランチをリモートリポジトリに反映させる際に行う操作</li>
-</ul>
-</li>
-</ul>
-<h1 id="リポジトリ作成からプッシュまでの手順"><a href="#リポジトリ作成からプッシュまでの手順" class="headerlink" title="リポジトリ作成からプッシュまでの手順"></a>リポジトリ作成からプッシュまでの手順</h1><p>基本的にはコマンドを使うことは無いかと思いますが、ここではコマンド操作による説明を行います。</p>
-<h2 id="1-リモートリポジトリを作成する"><a href="#1-リモートリポジトリを作成する" class="headerlink" title="1.リモートリポジトリを作成する"></a>1.リモートリポジトリを作成する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">mkdir</span> "プロジェクト名"</span><br><span class="line">&gt; <span class="built_in">cd</span> "プロジェクト名"</span><br><span class="line">&gt; git init --bare</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> /<span class="built_in">path</span>/プロジェクト名/</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-リモートリポジトリを複製し、ローカルリポジトリを作成する"><a href="#2-リモートリポジトリを複製し、ローカルリポジトリを作成する" class="headerlink" title="2.リモートリポジトリを複製し、ローカルリポジトリを作成する"></a>2.リモートリポジトリを複製し、ローカルリポジトリを作成する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">mkdir</span> work</span><br><span class="line">&gt; <span class="built_in">cd</span> work</span><br><span class="line">&gt; git clone "<span class="number">1</span>で作成したフォルダのパス"</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-ブランチを分ける"><a href="#3-ブランチを分ける" class="headerlink" title="3.ブランチを分ける"></a>3.ブランチを分ける</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git checkout -b "ブランチ名"</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>ポイント</strong><br>checkout -bでは、ブランチの作成と切替を同時に行います。</p>
-</blockquote>
-<h2 id="4-現在のブランチを確認する"><a href="#4-現在のブランチを確認する" class="headerlink" title="4.現在のブランチを確認する"></a>4.現在のブランチを確認する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git branch -a -vvv</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>ポイント1</strong><br>*がついているブランチが現在選択中のブランチとなります。</p><p></p>
-</blockquote>
-<blockquote>
-<p><strong>ポイント2</strong><br>remotesで始まる名前の物は、リモートリポジトリにあるブランチとなります。</p>
-</blockquote>
-<blockquote>
-<p><strong>注意</strong><br>masterブランチに１つもコミットが無い状態での<br>ブランチ作成、切替を行った状態では、何も表示されない様です。</p>
-</blockquote>
-<h2 id="5-変更"><a href="#5-変更" class="headerlink" title="5.変更"></a>5.変更</h2><p>ファイルを修正、追加するなどして変更を加えます</p>
-<h2 id="6-git-add前に状態を確認"><a href="#6-git-add前に状態を確認" class="headerlink" title="6.git add前に状態を確認"></a>6.git add前に状態を確認</h2><p>Untracked files(非トラッキング)となっている事がわかります。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git status</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-git-addする"><a href="#7-git-addする" class="headerlink" title="7.git addする"></a>7.git addする</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git add ""今回新規作成されたファイル"</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-ステージング後に状態を確認"><a href="#8-ステージング後に状態を確認" class="headerlink" title="8.ステージング後に状態を確認"></a>8.ステージング後に状態を確認</h2><p>Changes to be commited(ステージング)に含まれている事がわかります。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git status</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-変更を確定する"><a href="#9-変更を確定する" class="headerlink" title="9.変更を確定する"></a>9.変更を確定する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git commit -m "ログに残すメッセージ"</span><br></pre></td></tr></table></figure>
-
-<h2 id="10-ログを確認する"><a href="#10-ログを確認する" class="headerlink" title="10.ログを確認する"></a>10.ログを確認する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git log</span><br></pre></td></tr></table></figure>
-
-<h2 id="11-プッシュする"><a href="#11-プッシュする" class="headerlink" title="11.プッシュする"></a>11.プッシュする</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git push origin HEAD</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>ポイント</strong><br>originとは、clone時に自動で作成されるリモートリポジトリのURLの名前となります。<br>HEADとは、現在のブランチの最新コミットの状態を指します。<br>この二つを組み合わせる事で、ブランチ名を指定する事なく、プッシュする事が可能です。</p>
-</blockquote>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
   </nav>
 
 
@@ -1227,7 +1159,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
