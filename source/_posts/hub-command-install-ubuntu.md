@@ -2,7 +2,7 @@
 layout: post
 title: hubコマンドのインストール(Ubuntu)
 date: 2020-09-12 19:32:47
-tags:[hub,ubuntu]
+tags: [hub,ubuntu]
 ---
 
 # コマンド
