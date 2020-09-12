@@ -65,15 +65,19 @@
   };
 </script>
 
-  <meta name="keywords" content="IT,Nodejs,Golang,Vim,スーパーカブ,リトルカブ,ニュービートル">
-<meta property="og:type" content="website">
-<meta property="og:title" content="skt workshop">
-<meta property="og:url" content="https://sakkuntyo.github.io/archives/index.html">
+  <meta name="description" content="ターミナルに出てきた文字列をコピーしたい、ただしマウス触るのがめんどくさい。。。そんな時に 環境 Ubuntu18.04  インストール12$ apt update$ apt install xsel -y  使い方1. 出力をクリップボードにコピー1$ echo &quot;Hellow&quot; | xsel --clipboard --input  この後右クリックやCtrl+Vで貼り付けできる様になっていま">
+<meta name="keywords" content="xsel,ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="コマンドラインの出力をクリップボードにコピー">
+<meta property="og:url" content="https://sakkuntyo.github.io/2020/01/12/xsel-commandline-clipboard/index.html">
 <meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="ターミナルに出てきた文字列をコピーしたい、ただしマウス触るのがめんどくさい。。。そんな時に 環境 Ubuntu18.04  インストール12$ apt update$ apt install xsel -y  使い方1. 出力をクリップボードにコピー1$ echo &quot;Hellow&quot; | xsel --clipboard --input  この後右クリックやCtrl+Vで貼り付けできる様になっていま">
 <meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2020-09-12T10:31:57.574Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="skt workshop">
-  <link rel="canonical" href="https://sakkuntyo.github.io/archives/">
+<meta name="twitter:title" content="コマンドラインの出力をクリップボードにコピー">
+<meta name="twitter:description" content="ターミナルに出てきた文字列をコピーしたい、ただしマウス触るのがめんどくさい。。。そんな時に 環境 Ubuntu18.04  インストール12$ apt update$ apt install xsel -y  使い方1. 出力をクリップボードにコピー1$ echo &quot;Hellow&quot; | xsel --clipboard --input  この後右クリックやCtrl+Vで貼り付けできる様になっていま">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2020/01/12/xsel-commandline-clipboard/">
 
 
 <script id="page-configurations">
@@ -81,13 +85,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>アーカイブ | skt workshop</title>
+  <title>コマンドラインの出力をクリップボードにコピー | skt workshop</title>
   
 
 
@@ -179,15 +183,6 @@
 
     
 
-  
-    
-    
-  
-    
-    
-  
-  
-
 </nav>
 </div>
     </header>
@@ -205,321 +200,115 @@
           <div id="content" class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/12/xsel-commandline-clipboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">コマンドラインの出力をクリップボードにコピー
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-01-12 04:03:19" itemprop="dateCreated datePublished" datetime="2020-01-12T04:03:19+09:00">2020-01-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <p>ターミナルに出てきた文字列をコピーしたい、<br>ただしマウス触るのがめんどくさい。。。<br>そんな時に</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu18.04</li>
+</ul>
+<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install xsel -y</span><br></pre></td></tr></table></figure>
 
-  
-  
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="1-出力をクリップボードにコピー"><a href="#1-出力をクリップボードにコピー" class="headerlink" title="1. 出力をクリップボードにコピー"></a>1. 出力をクリップボードにコピー</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"Hellow"</span> | xsel --clipboard --input</span><br></pre></td></tr></table></figure>
 
-  
+<p>この後右クリックやCtrl+Vで貼り付けできる様になっています。</p>
+
+    </div>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-10T22:56:19+09:00"
-              content="2020-04-10">
-          04-10
-        </time>
-      </div>
-
-      <h2 class="post-title">
+    
+    
         
-          <a class="post-title-link" href="/2020/04/10/rakuten-unlimit-iphone/" itemprop="url">
-            <span itemprop="name">楽天モバイルUN-LIMITをiPhoneで使ってみた</span>
-          </a>
-        
-      </h2>
+      
 
-    </header>
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/xsel/" rel="tag"># xsel</a>
+            
+              <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/12/27/github-command-operation/" rel="next" title="GitHubをコマンド操作">
+                  <i class="fa fa-chevron-left"></i> GitHubをコマンド操作
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2020/01/22/ubuntu-nginx-webserver-md/" rel="prev" title="UbuntuとNginxでウェブサーバを構築">
+                  UbuntuとNginxでウェブサーバを構築 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </article>
-
-
-
+  
   
   
 
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-23T01:17:02+09:00"
-              content="2020-02-23">
-          02-23
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/23/ubuntu-snap/" itemprop="url">
-            <span itemprop="name">依存関係を気にしなくていいパッケージ管理ツール「snap」</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-22T15:48:57+09:00"
-              content="2020-02-22">
-          02-22
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/22/nslookup/" itemprop="url">
-            <span itemprop="name">IPアドレスとドメインを正引、逆引する</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-13T23:14:06+09:00"
-              content="2020-02-13">
-          02-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/13/wsl-ubuntu-byobu/" itemprop="url">
-            <span itemprop="name">WSLのUbuntuでbyobuを使う</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-12T02:20:50+09:00"
-              content="2020-02-12">
-          02-12
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/12/mount-networkdrive-for-wsl/" itemprop="url">
-            <span itemprop="name">WSLからWindowsのドライブをマウントする</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-11T22:46:44+09:00"
-              content="2020-02-11">
-          02-11
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/11/wsl-mount-for-windows/" itemprop="url">
-            <span itemprop="name">WindowsからWSLのUbuntuのディレクトリをマウントする</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-09T04:52:22+09:00"
-              content="2020-02-09">
-          02-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/09/miniconda-python/" itemprop="url">
-            <span itemprop="name">minicondaでpython3をインストール</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-08T00:15:47+09:00"
-              content="2020-02-08">
-          02-08
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/08/powershell/" itemprop="url">
-            <span itemprop="name">PowerShellをUbuntuにインストール</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-06T00:43:27+09:00"
-              content="2020-02-06">
-          02-06
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/06/nmon/" itemprop="url">
-            <span itemprop="name">ターミナル上でパフォーマンスを確認</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-05T23:54:39+09:00"
-              content="2020-02-05">
-          02-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/05/byobu/" itemprop="url">
-            <span itemprop="name">ターミナルでタブみたいな機能が使える、byobuの使い方</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-
-    </div>
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
-  </nav>
-
 
 
           </div>
@@ -536,6 +325,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -548,6 +342,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#インストール"><span class="nav-number">2.</span> <span class="nav-text">インストール</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使い方"><span class="nav-number">3.</span> <span class="nav-text">使い方</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-出力をクリップボードにコピー"><span class="nav-number">3.1.</span> <span class="nav-text">1. 出力をクリップボードにコピー</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="必要な基礎知識 リポジトリ リモートリポジトリ 皆で操作するために作られる   ローカルリポジトリ 自分が操作するために作られる     ブランチ リポジトリに含まれる機能 デフォルトでmasterブランチが作られる ブランチ同士を突き合わせて差分を見てからマージを行う   ワーキングツリー 現在のファイルの状態   インデックス 現在のファイルの管理状態 git add “ファイル名” と操作を">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gitの使い方">
+<meta property="og:url" content="https://sakkuntyo.github.io/2019/10/12/git-howto-simple/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="必要な基礎知識 リポジトリ リモートリポジトリ 皆で操作するために作られる   ローカルリポジトリ 自分が操作するために作られる     ブランチ リポジトリに含まれる機能 デフォルトでmasterブランチが作られる ブランチ同士を突き合わせて差分を見てからマージを行う   ワーキングツリー 現在のファイルの状態   インデックス 現在のファイルの管理状態 git add “ファイル名” と操作を">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2020-09-12T10:31:57.570Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gitの使い方">
+<meta name="twitter:description" content="必要な基礎知識 リポジトリ リモートリポジトリ 皆で操作するために作られる   ローカルリポジトリ 自分が操作するために作られる     ブランチ リポジトリに含まれる機能 デフォルトでmasterブランチが作られる ブランチ同士を突き合わせて差分を見てからマージを行う   ワーキングツリー 現在のファイルの状態   インデックス 現在のファイルの管理状態 git add “ファイル名” と操作を">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2019/10/12/git-howto-simple/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Gitの使い方 | skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/12/git-howto-simple/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Gitの使い方
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-10-12 20:38:05" itemprop="dateCreated datePublished" datetime="2019-10-12T20:38:05+09:00">2019-10-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="必要な基礎知識"><a href="#必要な基礎知識" class="headerlink" title="必要な基礎知識"></a>必要な基礎知識</h1><ul>
+<li>リポジトリ<ul>
+<li>リモートリポジトリ<ul>
+<li>皆で操作するために作られる</li>
+</ul>
+</li>
+<li>ローカルリポジトリ<ul>
+<li>自分が操作するために作られる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ブランチ<ul>
+<li>リポジトリに含まれる機能</li>
+<li>デフォルトでmasterブランチが作られる</li>
+<li>ブランチ同士を突き合わせて差分を見てからマージを行う</li>
+</ul>
+</li>
+<li>ワーキングツリー<ul>
+<li>現在のファイルの状態</li>
+</ul>
+</li>
+<li>インデックス<ul>
+<li>現在のファイルの管理状態</li>
+<li>git add “ファイル名” と操作を行うと、指定したファイルがステージング状態(コミットに含まれる状態)となる</li>
+<li>インデックスをリセットしたい場合には、git resetする</li>
+<li>状態<ul>
+<li>ステージング<ul>
+<li>次のコミットに含まれる状態</li>
+</ul>
+</li>
+<li>非ステージング<ul>
+<li>次のコミットに含まれない状態</li>
+</ul>
+</li>
+<li>非トラッキング<ul>
+<li>ブランチ内で全く管理していない状態</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>コミット<ul>
+<li>ファイルの状態を確定する操作</li>
+<li>ログを見たり、以前の状態に戻す際に必要となる</li>
+</ul>
+</li>
+<li>プッシュ<ul>
+<li>ローカルで変更されたブランチをリモートリポジトリに反映させる際に行う操作</li>
+</ul>
+</li>
+</ul>
+<h1 id="リポジトリ作成からプッシュまでの手順"><a href="#リポジトリ作成からプッシュまでの手順" class="headerlink" title="リポジトリ作成からプッシュまでの手順"></a>リポジトリ作成からプッシュまでの手順</h1><p>基本的にはコマンドを使うことは無いかと思いますが、ここではコマンド操作による説明を行います。</p>
+<h2 id="1-リモートリポジトリを作成する"><a href="#1-リモートリポジトリを作成する" class="headerlink" title="1.リモートリポジトリを作成する"></a>1.リモートリポジトリを作成する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">mkdir</span> "プロジェクト名"</span><br><span class="line">&gt; <span class="built_in">cd</span> "プロジェクト名"</span><br><span class="line">&gt; git init --bare</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> /<span class="built_in">path</span>/プロジェクト名/</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-リモートリポジトリを複製し、ローカルリポジトリを作成する"><a href="#2-リモートリポジトリを複製し、ローカルリポジトリを作成する" class="headerlink" title="2.リモートリポジトリを複製し、ローカルリポジトリを作成する"></a>2.リモートリポジトリを複製し、ローカルリポジトリを作成する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">mkdir</span> work</span><br><span class="line">&gt; <span class="built_in">cd</span> work</span><br><span class="line">&gt; git clone "<span class="number">1</span>で作成したフォルダのパス"</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-ブランチを分ける"><a href="#3-ブランチを分ける" class="headerlink" title="3.ブランチを分ける"></a>3.ブランチを分ける</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git checkout -b "ブランチ名"</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>ポイント</strong><br>checkout -bでは、ブランチの作成と切替を同時に行います。</p>
+</blockquote>
+<h2 id="4-現在のブランチを確認する"><a href="#4-現在のブランチを確認する" class="headerlink" title="4.現在のブランチを確認する"></a>4.現在のブランチを確認する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git branch -a -vvv</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>ポイント1</strong><br>*がついているブランチが現在選択中のブランチとなります。</p><p></p>
+</blockquote>
+<blockquote>
+<p><strong>ポイント2</strong><br>remotesで始まる名前の物は、リモートリポジトリにあるブランチとなります。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong><br>masterブランチに１つもコミットが無い状態での<br>ブランチ作成、切替を行った状態では、何も表示されない様です。</p>
+</blockquote>
+<h2 id="5-変更"><a href="#5-変更" class="headerlink" title="5.変更"></a>5.変更</h2><p>ファイルを修正、追加するなどして変更を加えます</p>
+<h2 id="6-git-add前に状態を確認"><a href="#6-git-add前に状態を確認" class="headerlink" title="6.git add前に状態を確認"></a>6.git add前に状態を確認</h2><p>Untracked files(非トラッキング)となっている事がわかります。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git status</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-git-addする"><a href="#7-git-addする" class="headerlink" title="7.git addする"></a>7.git addする</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git add ""今回新規作成されたファイル"</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-ステージング後に状態を確認"><a href="#8-ステージング後に状態を確認" class="headerlink" title="8.ステージング後に状態を確認"></a>8.ステージング後に状態を確認</h2><p>Changes to be commited(ステージング)に含まれている事がわかります。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git status</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-変更を確定する"><a href="#9-変更を確定する" class="headerlink" title="9.変更を確定する"></a>9.変更を確定する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git commit -m "ログに残すメッセージ"</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-ログを確認する"><a href="#10-ログを確認する" class="headerlink" title="10.ログを確認する"></a>10.ログを確認する</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git log</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-プッシュする"><a href="#11-プッシュする" class="headerlink" title="11.プッシュする"></a>11.プッシュする</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git push origin HEAD</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>ポイント</strong><br>originとは、clone時に自動で作成されるリモートリポジトリのURLの名前となります。<br>HEADとは、現在のブランチの最新コミットの状態を指します。<br>この二つを組み合わせる事で、ブランチ名を指定する事なく、プッシュする事が可能です。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Git/" rel="tag"># Git</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/20/github-addkey/" rel="prev" title="GitHubに公開鍵を追加">
+                  GitHubに公開鍵を追加 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#必要な基礎知識"><span class="nav-number">1.</span> <span class="nav-text">必要な基礎知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#リポジトリ作成からプッシュまでの手順"><span class="nav-number">2.</span> <span class="nav-text">リポジトリ作成からプッシュまでの手順</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-リモートリポジトリを作成する"><span class="nav-number">2.1.</span> <span class="nav-text">1.リモートリポジトリを作成する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-リモートリポジトリを複製し、ローカルリポジトリを作成する"><span class="nav-number">2.2.</span> <span class="nav-text">2.リモートリポジトリを複製し、ローカルリポジトリを作成する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ブランチを分ける"><span class="nav-number">2.3.</span> <span class="nav-text">3.ブランチを分ける</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-現在のブランチを確認する"><span class="nav-number">2.4.</span> <span class="nav-text">4.現在のブランチを確認する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-変更"><span class="nav-number">2.5.</span> <span class="nav-text">5.変更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-git-add前に状態を確認"><span class="nav-number">2.6.</span> <span class="nav-text">6.git add前に状態を確認</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-git-addする"><span class="nav-number">2.7.</span> <span class="nav-text">7.git addする</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-ステージング後に状態を確認"><span class="nav-number">2.8.</span> <span class="nav-text">8.ステージング後に状態を確認</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-変更を確定する"><span class="nav-number">2.9.</span> <span class="nav-text">9.変更を確定する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-ログを確認する"><span class="nav-number">2.10.</span> <span class="nav-text">10.ログを確認する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-プッシュする"><span class="nav-number">2.11.</span> <span class="nav-text">11.プッシュする</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

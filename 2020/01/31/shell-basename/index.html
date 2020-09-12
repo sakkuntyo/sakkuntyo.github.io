@@ -65,15 +65,19 @@
   };
 </script>
 
-  <meta name="keywords" content="IT,Nodejs,Golang,Vim,スーパーカブ,リトルカブ,ニュービートル">
-<meta property="og:type" content="website">
-<meta property="og:title" content="skt workshop">
-<meta property="og:url" content="https://sakkuntyo.github.io/archives/index.html">
+  <meta name="description" content="basenameの初めて見る使い方を見たのでメモ 環境 Ubuntu18.04 bash    出来ることパスで指定されたファイルやフォルダの名前だけを出力する 以下の様にファイルが配置されているとします。 12345678$ mkdir test$ cd test$ mkdir dir1$ touch dir1/test.sh$ find../dir1./dir1/test.sh  ファイル名を">
+<meta name="keywords" content="sh,basename">
+<meta property="og:type" content="article">
+<meta property="og:title" content="basenameコマンドの使い方">
+<meta property="og:url" content="https://sakkuntyo.github.io/2020/01/31/shell-basename/index.html">
 <meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="basenameの初めて見る使い方を見たのでメモ 環境 Ubuntu18.04 bash    出来ることパスで指定されたファイルやフォルダの名前だけを出力する 以下の様にファイルが配置されているとします。 12345678$ mkdir test$ cd test$ mkdir dir1$ touch dir1/test.sh$ find../dir1./dir1/test.sh  ファイル名を">
 <meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2020-09-12T10:31:57.574Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="skt workshop">
-  <link rel="canonical" href="https://sakkuntyo.github.io/archives/">
+<meta name="twitter:title" content="basenameコマンドの使い方">
+<meta name="twitter:description" content="basenameの初めて見る使い方を見たのでメモ 環境 Ubuntu18.04 bash    出来ることパスで指定されたファイルやフォルダの名前だけを出力する 以下の様にファイルが配置されているとします。 12345678$ mkdir test$ cd test$ mkdir dir1$ touch dir1/test.sh$ find../dir1./dir1/test.sh  ファイル名を">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2020/01/31/shell-basename/">
 
 
 <script id="page-configurations">
@@ -81,13 +85,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>アーカイブ | skt workshop</title>
+  <title>basenameコマンドの使い方 | skt workshop</title>
   
 
 
@@ -179,15 +183,6 @@
 
     
 
-  
-    
-    
-  
-    
-    
-  
-  
-
 </nav>
 </div>
     </header>
@@ -205,321 +200,123 @@
           <div id="content" class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/31/shell-basename/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">basenameコマンドの使い方
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-01-31 23:51:04" itemprop="dateCreated datePublished" datetime="2020-01-31T23:51:04+09:00">2020-01-31</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <p>basenameの初めて見る使い方を見たのでメモ</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu18.04<ul>
+<li>bash</li>
+</ul>
+</li>
+</ul>
+<h1 id="出来ること"><a href="#出来ること" class="headerlink" title="出来ること"></a>出来ること</h1><p>パスで指定されたファイルやフォルダの名前だけを出力する</p>
+<p>以下の様にファイルが配置されているとします。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir <span class="built_in">test</span></span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ mkdir dir1</span><br><span class="line">$ touch dir1/test.sh</span><br><span class="line">$ find</span><br><span class="line">.</span><br><span class="line">./dir1</span><br><span class="line">./dir1/test.sh</span><br></pre></td></tr></table></figure>
 
-  
-  
+<h2 id="ファイル名を出力する"><a href="#ファイル名を出力する" class="headerlink" title="ファイル名を出力する"></a>ファイル名を出力する</h2><p>パスは要らない時などに使える。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ basename ./dir/test.sh</span><br><span class="line">test.sh</span><br></pre></td></tr></table></figure>
 
-  
+<h2 id="ファイル名の末尾文字を削除し出力する"><a href="#ファイル名の末尾文字を削除し出力する" class="headerlink" title="ファイル名の末尾文字を削除し出力する"></a>ファイル名の末尾文字を削除し出力する</h2><p>これで拡張子を消したりできる。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ basename ./dir/test.sh .sh</span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-10T22:56:19+09:00"
-              content="2020-04-10">
-          04-10
-        </time>
-      </div>
-
-      <h2 class="post-title">
+    
+    
         
-          <a class="post-title-link" href="/2020/04/10/rakuten-unlimit-iphone/" itemprop="url">
-            <span itemprop="name">楽天モバイルUN-LIMITをiPhoneで使ってみた</span>
-          </a>
-        
-      </h2>
+      
 
-    </header>
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/sh/" rel="tag"># sh</a>
+            
+              <a href="/tags/basename/" rel="tag"># basename</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/01/30/hexo-generate-sitemap/" rel="next" title="Hexoでsitemap.xmlを生成">
+                  <i class="fa fa-chevron-left"></i> Hexoでsitemap.xmlを生成
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2020/02/01/npx/" rel="prev" title="「npm install -g」はもう要らない！npxの使い方">
+                  「npm install -g」はもう要らない！npxの使い方 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </article>
-
-
-
+  
   
   
 
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-23T01:17:02+09:00"
-              content="2020-02-23">
-          02-23
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/23/ubuntu-snap/" itemprop="url">
-            <span itemprop="name">依存関係を気にしなくていいパッケージ管理ツール「snap」</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-22T15:48:57+09:00"
-              content="2020-02-22">
-          02-22
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/22/nslookup/" itemprop="url">
-            <span itemprop="name">IPアドレスとドメインを正引、逆引する</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-13T23:14:06+09:00"
-              content="2020-02-13">
-          02-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/13/wsl-ubuntu-byobu/" itemprop="url">
-            <span itemprop="name">WSLのUbuntuでbyobuを使う</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-12T02:20:50+09:00"
-              content="2020-02-12">
-          02-12
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/12/mount-networkdrive-for-wsl/" itemprop="url">
-            <span itemprop="name">WSLからWindowsのドライブをマウントする</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-11T22:46:44+09:00"
-              content="2020-02-11">
-          02-11
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/11/wsl-mount-for-windows/" itemprop="url">
-            <span itemprop="name">WindowsからWSLのUbuntuのディレクトリをマウントする</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-09T04:52:22+09:00"
-              content="2020-02-09">
-          02-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/09/miniconda-python/" itemprop="url">
-            <span itemprop="name">minicondaでpython3をインストール</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-08T00:15:47+09:00"
-              content="2020-02-08">
-          02-08
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/08/powershell/" itemprop="url">
-            <span itemprop="name">PowerShellをUbuntuにインストール</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-06T00:43:27+09:00"
-              content="2020-02-06">
-          02-06
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/06/nmon/" itemprop="url">
-            <span itemprop="name">ターミナル上でパフォーマンスを確認</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-05T23:54:39+09:00"
-              content="2020-02-05">
-          02-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/02/05/byobu/" itemprop="url">
-            <span itemprop="name">ターミナルでタブみたいな機能が使える、byobuの使い方</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-
-    </div>
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
-  </nav>
-
 
 
           </div>
@@ -536,6 +333,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -548,6 +350,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出来ること"><span class="nav-number">2.</span> <span class="nav-text">出来ること</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ファイル名を出力する"><span class="nav-number">2.1.</span> <span class="nav-text">ファイル名を出力する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ファイル名の末尾文字を削除し出力する"><span class="nav-number">2.2.</span> <span class="nav-text">ファイル名の末尾文字を削除し出力する</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
