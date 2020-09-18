@@ -201,6 +201,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/09/19/nodejs-get-client-id/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/09/19/nodejs-get-client-id/" class="post-title-link" itemprop="url">NodejsのウェブサーバーでクライアントのIPを受け取る</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-09-19 01:09:55 / 修正日：01:16:11" itemprop="dateCreated datePublished" datetime="2020-09-19T01:09:55+09:00">2020-09-19</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="クライアントのIPを確かめたい！"><a href="#クライアントのIPを確かめたい！" class="headerlink" title="クライアントのIPを確かめたい！"></a>クライアントのIPを確かめたい！</h1><p>そういう時はreqの情報をとる</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reqdata = req.headers[<span class="string">'x-forwarded-for'</span>] || </span><br><span class="line">   req.connection.remoteAddress || </span><br><span class="line">   req.socket.remoteAddress ||</span><br><span class="line">   req.connection.socket.remoteAddress;</span><br><span class="line"><span class="built_in">console</span>.log(reqdata);</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/09/12/hub-command-install-ubuntu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -935,93 +1004,6 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/06/nmon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="佐々木 大輔">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="skt workshop">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2020/02/06/nmon/" class="post-title-link" itemprop="url">ターミナル上でパフォーマンスを確認</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              
-                
-              
-
-              <time title="作成日：2020-02-06 00:43:27" itemprop="dateCreated datePublished" datetime="2020-02-06T00:43:27+09:00">2020-02-06</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Ubuntu 18.04</li>
-</ul>
-<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install nmon -y</span><br></pre></td></tr></table></figure>
-
-<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="起動"><a href="#起動" class="headerlink" title="起動"></a>起動</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nmon</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/nmon.png" alt="nmon"></p>
-<h2 id="各パフォーマンスを確認する"><a href="#各パフォーマンスを確認する" class="headerlink" title="各パフォーマンスを確認する"></a>各パフォーマンスを確認する</h2><p>各操作はコマンドで行います。</p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>C</p>
-<p><img src="/images/nmon1.png" alt="nmon1"></p>
-<h3 id="メモリ"><a href="#メモリ" class="headerlink" title="メモリ"></a>メモリ</h3><p>M</p>
-<p><img src="/images/nmon2.png" alt="nmon2"></p>
-<h3 id="DISK-I-O"><a href="#DISK-I-O" class="headerlink" title="DISK I/O"></a>DISK I/O</h3><p>D</p>
-<h3 id="プロセス"><a href="#プロセス" class="headerlink" title="プロセス"></a>プロセス</h3><p>t</p>
-<p><img src="/images/nmon3.png" alt="nmon3"></p>
-<h3 id="ネットワーク"><a href="#ネットワーク" class="headerlink" title="ネットワーク"></a>ネットワーク</h3><p>n</p>
-<p><img src="/images/nmon4.png" alt="nmon4"></p>
-<h3 id="システムリソースビュー"><a href="#システムリソースビュー" class="headerlink" title="システムリソースビュー"></a>システムリソースビュー</h3><p>r</p>
-<p><img src="/images/nmon5.png" alt="nmon5"></p>
-<h3 id="終了"><a href="#終了" class="headerlink" title="終了"></a>終了</h3><p>Ctrl-C</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
@@ -1071,7 +1053,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>

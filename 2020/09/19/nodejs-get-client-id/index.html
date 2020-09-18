@@ -65,26 +65,19 @@
   };
 </script>
 
-  <meta name="description" content="環境 Windows10 Ubuntu 18.04(WSL)  手順WSLのディレクトリを開く実はエクスプローラからWSLのディレクトリを除くことが出来ます。 エクスプローラにて、\\wsl$を開く  マウントしたいディレクトリを開き、アドレスをコピー マウント「ネットワーク」を右クリックし、「ネットワークドライブの割り当て」を選択します。  その後、割り当てたいドライブレターを選択し、先ほどのア">
-<meta name="keywords" content="wsl">
+  <meta name="description" content="クライアントのIPを確かめたい！そういう時はreqの情報をとる 12345var reqdata = req.headers[&apos;x-forwarded-for&apos;] ||    req.connection.remoteAddress ||    req.socket.remoteAddress ||   req.connection.socket.remoteAddress;console.log">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WindowsからWSLのUbuntuのディレクトリをマウントする">
-<meta property="og:url" content="https://sakkuntyo.github.io/2020/02/11/wsl-mount-for-windows/index.html">
+<meta property="og:title" content="NodejsのウェブサーバーでクライアントのIPを受け取る">
+<meta property="og:url" content="https://sakkuntyo.github.io/2020/09/19/nodejs-get-client-id/index.html">
 <meta property="og:site_name" content="skt workshop">
-<meta property="og:description" content="環境 Windows10 Ubuntu 18.04(WSL)  手順WSLのディレクトリを開く実はエクスプローラからWSLのディレクトリを除くことが出来ます。 エクスプローラにて、\\wsl$を開く  マウントしたいディレクトリを開き、アドレスをコピー マウント「ネットワーク」を右クリックし、「ネットワークドライブの割り当て」を選択します。  その後、割り当てたいドライブレターを選択し、先ほどのア">
+<meta property="og:description" content="クライアントのIPを確かめたい！そういう時はreqの情報をとる 12345var reqdata = req.headers[&apos;x-forwarded-for&apos;] ||    req.connection.remoteAddress ||    req.socket.remoteAddress ||   req.connection.socket.remoteAddress;console.log">
 <meta property="og:locale" content="ja">
-<meta property="og:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows1.png">
-<meta property="og:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows2.png">
-<meta property="og:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows3.png">
-<meta property="og:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows4.png">
-<meta property="og:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows5.png">
-<meta property="og:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows6.png">
-<meta property="og:updated_time" content="2020-09-12T10:31:57.574Z">
+<meta property="og:updated_time" content="2020-09-18T16:16:11.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WindowsからWSLのUbuntuのディレクトリをマウントする">
-<meta name="twitter:description" content="環境 Windows10 Ubuntu 18.04(WSL)  手順WSLのディレクトリを開く実はエクスプローラからWSLのディレクトリを除くことが出来ます。 エクスプローラにて、\\wsl$を開く  マウントしたいディレクトリを開き、アドレスをコピー マウント「ネットワーク」を右クリックし、「ネットワークドライブの割り当て」を選択します。  その後、割り当てたいドライブレターを選択し、先ほどのア">
-<meta name="twitter:image" content="https://sakkuntyo.github.io/images/wsl-mount-for-windows1.png">
-  <link rel="canonical" href="https://sakkuntyo.github.io/2020/02/11/wsl-mount-for-windows/">
+<meta name="twitter:title" content="NodejsのウェブサーバーでクライアントのIPを受け取る">
+<meta name="twitter:description" content="クライアントのIPを確かめたい！そういう時はreqの情報をとる 12345var reqdata = req.headers[&apos;x-forwarded-for&apos;] ||    req.connection.remoteAddress ||    req.socket.remoteAddress ||   req.connection.socket.remoteAddress;console.log">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2020/09/19/nodejs-get-client-id/">
 
 
 <script id="page-configurations">
@@ -98,7 +91,7 @@
   };
 </script>
 
-  <title>WindowsからWSLのUbuntuのディレクトリをマウントする | skt workshop</title>
+  <title>NodejsのウェブサーバーでクライアントのIPを受け取る | skt workshop</title>
   
 
 
@@ -212,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/11/wsl-mount-for-windows/">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/09/19/nodejs-get-client-id/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="佐々木 大輔">
@@ -224,7 +217,7 @@
       <meta itemprop="name" content="skt workshop">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">WindowsからWSLのUbuntuのディレクトリをマウントする
+        <h1 class="post-title" itemprop="name headline">NodejsのウェブサーバーでクライアントのIPを受け取る
 
           
         </h1>
@@ -240,7 +233,7 @@
                 
               
 
-              <time title="作成日：2020-02-11 22:46:44" itemprop="dateCreated datePublished" datetime="2020-02-11T22:46:44+09:00">2020-02-11</time>
+              <time title="作成日：2020-09-19 01:09:55 / 修正日：01:16:11" itemprop="dateCreated datePublished" datetime="2020-09-19T01:09:55+09:00">2020-09-19</time>
             </span>
           
 
@@ -255,21 +248,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Windows10</li>
-<li>Ubuntu 18.04(WSL)</li>
-</ul>
-<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="WSLのディレクトリを開く"><a href="#WSLのディレクトリを開く" class="headerlink" title="WSLのディレクトリを開く"></a>WSLのディレクトリを開く</h2><p>実はエクスプローラからWSLのディレクトリを除くことが出来ます。</p>
-<p>エクスプローラにて、\\wsl$を開く</p>
-<p><img src="/images/wsl-mount-for-windows1.png" alt="1"></p>
-<h2 id="マウントしたいディレクトリを開き、アドレスをコピー"><a href="#マウントしたいディレクトリを開き、アドレスをコピー" class="headerlink" title="マウントしたいディレクトリを開き、アドレスをコピー"></a>マウントしたいディレクトリを開き、アドレスをコピー</h2><p><img src="/images/wsl-mount-for-windows2.png" alt="2"></p>
-<h2 id="マウント"><a href="#マウント" class="headerlink" title="マウント"></a>マウント</h2><p>「ネットワーク」を右クリックし、「ネットワークドライブの割り当て」を選択します。</p>
-<p><img src="/images/wsl-mount-for-windows3.png" alt="3"></p>
-<p>その後、割り当てたいドライブレターを選択し、先ほどのアドレスを張り付けし、OKします。</p>
-<p><img src="/images/wsl-mount-for-windows4.png" alt="4"></p>
-<h2 id="確認"><a href="#確認" class="headerlink" title="確認"></a>確認</h2><p>「PC」のツリー上に表示される様になります。</p>
-<p><img src="/images/wsl-mount-for-windows5.png" alt="5"></p>
-<h2 id="アンマウント"><a href="#アンマウント" class="headerlink" title="アンマウント"></a>アンマウント</h2><p><img src="/images/wsl-mount-for-windows6.png" alt="6"></p>
+        <h1 id="クライアントのIPを確かめたい！"><a href="#クライアントのIPを確かめたい！" class="headerlink" title="クライアントのIPを確かめたい！"></a>クライアントのIPを確かめたい！</h1><p>そういう時はreqの情報をとる</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reqdata = req.headers[<span class="string">'x-forwarded-for'</span>] || </span><br><span class="line">   req.connection.remoteAddress || </span><br><span class="line">   req.socket.remoteAddress ||</span><br><span class="line">   req.connection.socket.remoteAddress;</span><br><span class="line"><span class="built_in">console</span>.log(reqdata);</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -285,7 +266,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/wsl/" rel="tag"># wsl</a>
+              <a href="/tags/nodejs/" rel="tag"># nodejs</a>
             
           </div>
         
@@ -295,8 +276,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2020/02/09/miniconda-python/" rel="next" title="minicondaでpython3をインストール">
-                  <i class="fa fa-chevron-left"></i> minicondaでpython3をインストール
+                <a href="/2020/09/12/hub-command-install-ubuntu/" rel="next" title="hubコマンドのインストール(Ubuntu)">
+                  <i class="fa fa-chevron-left"></i> hubコマンドのインストール(Ubuntu)
                 </a>
               
             </div>
@@ -304,10 +285,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2020/02/12/mount-networkdrive-for-wsl/" rel="prev" title="WSLからWindowsのドライブをマウントする">
-                  WSLからWindowsのドライブをマウントする <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -353,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手順"><span class="nav-number">2.</span> <span class="nav-text">手順</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WSLのディレクトリを開く"><span class="nav-number">2.1.</span> <span class="nav-text">WSLのディレクトリを開く</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#マウントしたいディレクトリを開き、アドレスをコピー"><span class="nav-number">2.2.</span> <span class="nav-text">マウントしたいディレクトリを開き、アドレスをコピー</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#マウント"><span class="nav-number">2.3.</span> <span class="nav-text">マウント</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#確認"><span class="nav-number">2.4.</span> <span class="nav-text">確認</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#アンマウント"><span class="nav-number">2.5.</span> <span class="nav-text">アンマウント</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#クライアントのIPを確かめたい！"><span class="nav-number">1.</span> <span class="nav-text">クライアントのIPを確かめたい！</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->

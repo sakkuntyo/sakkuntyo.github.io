@@ -201,6 +201,103 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/20/github-addkey/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/20/github-addkey/" class="post-title-link" itemprop="url">GitHubに公開鍵を追加</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-10-20 12:42:45" itemprop="dateCreated datePublished" datetime="2019-10-20T12:42:45+09:00">2019-10-20</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前提環境"><a href="#前提環境" class="headerlink" title="前提環境"></a>前提環境</h1><ul>
+<li>Ubuntu</li>
+</ul>
+<h1 id="GitHubに公開鍵を追加する理由"><a href="#GitHubに公開鍵を追加する理由" class="headerlink" title="GitHubに公開鍵を追加する理由"></a>GitHubに公開鍵を追加する理由</h1><ul>
+<li>sshを使ってリモートリポジトリの操作を出来る様になる</li>
+<li>GitHub上にあるリポジトリをsshで操作する様に作られた手順、ツールが沢山ある</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong><br>sshを使わなくてもhttpで操作する事が可能<br>ただし、その場合はGitHubアカウントのパスワード入力が多々必要になる</p>
+</blockquote>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="秘密鍵・公開鍵を作成する"><a href="#秘密鍵・公開鍵を作成する" class="headerlink" title="秘密鍵・公開鍵を作成する"></a>秘密鍵・公開鍵を作成する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/root/.ssh/id_rsa): sakkuntyo-mint <span class="comment">#鍵の名前です、今回はLinuxMint用に作成したためこの名前</span></span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): <span class="comment">#パスワード、無くても良い</span></span><br><span class="line">Enter same passphrase again: <span class="comment">#パスワードの再確認</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> sakkuntyo-mint.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> sakkuntyo-mint.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:7XG5j/GRtAxIs3/dkUxVIZDrcyG+6g7LVxqvNVK1bEg root@DESKTOP-2QSQU2N</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 2048]----+</span></span><br><span class="line"><span class="string">|           .o. .=|</span></span><br><span class="line"><span class="string">|           .  . .|</span></span><br><span class="line"><span class="string">|          oE.. . |</span></span><br><span class="line"><span class="string">|         o.*+o+ .|</span></span><br><span class="line"><span class="string">|        S Bo=+o+ |</span></span><br><span class="line"><span class="string">|         o.O.* +o|</span></span><br><span class="line"><span class="string">|       . .*oB * o|</span></span><br><span class="line"><span class="string">|      . oooo.* . |</span></span><br><span class="line"><span class="string">|       o+=o . o  |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="鍵ファイルが出来た事を確認する"><a href="#鍵ファイルが出来た事を確認する" class="headerlink" title="鍵ファイルが出来た事を確認する"></a>鍵ファイルが出来た事を確認する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">sakkuntyo-mint sakkuntyo-mint.pub</span><br></pre></td></tr></table></figure>
+
+<p>.pubが付いているのが公開鍵<br>ついていないのが秘密鍵</p>
+<h2 id="GitHubに配置する"><a href="#GitHubに配置する" class="headerlink" title="GitHubに配置する"></a>GitHubに配置する</h2><h3 id="github-comのsettingsを開く"><a href="#github-comのsettingsを開く" class="headerlink" title="github.comのsettingsを開く"></a>github.comのsettingsを開く</h3><p><img src="/images/github-settings.png" alt="github-settings"><br><img src="/images/github-settings2.png" alt="github-settings2"></p>
+<h3 id="「SHS-and-GPG-keys」を開き、公開鍵の名前と公開鍵の内容を登録"><a href="#「SHS-and-GPG-keys」を開き、公開鍵の名前と公開鍵の内容を登録" class="headerlink" title="「SHS and GPG keys」を開き、公開鍵の名前と公開鍵の内容を登録"></a>「SHS and GPG keys」を開き、公開鍵の名前と公開鍵の内容を登録</h3><p>Titleは何でも大丈夫</p>
+<p><img src="/images/github-settings-keys.png" alt="github-settings"><br><img src="/images/github-settings-keys2.png" alt="github-settings"></p>
+<p>これで公開鍵が登録されました</p>
+<h2 id="sshクライアントにgitの設定を追加"><a href="#sshクライアントにgitの設定を追加" class="headerlink" title="sshクライアントにgitの設定を追加"></a>sshクライアントにgitの設定を追加</h2><p>~/.ssh/configを編集し、以下の4行を追加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host git</span><br><span class="line">  hostname github.com</span><br><span class="line">  user git</span><br><span class="line">  identityfile ~/.ssh/sakkuntyo-mint #秘密鍵のパス</span><br></pre></td></tr></table></figure>
+
+<p>秘密鍵をconfigで指定した場所に置きなおす</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv sakkuntyo-mint ~/.ssh/</span><br></pre></td></tr></table></figure>
+
+<p>秘密鍵の権限を自分だけが読める様に変更</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 0600 ~/.ssh/sakkuntyo-mint</span><br></pre></td></tr></table></figure>
+
+<h2 id="プライベートリポジトリをcloneしてみる"><a href="#プライベートリポジトリをcloneしてみる" class="headerlink" title="プライベートリポジトリをcloneしてみる"></a>プライベートリポジトリをcloneしてみる</h2><p>プライベートリポジトリをhttpでcloneしようとするとパスワードが求められますが<br>sshを使ってcloneした場合にはパスワードは求められなくなります</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git:sakkuntyo/private-repo</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/12/git-howto-simple/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -404,7 +501,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>

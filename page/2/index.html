@@ -201,6 +201,93 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/06/nmon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/06/nmon/" class="post-title-link" itemprop="url">ターミナル上でパフォーマンスを確認</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-06 00:43:27" itemprop="dateCreated datePublished" datetime="2020-02-06T00:43:27+09:00">2020-02-06</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install nmon -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="起動"><a href="#起動" class="headerlink" title="起動"></a>起動</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nmon</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/nmon.png" alt="nmon"></p>
+<h2 id="各パフォーマンスを確認する"><a href="#各パフォーマンスを確認する" class="headerlink" title="各パフォーマンスを確認する"></a>各パフォーマンスを確認する</h2><p>各操作はコマンドで行います。</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>C</p>
+<p><img src="/images/nmon1.png" alt="nmon1"></p>
+<h3 id="メモリ"><a href="#メモリ" class="headerlink" title="メモリ"></a>メモリ</h3><p>M</p>
+<p><img src="/images/nmon2.png" alt="nmon2"></p>
+<h3 id="DISK-I-O"><a href="#DISK-I-O" class="headerlink" title="DISK I/O"></a>DISK I/O</h3><p>D</p>
+<h3 id="プロセス"><a href="#プロセス" class="headerlink" title="プロセス"></a>プロセス</h3><p>t</p>
+<p><img src="/images/nmon3.png" alt="nmon3"></p>
+<h3 id="ネットワーク"><a href="#ネットワーク" class="headerlink" title="ネットワーク"></a>ネットワーク</h3><p>n</p>
+<p><img src="/images/nmon4.png" alt="nmon4"></p>
+<h3 id="システムリソースビュー"><a href="#システムリソースビュー" class="headerlink" title="システムリソースビュー"></a>システムリソースビュー</h3><p>r</p>
+<p><img src="/images/nmon5.png" alt="nmon5"></p>
+<h3 id="終了"><a href="#終了" class="headerlink" title="終了"></a>終了</h3><p>Ctrl-C</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/05/byobu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1022,86 +1109,6 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/29/wsl-ubuntu-root/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="佐々木 大輔">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="skt workshop">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2020/01/29/wsl-ubuntu-root/" class="post-title-link" itemprop="url">WSLのUbuntuの初期ユーザーをrootにする</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              
-                
-              
-
-              <time title="作成日：2020-01-29 22:39:26" itemprop="dateCreated datePublished" datetime="2020-01-29T22:39:26+09:00">2020-01-29</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>WSLのUbuntuを使っていて、sudoの度に「めんどくさいなあ」と思っていた時に見つけた方法です。</p>
-<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Windows 10<ul>
-<li>Ubuntu18.04(WSL)</li>
-<li>Ubuntu16.04(WSL)</li>
-</ul>
-</li>
-</ul>
-<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="Windowsの機能「Windows-Subsystem-for-Linux」を有効化する"><a href="#Windowsの機能「Windows-Subsystem-for-Linux」を有効化する" class="headerlink" title="Windowsの機能「Windows Subsystem for Linux」を有効化する"></a>Windowsの機能「Windows Subsystem for Linux」を有効化する</h2><p>Windowsキー -&gt; 「機能の有効化」と検索し、「Windowsの機能の有効化または無効化」を開く -&gt; Windows Subsystem for Linuxを探してチェックする</p>
-<p>その後、再起動する</p>
-<h2 id="Windows-StoreからUbuntuをインストールする"><a href="#Windows-StoreからUbuntuをインストールする" class="headerlink" title="Windows StoreからUbuntuをインストールする"></a>Windows StoreからUbuntuをインストールする</h2><p>スタートメニューから「Microsoft Store」を開く -&gt; どれでもよいのでUbuntuをインストール</p>
-<h2 id="初期ユーザー名を「root」で指定する"><a href="#初期ユーザー名を「root」で指定する" class="headerlink" title="初期ユーザー名を「root」で指定する"></a>初期ユーザー名を「root」で指定する</h2><p>スタートメニューからUbuntuを開き、ユーザー名を聞かれたら「root」と入力</p>
-<p>既に存在しているユーザーです！(英語)と言われるが、そのまま閉じる</p>
-<h2 id="再度Ubuntuを起動する"><a href="#再度Ubuntuを起動する" class="headerlink" title="再度Ubuntuを起動する"></a>再度Ubuntuを起動する</h2><p>なんと、rootでログインしています。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
@@ -1151,7 +1158,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
