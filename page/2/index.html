@@ -201,6 +201,88 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/08/powershell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/08/powershell/" class="post-title-link" itemprop="url">PowerShellをUbuntuにインストール</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-08 00:15:47" itemprop="dateCreated datePublished" datetime="2020-02-08T00:15:47+09:00">2020-02-08</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="Microsoftのリポジトリキーを追加"><a href="#Microsoftのリポジトリキーを追加" class="headerlink" title="Microsoftのリポジトリキーを追加"></a>Microsoftのリポジトリキーを追加</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb</span><br><span class="line">$ sudo dpkg -i packages-microsoft-prod.deb</span><br><span class="line">$ sudo apt update</span><br></pre></td></tr></table></figure>
+
+<h2 id="dotnet-sdkインストール"><a href="#dotnet-sdkインストール" class="headerlink" title="dotnet-sdkインストール"></a>dotnet-sdkインストール</h2><p>dotnetコマンドでPowerShellをインストールするため、dotnet-sdkをインストールします。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install dotnet-sdk-3.1 -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="PowerShellインストール"><a href="#PowerShellインストール" class="headerlink" title="PowerShellインストール"></a>PowerShellインストール</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dotnet tool install --global powershell</span><br></pre></td></tr></table></figure>
+
+<p>インストール完了後、ターミナルを再起動します。</p>
+<h2 id="実行できる事を確認"><a href="#実行できる事を確認" class="headerlink" title="実行できる事を確認"></a>実行できる事を確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pwsh</span><br><span class="line">PowerShell 6.2.4</span><br><span class="line">Copyright (c) Microsoft Corporation. All rights reserved.</span><br><span class="line"></span><br><span class="line">https://aka.ms/pscore6-docs</span><br><span class="line">Type <span class="string">'help'</span> to get <span class="built_in">help</span>.</span><br><span class="line"></span><br><span class="line">PS /home/user&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="試しにコマンドを実行してみる"><a href="#試しにコマンドを実行してみる" class="headerlink" title="試しにコマンドを実行してみる"></a>試しにコマンドを実行してみる</h2><p>PowerShellでgrepをしてみます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PS /home/user&gt; echo <span class="string">"aaaabbbb"</span> | <span class="built_in">Select-String</span> <span class="string">"aaaa"</span></span><br><span class="line"></span><br><span class="line">aaaabbbb</span><br><span class="line"></span><br><span class="line">PS /home/user&gt; echo <span class="string">"aaaabbbb"</span> | <span class="built_in">Select-String</span> <span class="string">"cccc"</span> <span class="comment"># 何も表示されない</span></span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/06/nmon/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1021,94 +1103,6 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/30/git-mingw-gcc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="佐々木 大輔">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="skt workshop">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2020/01/30/git-mingw-gcc/" class="post-title-link" itemprop="url">GitBashにgccをインストール</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              
-                
-              
-
-              <time title="作成日：2020-01-30 20:44:26" itemprop="dateCreated datePublished" datetime="2020-01-30T20:44:26+09:00">2020-01-30</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>go installしてたら「gcc.exe」が無いとビルドできないぞ！<br>と言われたので、mingw64のバイナリから持ってくる方法を覚えました。</p>
-<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ul>
-<li>Windows10<ul>
-<li>Git</li>
-</ul>
-</li>
-</ul>
-<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="Gitをインストール"><a href="#Gitをインストール" class="headerlink" title="Gitをインストール"></a>Gitをインストール</h2><p>Windows向けのGitは<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">ここ</a>からインストーラを入手できます。</p>
-<p>起動し、全て「はい」を選択したとして次の手順に進みます。</p>
-<h2 id="MinGW-w64のバイナリをダウンロード"><a href="#MinGW-w64のバイナリをダウンロード" class="headerlink" title="MinGW-w64のバイナリをダウンロード"></a>MinGW-w64のバイナリをダウンロード</h2><p><a href="https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/" target="_blank" rel="noopener">ここ</a>の下の方にあるx86_64-win32-sjljを選択しダウンロードします。</p>
-<p>このファイルはダウンロードフォルダに置いておいてください。<br>解凍するために、7zipをインストールします。</p>
-<h2 id="7-zipのインストール"><a href="#7-zipのインストール" class="headerlink" title="7-zipのインストール"></a>7-zipのインストール</h2><p><a href="https://www.7-zip.org/" target="_blank" rel="noopener">ここ</a>からダウンロードし、インストールします。</p>
-<h2 id="解凍"><a href="#解凍" class="headerlink" title="解凍"></a>解凍</h2><p>GitBashを管理者権限で開き、以下コマンドを実行して解凍します。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/Downloads</span><br><span class="line">前半は7z.exeのパス、xはeXtractのx、最後は7zipファイルのファイル名</span><br><span class="line">$ /c/Program\ Files/7-Zip/7z.exe x x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0.7z</span><br><span class="line">7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21</span><br><span class="line"></span><br><span class="line">Scanning the drive <span class="keyword">for</span> archives:</span><br><span class="line">1 file, 52785774 bytes (51 MiB)</span><br><span class="line"></span><br><span class="line">Extracting archive: x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0.7z</span><br><span class="line">--</span><br><span class="line">Path = x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0.7z</span><br><span class="line">Type = 7z</span><br><span class="line">Physical Size = 52785774</span><br><span class="line">Headers Size = 109370</span><br><span class="line">Method = LZMA2:26 LZMA:20 BCJ2</span><br><span class="line">Solid = +</span><br><span class="line">Blocks = 2</span><br><span class="line"></span><br><span class="line">Everything is Ok</span><br><span class="line"></span><br><span class="line">Folders: 340</span><br><span class="line">Files: 13669</span><br><span class="line">Size:       527855563</span><br><span class="line">Compressed: 52785774</span><br></pre></td></tr></table></figure>
-
-<p>解凍が終わると、またコマンドが打てる様になるため、mingw64フォルダが作成されている事を確認します。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">mingw64  x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0.7z</span><br></pre></td></tr></table></figure>
-
-<h2 id="gccなどをGitのインストールディレクトリにコピー"><a href="#gccなどをGitのインストールディレクトリにコピー" class="headerlink" title="gccなどをGitのインストールディレクトリにコピー"></a>gccなどをGitのインストールディレクトリにコピー</h2><p>GitBashを管理者権限で開き、以下のコマンドを実行します。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解凍してできたmingw64フォルダ内のbinフォルダに移動</span><br><span class="line">$ <span class="built_in">cd</span> ~/Downloads/mingw64/bin</span><br><span class="line">tarで既存のファイルに上書きはしないオプションを付けて、Gitのmingw64/binにコピー</span><br><span class="line">$ tar -cvf - . | tar -xvf - --keep-newer-files -C /c/Program\ Files/Git/mingw64/bin/</span><br></pre></td></tr></table></figure>
-
-<p>この後GitBashを起動し直すと、gccが使用出来る様になっています。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
@@ -1158,7 +1152,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
@@ -1167,7 +1161,7 @@
       
       <div class="site-state-item site-state-tags">
         
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">タグ</span>
         
       </div>
