@@ -11,7 +11,7 @@ Ryzenの4世代目Uシリーズでpassmarkが10000超えしていたので気に
 
 ## CPU
 
-Ryzen R5 4500U
+Ryzen 5 4500U
 
 ![image](https://user-images.githubusercontent.com/20591351/93623178-42cbcb80-fa19-11ea-927d-b9dad18880d9.png)
 
