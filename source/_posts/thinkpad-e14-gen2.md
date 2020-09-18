@@ -27,6 +27,9 @@ Ryzen R5 4500U
 
 ![image](https://user-images.githubusercontent.com/20591351/93623315-8292b300-fa19-11ea-9d34-fd0a80274a98.png)
 
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=noma3629-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B087WTPD58&linkId=d25399cf8bb13f0b56c702eba860542b&bc1=FFFFFF&lt1=_top&fc1=333333&lc1=0066C0&bg1=FFFFFF&f=ifr">
+</iframe>
+
 ## 価格
 
 63000 + 4000(メモリ代) = \67000
