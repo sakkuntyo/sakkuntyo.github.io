@@ -10,9 +10,11 @@ tags: [nodejs]
 そういう時はreqの情報をとる
 
 ```js
-var reqdata = req.headers['x-forwarded-for'] || 
-   req.connection.remoteAddress || 
-   req.socket.remoteAddress ||
-   req.connection.socket.remoteAddress;
-console.log(reqdata);
+router.post('/webtest', function (req, res) {
+  var reqdata = req.headers['x-forwarded-for'] || 
+     req.connection.remoteAddress || 
+     req.socket.remoteAddress ||
+     req.connection.socket.remoteAddress;
+  console.log(reqdata);
+});
 ```
