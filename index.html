@@ -230,7 +230,7 @@
                 
               
 
-              <time title="作成日：2020-09-19 01:09:55 / 修正日：01:16:11" itemprop="dateCreated datePublished" datetime="2020-09-19T01:09:55+09:00">2020-09-19</time>
+              <time title="作成日：2020-09-19 01:09:55 / 修正日：01:22:30" itemprop="dateCreated datePublished" datetime="2020-09-19T01:09:55+09:00">2020-09-19</time>
             </span>
           
 
@@ -246,7 +246,7 @@
 
       
           <h1 id="クライアントのIPを確かめたい！"><a href="#クライアントのIPを確かめたい！" class="headerlink" title="クライアントのIPを確かめたい！"></a>クライアントのIPを確かめたい！</h1><p>そういう時はreqの情報をとる</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reqdata = req.headers[<span class="string">'x-forwarded-for'</span>] || </span><br><span class="line">   req.connection.remoteAddress || </span><br><span class="line">   req.socket.remoteAddress ||</span><br><span class="line">   req.connection.socket.remoteAddress;</span><br><span class="line"><span class="built_in">console</span>.log(reqdata);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'/webtest'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reqdata = req.headers[<span class="string">'x-forwarded-for'</span>] || </span><br><span class="line">     req.connection.remoteAddress || </span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress;</span><br><span class="line">  <span class="built_in">console</span>.log(reqdata);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 
         
