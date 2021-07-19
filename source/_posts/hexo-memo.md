@@ -41,3 +41,10 @@ $ npx hexo server -D
 ```
 $ npx hexo deploy -g
 ```
+
+## デプロイするとレイアウトが壊れる
+npx hexo server だと問題なく表示される場合、クリーンをすると js や css も再デプロイされるかも。
+
+```
+$ npx hexo clean
+```
