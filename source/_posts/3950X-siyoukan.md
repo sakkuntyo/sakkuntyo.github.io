@@ -40,7 +40,7 @@ https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i9-9960X+%40+3.10GHz&id=3405
 ## 良くない所
 
 ### Nested Virtual Machine に非対応
-強いマシンを盛ったら仮想マシンの中で仮想マシンを動作させたくなるものですが、
+強いマシンを持てば仮想マシンの中で仮想マシンを動作させたくなるものですが、
 AMDのCPUの場合はまだ正式に対応していません。
 ※AMD でも Windows10 の Insider Preview バージョンを使用する事で可能です。
 
