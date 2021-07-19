@@ -25,6 +25,25 @@ Intel の 16コアCPU の i9 9960X では 15万円近くします。
 しかも、i9 9960X では、サーバー向けのパーツが必要になります。
 ~~ただ、もう少しお金だして 5950X を購入してもよかったかも~~
 
+### 強い
+
+上記 Intel の 16コア CPU とベンチマークスコアの比較用
+
+- AMD Ryzen9 3950X
+![2](/images/3950X-siyoukan2.jpg)
+https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+9+3950X&id=3598
+
+- Intel i9 9960X
+![3](/images/3950X-siyoukan3.jpg)
+https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i9-9960X+%40+3.10GHz&id=3405
+
+## 良くない所
+
+### Nested Virtual Machine に非対応
+強いマシンを盛ったら仮想マシンの中で仮想マシンを動作させたくなるものですが、
+AMDのCPUの場合はまだ正式に対応していません。
+※AMD でも Windows10 の Insider Preview バージョンを使用する事で可能です。
+
 # 変更した構成
 
 - M/B: MSI MAG B550 TOMAHAWK ※Ryzen5 1600X で使用していたマザーボードが非対応だったので
