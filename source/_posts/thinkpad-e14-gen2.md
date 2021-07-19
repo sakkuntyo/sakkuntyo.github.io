@@ -27,8 +27,7 @@ Ryzen 5 4500U
 
 ![image](https://user-images.githubusercontent.com/20591351/93623315-8292b300-fa19-11ea-9d34-fd0a80274a98.png)
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=noma3629-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B087WTPD58&linkId=d25399cf8bb13f0b56c702eba860542b&bc1=FFFFFF&lt1=_top&fc1=333333&lc1=0066C0&bg1=FFFFFF&f=ifr">
-</iframe>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B087WTPD58&linkId=59ca095a06965007b7098b1f656acc89"></iframe>
 
 ## 価格
 
