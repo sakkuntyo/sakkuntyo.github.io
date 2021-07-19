@@ -15,7 +15,7 @@ tags: [hexo]
 
 ## clone
 ```
-git clone https://github.com/sakkuntyo/sakkuntyo.github.io -b edit
+git clone git://github.com/sakkuntyo/sakkuntyo.github.io -b edit
 ```
 
 ## 記事を追加
