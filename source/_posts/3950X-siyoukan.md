@@ -50,7 +50,7 @@ AMDのCPUの場合はまだ正式に対応していません。
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08B62MK65&linkId=56461ea1e7b746a3f2d018a28e87ac22"></iframe>
 - CPU: AMD Ryzen9 3950X
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07ZTYKLZW&linkId=5f1bea128e324a4265106ce091875a28"></iframe>
-- Patriot Viper Steel DDR4 3600MHz 32GB x 2 ※3000MHz 以下へのダウンクロックをする事で動作
+- メモリ: Patriot Viper Steel DDR4 3600MHz 32GB x 2 ※3000MHz 以下へのダウンクロックをする事で動作
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08688GFPD&linkId=80130a81a8591587492798f4c5d9e62d"></iframe>
 
 # 実際使ってみてどうか
