@@ -13,5 +13,5 @@ tags: [sandybridge]
 > 最新のCPU
 ![1](/images/sandy-bridge-friend-voice1.png)
 
-> 「最新のノートと同じスコアなら今のままで充分」
+> 「最新のノートの i7 と同じスコアなら今のままで充分」
 ![2](/images/sandy-bridge-friend-voice2.png)
