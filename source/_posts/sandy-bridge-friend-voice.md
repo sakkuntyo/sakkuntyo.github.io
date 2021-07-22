@@ -10,8 +10,8 @@ tags: [sandybridge]
 
 # サンディで充分おじさんの主張
 
-> 最新のCPU
+> 最近のCPU
 ![1](/images/sandy-bridge-friend-voice1.png)
 
-> 「最新のノートの i7 と同じスコアなら今のままで充分」
+> 「最近のノートの i7 と同じスコアなら今のままで充分」
 ![2](/images/sandy-bridge-friend-voice2.png)
