@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Azure] kusto のクエリをテスト実行する"
+title: "[Azure] kusto クエリをテスト実行する"
 date: 2021-08-15 19:21:14
 tags: [Azure,kusto]
 ---
