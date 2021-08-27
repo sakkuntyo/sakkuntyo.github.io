@@ -2,7 +2,7 @@
 layout: post
 title: "Aonic215, SoundcoreLibertyAir 2 pro, AirPods Pro, XC90を比較"
 date: 2021-08-28 00:58:19
-tags: [ガジェット]　
+tags: [ガジェット]
 ---
 
 [JVC HA-XC90T](https://amzn.to/3ziSMg1) と [SHURE AONIC 215](https://amzn.to/3ktTQHB) を購入したので感想を書いておきます。
