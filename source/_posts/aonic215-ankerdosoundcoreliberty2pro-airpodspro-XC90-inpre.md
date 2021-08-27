@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Aonic215, SoundcoreLibertyAir 2 pro, AirPods Pro, XC90を比較]
+title: "Aonic215, SoundcoreLibertyAir 2 pro, AirPods Pro, XC90を比較"
 date: 2021-08-28 00:58:19
 tags: [ガジェット]　
 ---
