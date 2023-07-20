@@ -2,7 +2,7 @@
 layout: post
 title: "サンプル Spring アプリ を用意、実行するコマンド"
 date: 2023-04-02 00:00:00
-tags: [GPU,GPU-PV,GPU-V]
+tags: [java]
 ---
 
 java 1.17 を入れる手順も含むので空のVM 等で実施する事をお勧めします。
