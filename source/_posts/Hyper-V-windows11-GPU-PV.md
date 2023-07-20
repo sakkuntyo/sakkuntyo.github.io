@@ -67,7 +67,11 @@ Set-VM -HighMemoryMappedIoSpace 32GB -VMName "Hyper-V 上のマシン名"
 
 ## ゲスト側のタスクマネージャでは GPU 表示されない
 
-ゲスト側の使用率はゲスト側で見たかったんですけど見えず、ただ FF14 ベンチが動作したので GPU は使えている様です。
+ゲスト側の使用率はゲスト側で見たかったんですけど見えず、0 % 表示
+
+![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/452c8eda-3333-4df8-900c-af96dcdcd6f9)
+
+ただ FF14 ベンチが動作したので GPU は使えている様です
 
 ![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/6290fd3d-3a9f-48f2-ac46-8eebe1020d47)
 
