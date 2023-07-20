@@ -77,15 +77,20 @@ Set-VM -HighMemoryMappedIoSpace 32GB -VMName "Hyper-V 上のマシン名"
 
 ## ホスト側 FF14ベンチ (4K)
 
-色々な事しながらやっちゃったのでスコア低いかも・・・
-
 ![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/3de6f240-9355-4981-8d68-145f6bcdda04)
+
+## ホスト側 FF14ベンチ (FullHD)
+
+![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/e8bf8e6a-7476-4e1f-b695-5a3a8a121a16)
 
 ## ゲスト側 FF14ベンチ (4K)
 
-こちらも 4K、こちらは4Kしか選ぶ事ができず
-
 ![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/5696061f-fb6e-485e-a304-02cbbb8ff513)
+
+## ゲスト側 FF14ベンチ (FullHD)
+
+![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/37358b6a-7eb8-4be8-8842-c760df63db21)
+
 
 ## 体感
 
