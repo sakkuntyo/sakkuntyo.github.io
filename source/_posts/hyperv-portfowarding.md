@@ -24,7 +24,7 @@ Hyper-V で 外部ネットワーク のインターフェースを作る事で�
 
 改善策として 仮想ネットワーク アダプタ の offload を無効化する方法も色々な所に書いてあるが、解決しない
 
-[参照] (https://www.ginnokagi.com/2008/05/vmwaretcp_segmentaion_offload.html)
+[参照](https://www.ginnokagi.com/2008/05/vmwaretcp_segmentaion_offload.html)
 
 # 手順
 
