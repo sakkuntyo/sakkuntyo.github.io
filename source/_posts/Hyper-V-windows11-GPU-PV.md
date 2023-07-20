@@ -13,7 +13,7 @@ GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改め
 - ホストマシン
   - Windows 11 OSビルド 22621.1992
   - CPU: Ryzen9 3950X (16core/32threads)
-  - GPU RTX 3090
+  - GPU: RTX 3090
 - ゲストマシン
   - Windows 11
 
