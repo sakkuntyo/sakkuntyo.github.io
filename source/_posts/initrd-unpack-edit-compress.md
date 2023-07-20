@@ -62,7 +62,7 @@ bin  conf  etc  init  lib  lib64  run  sbin  scripts  usr  var
 $ vi init
 ```
 
-詳しくは触れませんが、shによって実行できる形で書かれている事がわかります。
+init を見てみると shによって実行できる形で書かれている事がわかります。
 
 ```bash
 #!/bin/sh
@@ -411,7 +411,7 @@ echo "Something went badly wrong in the initramfs."
 panic "Please file a bug on initramfs-tools."
 ```
 
-またこのinitを実行するタイミングではルートファイルをマウントしていないため、ルートにある/binや/sbinを利用できません。
+またこのinitを実行するタイミングではルート(/)をマウントしていないため、ルート(/)にある/binや/sbinを利用できません。
 
 代わりに、initrd内部の/binや/sbinを利用しています。
 
@@ -423,7 +423,7 @@ panic "Please file a bug on initramfs-tools."
 ## initrdを作成する
 
 展開後のファイルが配置されているフォルダで行います。
-cpioによるアーカイブ化、gzipによる圧縮を同時に行い元の状態に戻します。
+cpioによるアーカイブ化、gzipによる圧縮を同時に行い元の形式に戻します。
 
 ```bash
 $ find | cpio -o -H newc  | gzip -c > ../initrd.img-4.15.0-54-generic
