@@ -100,6 +100,14 @@ explorer.exe "$(Get-CimInstance -ClassName Win32_VideoController -Property * | S
 
 ![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/37358b6a-7eb8-4be8-8842-c760df63db21)
 
+## ゲスト側 FF14ベンチ (4K)
+
+- 設定値を少し変えた、わかりにくいですが、１桁あがっていたりしています。
+```
+Set-VMGpuPartitionAdapter -VMName "windows11-wfh-2" -MinPartitionVRAM 1000000000 -MaxPartitionVRAM 1000000000 -OptimalPartitionVRAM 1000000000 -MinPartitionEncode 1000000000 -MaxPartitionEncode 1000000000 -OptimalPartitionEncode 100000000 -MinPartitionDecode 1000000000 -MaxPartitionDecode 1000000000 -OptimalPartitionDecode 1000000000 -MinPartitionCompute 1000000000 -MaxPartitionCompute 1000000000 -OptimalPartitionCompute 1000000000
+```
+
+![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/c64c73ef-100b-4e1b-a0fe-a4cc66e2b45c)
 
 ## 体感
 
