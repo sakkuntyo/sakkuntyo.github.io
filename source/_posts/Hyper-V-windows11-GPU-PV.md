@@ -24,9 +24,9 @@ GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改め
 
 ## 1. Hyper-V で Windows 11 マシンを作成する
 
-## 2. Windows 11 マシンを停止し、ホスト側 で以下コマンドを実行
+## 2. ホスト側 で以下コマンドを実行
 
-管理者権限で以下 PowerShell を実行
+Windows 11 マシンを停止し、管理者権限で以下 PowerShell を実行
 
 ```
 Add-VMGpuPartitionAdapter -VMName "Hyper-V 上のマシン名"
@@ -44,7 +44,7 @@ Set-VM -HighMemoryMappedIoSpace 32GB -VMName "Hyper-V 上のマシン名"
 
 - 1. PowerShell で以下を実行すると出てくるフォルダ丸ごと
 ```
-"$(Get-CimInstance -ClassName Win32_VideoController -Property * | Select-Object -ExpandProperty InstalledDisplayDrivers | Write-Output)".Split(",")[0].Trim("\nvldumdx.dll")
+explorer.exe "$(Get-CimInstance -ClassName Win32_VideoController -Property * | Select-Object -ExpandProperty InstalledDisplayDrivers | Write-Output)".Split(",")[0].Trim("\nvldumdx.dll")
 例: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_50916785244854f2
 ```
 - 2. C:\Windows\System32\nvapi64.dll
