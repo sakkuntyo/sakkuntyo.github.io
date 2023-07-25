@@ -109,9 +109,18 @@ Set-VMGpuPartitionAdapter -VMName "windows11-wfh-2" -MinPartitionVRAM 1000000000
 
 ![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/c64c73ef-100b-4e1b-a0fe-a4cc66e2b45c)
 
+- 20230725追記
+設定値戻してもスコアがあがる事はありませんでした。何の差なんだ・・・
+
+## Surface Laptop 3 (4K)
+手元にあった Surface でもベンチしました。驚愕のスコア
+
+![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/a4a1e2ff-2db0-4878-a658-e03cd48ffcba)
+
 ## 体感
 
 GPU-PV ないよりはいいかも、な感じ
+-> 20230725追記: 6000くらい出ている時は結構いい
 
 # 参考にしたサイト
 
