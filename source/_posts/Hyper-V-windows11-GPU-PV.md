@@ -38,11 +38,12 @@ GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改め
 Windows 11 マシンを停止し、管理者権限で以下 PowerShell を実行
 
 ```
-Add-VMGpuPartitionAdapter -VMName "Hyper-V 上のマシン名"
-Set-VMGpuPartitionAdapter -VMName "Hyper-V 上のマシン名" -MinPartitionVRAM 80000000 -MaxPartitionVRAM 100000000 -OptimalPartitionVRAM 100000000 -MinPartitionEncode 80000000 -MaxPartitionEncode 100000000 -OptimalPartitionEncode 100000000 -MinPartitionDecode 80000000 -MaxPartitionDecode 100000000 -OptimalPartitionDecode 100000000 -MinPartitionCompute 80000000 -MaxPartitionCompute 100000000 -OptimalPartitionCompute 100000000
-Set-VM -GuestControlledCacheTypes $true -VMName "Hyper-V 上のマシン名"
-Set-VM -LowMemoryMappedIoSpace 1GB -VMName "Hyper-V 上のマシン名"
-Set-VM -HighMemoryMappedIoSpace 32GB -VMName "Hyper-V 上のマシン名"
+$MachinName="Hyper-V 上のマシン名"
+Add-VMGpuPartitionAdapter -VMName "${Machinname}"
+Set-VMGpuPartitionAdapter -VMName "${Machinname}" -MinPartitionVRAM 80000000 -MaxPartitionVRAM 100000000 -OptimalPartitionVRAM 100000000 -MinPartitionEncode 80000000 -MaxPartitionEncode 100000000 -OptimalPartitionEncode 100000000 -MinPartitionDecode 80000000 -MaxPartitionDecode 100000000 -OptimalPartitionDecode 100000000 -MinPartitionCompute 80000000 -MaxPartitionCompute 100000000 -OptimalPartitionCompute 100000000
+Set-VM -GuestControlledCacheTypes $true -VMName "${Machinname}"
+Set-VM -LowMemoryMappedIoSpace 1GB -VMName "${Machinname}"
+Set-VM -HighMemoryMappedIoSpace 32GB -VMName "${Machinname}"
 ```
 
 ## 3. ホストマシンからゲストマシンへファイルをコピーする
