@@ -13,7 +13,7 @@ GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改め
 1. DDA
   - グラボが限定されます
 2. Remote FX
-  - 廃止済、今はできない(現存しない)
+  - 廃止済、今はできないはず
 3. GPU-PV(旧名GPU-P)
   - 今回はコレ
 
@@ -130,3 +130,11 @@ GPU-PV ないよりはいいかも、な感じ
 
 - 2020年に↓見て試した、全く同じ手順だった。この時は GPU-P って名前だった、今書いていて気づいた、同じ人だった！
 [Hyper-VでGPU(3Dアクセラレーション)を利用する方法 Windows 10以降編 (GPU-P)](https://qiita.com/Hyper-W/items/3a2c7ff1d983deb80070)
+
+# おまけ
+
+これを管理者権限有効 PowerShell で実行すると拡張セッション無し解像度4Kが使える様になる
+
+```
+Set-VMVideo -VMName "HyperVマシン名" -HorizontalResolution 3840 -VerticalResolution 2160 -ResolutionType Single
+```
