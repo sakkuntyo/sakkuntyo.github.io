@@ -51,5 +51,5 @@ Add-NetNatStaticMapping -NatName vnat -ExternalIPAddress 0.0.0.0 -InternalIPAddr
 この ネットワークは dhcp サーバーはないので、Windows のネットワークアダプタ設定や、
 最近の ubuntu なら netplan による固定IP設定が必要
 
-ルーターから ホストマシンへのポートフォワーディングも設定しておく必要がある
+インターネットからアクセスできる様にするには、これだけではなくてルーターから ホストマシンへのポートフォワーディングも設定しておく必要がある
 
