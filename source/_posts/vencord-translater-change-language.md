@@ -10,7 +10,7 @@ tags: [discord]
 最近出てきた(私が見かける様になった)新しい 改造版 Discord クライアントです。
 
 # 導入方法
-ここを見て Discord PTB をインストールし、Discord PTB に Vencord を適用できます。
+ここを見て Discord PTB をインストールし、Discord PTB に Vencord を適用しました。Canary も前に入れてるので、3ついれてる。
 
 [【BetterDiscord超え】新改造版Discord、"Vencord"の入れ方とおすすめプラグイン - その1](https://unicode.hatenablog.jp/entry/vencord)
 
