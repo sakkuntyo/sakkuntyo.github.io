@@ -16,10 +16,6 @@ sudo add-apt-repository multiverse; sudo dpkg --add-architecture i386; sudo apt 
 sudo apt install steamcmd
 ```
 
-## ゲームサーバーのインストール
-
-```
-
 ## ゲームサーバーのインストール・アップデート
 
 インストールもアップデートも以下コマンドでできる
