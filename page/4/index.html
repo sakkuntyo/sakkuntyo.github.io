@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="keywords" content="IT,Nodejs,Golang,Vim,スーパーカブ,リトルカブ,ニュービートル">
+<meta property="og:type" content="website">
+<meta property="og:title" content="skt workshop">
+<meta property="og:url" content="https://sakkuntyo.github.io/page/4/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:locale" content="ja">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="skt workshop">
+  <link rel="canonical" href="https://sakkuntyo.github.io/page/4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/12/mount-networkdrive-for-wsl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/12/mount-networkdrive-for-wsl/" class="post-title-link" itemprop="url">WSLからWindowsのドライブをマウントする</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-12 02:20:50 / 修正日：02:27:18" itemprop="dateCreated datePublished" datetime="2020-02-12T02:20:50+09:00">2020-02-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows10</li>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="マウント"><a href="#マウント" class="headerlink" title="マウント"></a>マウント</h2><p>マウントしたいドライブのドライブレターを確認し、以下コマンドを実行</p>
+<p>今回はドライブレターはAとします。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p /mnt/a</span><br><span class="line">$ mount -t drvfs A: /mnt/a</span><br></pre></td></tr></table></figure>
+
+<h2 id="アンマウント"><a href="#アンマウント" class="headerlink" title="アンマウント"></a>アンマウント</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ umount /mnt/a</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/11/wsl-mount-for-windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/11/wsl-mount-for-windows/" class="post-title-link" itemprop="url">WindowsからWSLのUbuntuのディレクトリをマウントする</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-11 22:46:44" itemprop="dateCreated datePublished" datetime="2020-02-11T22:46:44+09:00">2020-02-11</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows10</li>
+<li>Ubuntu 18.04(WSL)</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="WSLのディレクトリを開く"><a href="#WSLのディレクトリを開く" class="headerlink" title="WSLのディレクトリを開く"></a>WSLのディレクトリを開く</h2><p>実はエクスプローラからWSLのディレクトリを除くことが出来ます。</p>
+<p>エクスプローラにて、\\wsl$を開く</p>
+<p><img src="/images/wsl-mount-for-windows1.png" alt="1"></p>
+<h2 id="マウントしたいディレクトリを開き、アドレスをコピー"><a href="#マウントしたいディレクトリを開き、アドレスをコピー" class="headerlink" title="マウントしたいディレクトリを開き、アドレスをコピー"></a>マウントしたいディレクトリを開き、アドレスをコピー</h2><p><img src="/images/wsl-mount-for-windows2.png" alt="2"></p>
+<h2 id="マウント"><a href="#マウント" class="headerlink" title="マウント"></a>マウント</h2><p>「ネットワーク」を右クリックし、「ネットワークドライブの割り当て」を選択します。</p>
+<p><img src="/images/wsl-mount-for-windows3.png" alt="3"></p>
+<p>その後、割り当てたいドライブレターを選択し、先ほどのアドレスを張り付けし、OKします。</p>
+<p><img src="/images/wsl-mount-for-windows4.png" alt="4"></p>
+<h2 id="確認"><a href="#確認" class="headerlink" title="確認"></a>確認</h2><p>「PC」のツリー上に表示される様になります。</p>
+<p><img src="/images/wsl-mount-for-windows5.png" alt="5"></p>
+<h2 id="アンマウント"><a href="#アンマウント" class="headerlink" title="アンマウント"></a>アンマウント</h2><p><img src="/images/wsl-mount-for-windows6.png" alt="6"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/09/miniconda-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/09/miniconda-python/" class="post-title-link" itemprop="url">minicondaでpython3をインストール</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-09 04:52:22 / 修正日：05:29:08" itemprop="dateCreated datePublished" datetime="2020-02-09T04:52:22+09:00">2020-02-09</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>anacondaとは、データサイエンティスト向けのpythonパッケージを含んだパッケージマネージャの様な物です。</p>
+<p>そのため、沢山のツールがインストールされてしまうため、<br>3GBの容量を使用してしまったり、<br>プラットフォームに予めインストールされている実行ファイルとの競合を起こす事があります。</p>
+<p>minicondaとは、anacondaからそれらのパッケージを除外したパッケージマネージャが主な機能となります。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="minicondaをインストールする"><a href="#minicondaをインストールする" class="headerlink" title="minicondaをインストールする"></a>minicondaをインストールする</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line"></span><br><span class="line">$ ./Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">この後、以下操作でインストールが完了します。</span><br><span class="line">1.Enter</span><br><span class="line">2.yesを入力後、Enter</span><br><span class="line">3.Enter</span><br><span class="line">4.yesを入力後、Enter</span><br><span class="line"></span><br><span class="line">bashを再起動</span><br><span class="line">$ <span class="built_in">exec</span> <span class="variable">$SHELL</span> -l</span><br></pre></td></tr></table></figure>
+
+<p>インストール中に、以下の様なリストが表示されますが、これらのツールも同時にインストールされます。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">The following NEW packages will be INSTALLED:                                           </span><br><span class="line">                                                                                        </span><br><span class="line">  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main                         </span><br><span class="line">  asn1crypto         pkgs/main/linux-64::asn1crypto-1.2.0-py37_0                        </span><br><span class="line">  ca-certificates    pkgs/main/linux-64::ca-certificates-2019.10.16-0                   </span><br><span class="line">  certifi            pkgs/main/linux-64::certifi-2019.9.11-py37_0                       </span><br><span class="line">  cffi               pkgs/main/linux-64::cffi-1.13.0-py37h2e261b9_0                     </span><br><span class="line">  chardet            pkgs/main/linux-64::chardet-3.0.4-py37_1003                        </span><br><span class="line">  conda              pkgs/main/linux-64::conda-4.7.12-py37_0                            </span><br><span class="line">  conda-package-han~ pkgs/main/linux-64::conda-package-handling-1.6.0-py37h7b6447c_0    </span><br><span class="line">  cryptography       pkgs/main/linux-64::cryptography-2.8-py37h1ba5d50_0                </span><br><span class="line">  idna               pkgs/main/linux-64::idna-2.8-py37_0                                </span><br><span class="line">  libedit            pkgs/main/linux-64::libedit-3.1.20181209-hc058e9b_0                </span><br><span class="line">  libffi             pkgs/main/linux-64::libffi-3.2.1-hd88cf55_4                        </span><br><span class="line">  libgcc-ng          pkgs/main/linux-64::libgcc-ng-9.1.0-hdf63c60_0                     </span><br><span class="line">  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-9.1.0-hdf63c60_0                  </span><br><span class="line">  ncurses            pkgs/main/linux-64::ncurses-6.1-he6710b0_1                         </span><br><span class="line">  openssl            pkgs/main/linux-64::openssl-1.1.1d-h7b6447c_3                      </span><br><span class="line">  pip                pkgs/main/linux-64::pip-19.3.1-py37_0                              </span><br><span class="line">  pycosat            pkgs/main/linux-64::pycosat-0.6.3-py37h14c3975_0                   </span><br><span class="line">  pycparser          pkgs/main/linux-64::pycparser-2.19-py37_0                          </span><br><span class="line">  pyopenssl          pkgs/main/linux-64::pyopenssl-19.0.0-py37_0                        </span><br><span class="line">  pysocks            pkgs/main/linux-64::pysocks-1.7.1-py37_0                           </span><br><span class="line">  python             pkgs/main/linux-64::python-3.7.4-h265db76_1                        </span><br><span class="line">  readline           pkgs/main/linux-64::readline-7.0-h7b6447c_5                        </span><br><span class="line">  requests           pkgs/main/linux-64::requests-2.22.0-py37_0                         </span><br><span class="line">  ruamel_yaml        pkgs/main/linux-64::ruamel_yaml-0.15.46-py37h14c3975_0             </span><br><span class="line">  setuptools         pkgs/main/linux-64::setuptools-41.4.0-py37_0                       </span><br><span class="line">  six                pkgs/main/linux-64::six-1.12.0-py37_0                              </span><br><span class="line">  sqlite             pkgs/main/linux-64::sqlite-3.30.0-h7b6447c_0                       </span><br><span class="line">  tk                 pkgs/main/linux-64::tk-8.6.8-hbc83047_0                            </span><br><span class="line">  tqdm               pkgs/main/noarch::tqdm-4.36.1-py_0                                 </span><br><span class="line">  urllib3            pkgs/main/linux-64::urllib3-1.24.2-py37_0                          </span><br><span class="line">  wheel              pkgs/main/linux-64::wheel-0.33.6-py37_0                            </span><br><span class="line">  xz                 pkgs/main/linux-64::xz-5.2.4-h14c3975_4                            </span><br><span class="line">  yaml               pkgs/main/linux-64::yaml-0.1.7-had09818_2                          </span><br><span class="line">  zlib               pkgs/main/linux-64::zlib-1.2.11-h7b6447c_3</span><br></pre></td></tr></table></figure>
+
+<h2 id="pythonがインストールされている事を確認"><a href="#pythonがインストールされている事を確認" class="headerlink" title="pythonがインストールされている事を確認"></a>pythonがインストールされている事を確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python -V</span><br><span class="line">Python 3.7.4</span><br></pre></td></tr></table></figure>
+
+<h2 id="pipがインストールされている事を確認"><a href="#pipがインストールされている事を確認" class="headerlink" title="pipがインストールされている事を確認"></a>pipがインストールされている事を確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip -V</span><br><span class="line">$ pip 19.3.1 from /root/miniconda3/lib/python3.7/site-packages/pip (python 3.7)</span><br></pre></td></tr></table></figure>
+
+<h2 id="アンインストール"><a href="#アンインストール" class="headerlink" title="アンインストール"></a>アンインストール</h2><p>~/miniconda3フォルダ以下に全てインストールされるため、以下できます。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ rm -r ~/miniconda3</span><br><span class="line"></span><br><span class="line">bashを再起動</span><br><span class="line">$ <span class="built_in">exec</span> <span class="variable">$SHELL</span> -l</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/08/powershell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/08/powershell/" class="post-title-link" itemprop="url">PowerShellをUbuntuにインストール</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-08 00:15:47" itemprop="dateCreated datePublished" datetime="2020-02-08T00:15:47+09:00">2020-02-08</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="Microsoftのリポジトリキーを追加"><a href="#Microsoftのリポジトリキーを追加" class="headerlink" title="Microsoftのリポジトリキーを追加"></a>Microsoftのリポジトリキーを追加</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb</span><br><span class="line">$ sudo dpkg -i packages-microsoft-prod.deb</span><br><span class="line">$ sudo apt update</span><br></pre></td></tr></table></figure>
+
+<h2 id="dotnet-sdkインストール"><a href="#dotnet-sdkインストール" class="headerlink" title="dotnet-sdkインストール"></a>dotnet-sdkインストール</h2><p>dotnetコマンドでPowerShellをインストールするため、dotnet-sdkをインストールします。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install dotnet-sdk-3.1 -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="PowerShellインストール"><a href="#PowerShellインストール" class="headerlink" title="PowerShellインストール"></a>PowerShellインストール</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dotnet tool install --global powershell</span><br></pre></td></tr></table></figure>
+
+<p>インストール完了後、ターミナルを再起動します。</p>
+<h2 id="実行できる事を確認"><a href="#実行できる事を確認" class="headerlink" title="実行できる事を確認"></a>実行できる事を確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pwsh</span><br><span class="line">PowerShell 6.2.4</span><br><span class="line">Copyright (c) Microsoft Corporation. All rights reserved.</span><br><span class="line"></span><br><span class="line">https://aka.ms/pscore6-docs</span><br><span class="line">Type <span class="string">'help'</span> to get <span class="built_in">help</span>.</span><br><span class="line"></span><br><span class="line">PS /home/user&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="試しにコマンドを実行してみる"><a href="#試しにコマンドを実行してみる" class="headerlink" title="試しにコマンドを実行してみる"></a>試しにコマンドを実行してみる</h2><p>PowerShellでgrepをしてみます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PS /home/user&gt; echo <span class="string">"aaaabbbb"</span> | <span class="built_in">Select-String</span> <span class="string">"aaaa"</span></span><br><span class="line"></span><br><span class="line">aaaabbbb</span><br><span class="line"></span><br><span class="line">PS /home/user&gt; echo <span class="string">"aaaabbbb"</span> | <span class="built_in">Select-String</span> <span class="string">"cccc"</span> <span class="comment"># 何も表示されない</span></span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/06/nmon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/06/nmon/" class="post-title-link" itemprop="url">ターミナル上でパフォーマンスを確認</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-06 00:43:27" itemprop="dateCreated datePublished" datetime="2020-02-06T00:43:27+09:00">2020-02-06</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install nmon -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="起動"><a href="#起動" class="headerlink" title="起動"></a>起動</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nmon</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/nmon.png" alt="nmon"></p>
+<h2 id="各パフォーマンスを確認する"><a href="#各パフォーマンスを確認する" class="headerlink" title="各パフォーマンスを確認する"></a>各パフォーマンスを確認する</h2><p>各操作はコマンドで行います。</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>C</p>
+<p><img src="/images/nmon1.png" alt="nmon1"></p>
+<h3 id="メモリ"><a href="#メモリ" class="headerlink" title="メモリ"></a>メモリ</h3><p>M</p>
+<p><img src="/images/nmon2.png" alt="nmon2"></p>
+<h3 id="DISK-I-O"><a href="#DISK-I-O" class="headerlink" title="DISK I/O"></a>DISK I/O</h3><p>D</p>
+<h3 id="プロセス"><a href="#プロセス" class="headerlink" title="プロセス"></a>プロセス</h3><p>t</p>
+<p><img src="/images/nmon3.png" alt="nmon3"></p>
+<h3 id="ネットワーク"><a href="#ネットワーク" class="headerlink" title="ネットワーク"></a>ネットワーク</h3><p>n</p>
+<p><img src="/images/nmon4.png" alt="nmon4"></p>
+<h3 id="システムリソースビュー"><a href="#システムリソースビュー" class="headerlink" title="システムリソースビュー"></a>システムリソースビュー</h3><p>r</p>
+<p><img src="/images/nmon5.png" alt="nmon5"></p>
+<h3 id="終了"><a href="#終了" class="headerlink" title="終了"></a>終了</h3><p>Ctrl-C</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/05/byobu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/05/byobu/" class="post-title-link" itemprop="url">ターミナルでタブみたいな機能が使える、byobuの使い方</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-05 23:54:39" itemprop="dateCreated datePublished" datetime="2020-02-05T23:54:39+09:00">2020-02-05</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://byobu.org/" target="_blank" rel="noopener">byobu</a>を使うと、一つのターミナルで複数のプロンプトが使えます。</p>
+<p>実行と同時にリソースの消費具合を確認したいから、右側にnmon、左側でvim、なんて事が出来る様になります。</p>
+<p>内部ではtmux(ターミナルマルチプレクサー)又はscreenが動いていて、<br>byobuはtmuxをショートカットベースで使いやすくしてくれます。</p>
+<p><img src="/images/byobu1.png" alt="byobu"></p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 18.04</li>
+</ul>
+<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install byobu -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="byobuを起動する"><a href="#byobuを起動する" class="headerlink" title="byobuを起動する"></a>byobuを起動する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ byobu</span><br></pre></td></tr></table></figure>
+
+<p>以降の全てのショートカットはbyobuを起動した状態で行います。</p>
+<h2 id="画面を垂直に分割する"><a href="#画面を垂直に分割する" class="headerlink" title="画面を垂直に分割する"></a>画面を垂直に分割する</h2><p>トップの画像はターミナルを垂直に分割した物です。</p>
+<p>Ctrl-F2</p>
+<p><img src="/images/byobu-vertical.png" alt="垂直に分割"></p>
+<h2 id="画面を水平に分割する"><a href="#画面を水平に分割する" class="headerlink" title="画面を水平に分割する"></a>画面を水平に分割する</h2><p>Shift-F2</p>
+<p><img src="/images/byobu-horizon.png" alt="水平に分割"></p>
+<h2 id="分割された他のプロンプトにフォーカスを移動"><a href="#分割された他のプロンプトにフォーカスを移動" class="headerlink" title="分割された他のプロンプトにフォーカスを移動"></a>分割された他のプロンプトにフォーカスを移動</h2><p>操作するプロンプトを変更したい時に</p>
+<ul>
+<li>次へ<ul>
+<li>Ctrl-F4</li>
+</ul>
+</li>
+<li>前へ<ul>
+<li>Ctrl-F3</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/byobu-focus1.png" alt="フォーカス移動前"><br><img src="/images/byobu-focus2.png" alt="フォーカス移動後"></p>
+<h2 id="分割されたプロンプトの移動"><a href="#分割されたプロンプトの移動" class="headerlink" title="分割されたプロンプトの移動"></a>分割されたプロンプトの移動</h2><ul>
+<li>次へ<ul>
+<li>Shift-F4</li>
+</ul>
+</li>
+<li>前へ<ul>
+<li>Shift-F3</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/byobu-move1.png" alt="移動前"><br><img src="/images/byobu-move2.png" alt="移動後"></p>
+<h2 id="新しいウィンドウを作成"><a href="#新しいウィンドウを作成" class="headerlink" title="新しいウィンドウを作成"></a>新しいウィンドウを作成</h2><p>F2</p>
+<p><img src="/images/byobu-newindow.png" alt="新規ウィンドウ"></p>
+<h2 id="他のウィンドウに移動"><a href="#他のウィンドウに移動" class="headerlink" title="他のウィンドウに移動"></a>他のウィンドウに移動</h2><ul>
+<li>次へ<ul>
+<li>F4</li>
+</ul>
+</li>
+<li>前へ<ul>
+<li>F3</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/byobu-focus-window.png" alt="ウィンドウのフォーカス移動"><br><img src="/images/byobu-focus-window.png" alt="ウィンドウのフォーカス移動"></p>
+<h2 id="分割されたプロンプト-ウィンドウ-を終了"><a href="#分割されたプロンプト-ウィンドウ-を終了" class="headerlink" title="分割されたプロンプト(ウィンドウ)を終了"></a>分割されたプロンプト(ウィンドウ)を終了</h2><p>終了したいプロンプトにフォーカスし、exitします。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/byobu-exit1.png" alt="終了"><br><img src="/images/byobu-exit2.png" alt="終了後"></p>
+<h2 id="画面の共有"><a href="#画面の共有" class="headerlink" title="画面の共有"></a>画面の共有</h2><p>他の人と同じ所にSSHした状態でbyobuを起動すると、同じ画面(セッション)を共有できます。</p>
+<p>気になる方は試してみてください。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/05/anyenv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/05/anyenv/" class="post-title-link" itemprop="url">anyenvで各env系ツールをインストール</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-05 00:01:54" itemprop="dateCreated datePublished" datetime="2020-02-05T00:01:54+09:00">2020-02-05</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>LinuxMint19 Mate</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="anyenvをインストール"><a href="#anyenvをインストール" class="headerlink" title="anyenvをインストール"></a>anyenvをインストール</h2><h3 id="anyenvをclone"><a href="#anyenvをclone" class="headerlink" title="anyenvをclone"></a>anyenvをclone</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/riywo/anyenv ~/.anyenv</span><br></pre></td></tr></table></figure>
+
+<h3 id="パスを通す"><a href="#パスを通す" class="headerlink" title="パスを通す"></a>パスを通す</h3><p>ターミナル起動時にanyenvのパスを通す設定を書く</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'PATH=$&#123;PATH&#125;:$&#123;HOME&#125;/.anyenv/bin'</span> &gt;&gt; ~/.bashrc</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'eval "$(anyenv init -)"'</span> &gt;&gt; ~/.bashrc</span><br><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br><span class="line"></span><br><span class="line">anyenv用のインストールフォルダを作成する</span><br><span class="line">一度だけ実行する必要がある</span><br><span class="line">$ anyenv install --init</span><br></pre></td></tr></table></figure>
+
+<h2 id="インストール出来るenvを確認"><a href="#インストール出来るenvを確認" class="headerlink" title="インストール出来るenvを確認"></a>インストール出来るenvを確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ anyenv install -l</span><br><span class="line">  Renv</span><br><span class="line">  crenv</span><br><span class="line">  denv</span><br><span class="line">  erlenv</span><br><span class="line">  exenv</span><br><span class="line">  goenv</span><br><span class="line">  hsenv</span><br><span class="line">  jenv</span><br><span class="line">  luaenv</span><br><span class="line">  nodenv</span><br><span class="line">  phpenv</span><br><span class="line">  plenv</span><br><span class="line">  pyenv</span><br><span class="line">  rbenv</span><br><span class="line">  sbtenv</span><br><span class="line">  scalaenv</span><br><span class="line">  swiftenv</span><br><span class="line">  tfenv</span><br></pre></td></tr></table></figure>
+
+<h2 id="好きなenvをインストール"><a href="#好きなenvをインストール" class="headerlink" title="好きなenvをインストール"></a>好きなenvをインストール</h2><p>今回はrbenvをインストールします</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ anyenv install rbenv</span><br><span class="line">インストール後、シェルを再起動させる必要がある様なので以下実行</span><br><span class="line">$ <span class="built_in">exec</span> <span class="variable">$SHELL</span> -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="rbenvが使える事を確認"><a href="#rbenvが使える事を確認" class="headerlink" title="rbenvが使える事を確認"></a>rbenvが使える事を確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rbenv --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="anyenvでインストールしたenvの確認"><a href="#anyenvでインストールしたenvの確認" class="headerlink" title="anyenvでインストールしたenvの確認"></a>anyenvでインストールしたenvの確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ anyenv <span class="built_in">local</span> -l</span><br><span class="line">rbenv: no <span class="built_in">local</span> version configured <span class="keyword">for</span> this directory</span><br></pre></td></tr></table></figure>
+
+<h2 id="envをアンインストール"><a href="#envをアンインストール" class="headerlink" title="envをアンインストール"></a>envをアンインストール</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ anyenv uninstall rbenv</span><br><span class="line">rbenvが使えなくなる</span><br><span class="line">$ rbenv</span><br><span class="line">anyenv: env `rbenv<span class="string">' not installed</span></span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/04/nodenv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/04/nodenv/" class="post-title-link" itemprop="url">nodenvでnodejsをインストール</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-04 23:35:33" itemprop="dateCreated datePublished" datetime="2020-02-04T23:35:33+09:00">2020-02-04</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>LinuxMint19 Mate</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="nodenvをインストール"><a href="#nodenvをインストール" class="headerlink" title="nodenvをインストール"></a>nodenvをインストール</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/nodenv/nodenv.git ~/.nodenv</span><br></pre></td></tr></table></figure>
+
+<h2 id="nodenvのパスを通す"><a href="#nodenvのパスを通す" class="headerlink" title="nodenvのパスを通す"></a>nodenvのパスを通す</h2><p>ターミナル起動時にパスを通す様に設定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'PATH=$&#123;PATH&#125;:$&#123;HOME&#125;/.nodenv/bin'</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="initする"><a href="#initする" class="headerlink" title="initする"></a>initする</h2><p>ターミナル起動時にinitする様に設定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'eval "$(nodenv init -)"'</span></span><br></pre></td></tr></table></figure>
+
+<p>nodenvコマンドは使えるが、nodenv installコマンドはまだ使えない</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nodenv install 12.14.1</span><br></pre></td></tr></table></figure>
+
+<h2 id="nodenvのinstallコマンドをインストール"><a href="#nodenvのinstallコマンドをインストール" class="headerlink" title="nodenvのinstallコマンドをインストール"></a>nodenvのinstallコマンドをインストール</h2><p>installコマンドやuninstallコマンドを使うためにはnode-buildが必要らしい</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/nodenv/node-build.git /usr/<span class="built_in">local</span>/src/</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'sudo PREFIX=/usr/local /usr/local/src/install.sh'</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="nodenvでnodeをインストール"><a href="#nodenvでnodeをインストール" class="headerlink" title="nodenvでnodeをインストール"></a>nodenvでnodeをインストール</h2><p>ターミナルを起動し直し、以下コマンドを実行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nodenv install 12.14.1</span><br><span class="line">$ nodenv global 12.14.1</span><br></pre></td></tr></table></figure>
+
+<h2 id="nodeとnpmのバージョンを確認する"><a href="#nodeとnpmのバージョンを確認する" class="headerlink" title="nodeとnpmのバージョンを確認する"></a>nodeとnpmのバージョンを確認する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v12.14.1</span><br><span class="line">$ npm -v</span><br><span class="line">6.13.4</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/02/neovim-vim-lsp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/02/neovim-vim-lsp/" class="post-title-link" itemprop="url">Neovim + vim-plug + vim-lspでLanguage Server Protocolを利用</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-02 23:59:14" itemprop="dateCreated datePublished" datetime="2020-02-02T23:59:14+09:00">2020-02-02</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>vim-lspをインストールする所まで<br>この手順では、python3.7.2をインストールするためにpyenvを入れています</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu18.04</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="Pythonとpipをインストールする"><a href="#Pythonとpipをインストールする" class="headerlink" title="Pythonとpipをインストールする"></a>Pythonとpipをインストールする</h2><p>~/.bashrcに以下を追記する</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## pyenv init and install</span></span><br><span class="line">PYENV_ROOT=<span class="string">"<span class="variable">$&#123;HOME&#125;</span>/.pyenv/bin"</span></span><br><span class="line">PATH=<span class="string">"<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;PYENV_ROOT&#125;</span>"</span></span><br><span class="line">pyenv --version &gt; /dev/null || &#123;</span><br><span class="line">  git <span class="built_in">clone</span> https://github.com/pyenv/pyenv <span class="variable">$&#123;HOME&#125;</span>/.pyenv</span><br><span class="line">  sudo <span class="variable">$&#123;HOME&#125;</span>/.pyenv/plugins/python-build/install.sh</span><br><span class="line">  pyenv install 3.7.2</span><br><span class="line">  pyenv <span class="built_in">rehash</span></span><br><span class="line">  pyenv global 3.7.2</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(pyenv init -)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<p>~/.bashrcを読み込み直す</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="Neovimをインストールする"><a href="#Neovimをインストールする" class="headerlink" title="Neovimをインストールする"></a>Neovimをインストールする</h2><p>~/.bashrcに以下を追記する</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## neovim init and install</span></span><br><span class="line">XDG_CONFIG_HOME=<span class="string">"<span class="variable">$&#123;HOME&#125;</span>/.config"</span></span><br><span class="line">XDG_CACHE_HOME=<span class="string">"<span class="variable">$&#123;HOME&#125;</span>/.cache"</span></span><br><span class="line">nvim --version &gt; /dev/null || &#123;</span><br><span class="line">  sudo add-apt-repository ppa:neovim-ppa/stable -y</span><br><span class="line">  sudo apt-get update</span><br><span class="line">  sudo apt-get install neovim -y</span><br><span class="line">  mkdir -p <span class="variable">$&#123;XDG_CONFIG_HOME&#125;</span>/nvim</span><br><span class="line">  touch <span class="variable">$&#123;XDG_CONFIG_HOME&#125;</span>/nvim/init.vim</span><br><span class="line">&#125;</span><br><span class="line">pip install neovim</span><br></pre></td></tr></table></figure>
+
+<p>~/.bashrcを読み込みなおす</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="vim-lspをインストールする"><a href="#vim-lspをインストールする" class="headerlink" title="vim-lspをインストールする"></a>vim-lspをインストールする</h2><p>~/.config/nvim/init.vimを以下の内容にする</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if has(&apos;vim_starting&apos;)</span><br><span class="line">  set rtp+=~/.vim/plugged/vim-plug</span><br><span class="line">  if !isdirectory(expand(&apos;~/.vim/plugged/vim-plug&apos;))</span><br><span class="line">    echo &apos;install vim-plug...&apos;</span><br><span class="line">    call system(&apos;mkdir -p ~/.vim/plugged/vim-plug&apos;)</span><br><span class="line">    call system(&apos;git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload&apos;)</span><br><span class="line">  end</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">call plug#begin(&apos;~/.vim/plugged&apos;)</span><br><span class="line">  Plug &apos;junegunn/vim-plug&apos;,&#123;&apos;dir&apos;: &apos;~/.vim/plugged/vim-plug/autoload&apos;&#125;</span><br><span class="line">  Plug &apos;prabirshrestha/async.vim&apos;</span><br><span class="line">  Plug &apos;prabirshrestha/vim-lsp&apos;</span><br><span class="line">  Plug &apos;mattn/vim-lsp-settings&apos;</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+
+<p>上記設定ではNeovim起動時にvim-plugが無ければインストール、<br>その後async.vim,vim-lsp,vim-lsp-settingsをインストールしています。</p>
+<p>Neovimを起動</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvim</span><br></pre></td></tr></table></figure>
+
+<p>コマンド「:PlugInstall」を実行し、上記プラグインをインストールする</p>
+<p>その後「:PlugStatus」を実行し、全てOKになっていれば問題なし、qキーでステータス画面を抜ける</p>
+<p>nodejsやgolang、pythonのlspをインストールする場合は、<br>init.vimに設定を追記、必要なモジュールをインストールするなど、それぞれlspに合わせた設定が必要となる</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/02/02/go-cms-ponzu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/02/02/go-cms-ponzu/" class="post-title-link" itemprop="url">Go製CMS ponzuを試してみた</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-02-02 03:36:06 / 修正日：03:43:57" itemprop="dateCreated datePublished" datetime="2020-02-02T03:36:06+09:00">2020-02-02</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CMSを作りたくて、<a href="https://www.youtube.com/watch?v=T_1ncPoLgrg" target="_blank" rel="noopener">この動画</a>を見ながら試してみました。</p>
+<h1 id="ponzuとは"><a href="#ponzuとは" class="headerlink" title="ponzuとは"></a>ponzuとは</h1><p>Goで作られているヘッドレスCMS</p>
+<p><a href="https://github.com/ponzu-cms/ponzu" target="_blank" rel="noopener">ponzu - GitHub</a></p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Go 1.13.5</li>
+</ul>
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go get -u https://github.com/ponzu-cms/ponzu/...</span><br></pre></td></tr></table></figure>
+
+<h2 id="ponzuプロジェクト作成"><a href="#ponzuプロジェクト作成" class="headerlink" title="ponzuプロジェクト作成"></a>ponzuプロジェクト作成</h2><p>以下コマンドでGOPATH/src以下にプロジェクトが作成される</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ponzu new github.com/sakkuntyo/ponzu-project</span><br></pre></td></tr></table></figure>
+
+<p>以下cd先にプロジェクトが作られている</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$&#123;GOPATH&#125;</span>/src/github.com/sakkuntyo/ponzu-project</span><br><span class="line">$ ls</span><br><span class="line">CONTRIBUTING.md  Dockerfile  LICENSE  README.md  addons  cmd  content  deployment  docs  examples  ponzu-banner.png</span><br></pre></td></tr></table></figure>
+
+<p>この後の操作はこのデイレクトリ内で行う</p>
+<h2 id="テンプレコードを作成"><a href="#テンプレコードを作成" class="headerlink" title="テンプレコードを作成"></a>テンプレコードを作成</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">テンプレートコード作成</span><br><span class="line">ponzu generate content コンテンツ名 コンテンツ内のデータ名:データ型:[入力方法] [コンテンツ内のデータ名:データ型:[入力方法]] ..</span><br><span class="line">$ ponzu generate content author name:string photo:string:file bio:string:richtext</span><br><span class="line">これでテンプレートコード(content/author.go)が作成される</span><br></pre></td></tr></table></figure>
+
+<h2 id="ponzuをビルド"><a href="#ponzuをビルド" class="headerlink" title="ponzuをビルド"></a>ponzuをビルド</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ponzu build</span><br><span class="line">これでponzu-server、及び実行に必要なライブラリ(cmd以下)が配置される</span><br></pre></td></tr></table></figure>
+
+<h2 id="ponzu起動"><a href="#ponzu起動" class="headerlink" title="ponzu起動"></a>ponzu起動</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ponzu run</span><br><span class="line">何故かうまくいかないが、もう一度実行すると起動できる</span><br><span class="line">$ ponzu run</span><br><span class="line">Server listening at localhost:8080 <span class="keyword">for</span> HTTP requests...</span><br><span class="line"></span><br><span class="line">Visit <span class="string">'/admin'</span> to get started.</span><br></pre></td></tr></table></figure>
+
+<p>起動中にlocalhost:8080/adminにアクセスする事でCMSのGUIが表示される</p>
+<h1 id="CMSで出来ること"><a href="#CMSで出来ること" class="headerlink" title="CMSで出来ること"></a>CMSで出来ること</h1><h2 id="記事の追加"><a href="#記事の追加" class="headerlink" title="記事の追加"></a>記事の追加</h2><p>左メニューからコンテンツを選び、NEWを選択する事で、記事が書ける</p>
+<p>SAVEをすると、内容がsystem.db(BoltDB)に保存される</p>
+<h2 id="書いた記事の参照"><a href="#書いた記事の参照" class="headerlink" title="書いた記事の参照"></a>書いた記事の参照</h2><p>json形式で記事が参照できる、確認してみる</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Authorをgenerate、記事追加したとして、以下コマンドで確認</span><br><span class="line">$ curl <span class="string">"localhost:8080/api/content?type=Author&amp;id=1"</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"data"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"bio"</span>: <span class="string">"ponzu\u305f\u3081\u3057\u3066\u307f\u305fbio"</span>,</span><br><span class="line">            <span class="string">"id"</span>: 1,</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"ponzu\u305f\u3081\u3057\u3066\u307f\u305f"</span>,</span><br><span class="line">            <span class="string">"photo"</span>: <span class="string">"/api/uploads/2020/02/4fd4c0e572a4fed83f1d1dc5e64a2ab8600.jpg"</span>,</span><br><span class="line">            <span class="string">"slug"</span>: <span class="string">"author-77f9980f-db1e-421b-bd3b-ce0879e9d670"</span>,</span><br><span class="line">            <span class="string">"timestamp"</span>: 1580577064000,</span><br><span class="line">            <span class="string">"updated"</span>: 1580577184147,</span><br><span class="line">            <span class="string">"uuid"</span>: <span class="string">"77f9980f-db1e-421b-bd3b-ce0879e9d670"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>これをブラウザ側でプレビューしてあげたりするとブログっぽくなるのかな</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
