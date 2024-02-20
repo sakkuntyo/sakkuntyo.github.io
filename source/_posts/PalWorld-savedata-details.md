@@ -105,11 +105,13 @@ IsPlayer": {\n.*\": true
 
 ## 筆者が管理してるサーバーのプレイヤーID.sav 対応表
 
-- 813399f0*.sav -> noma
-- 65332aeb*.sav -> KOB
-- 06d842d5*.sav -> sakura
-- e74926a0*.sav -> yocha-424
-- 120f57b4*.sav -> pia24mo
-- e7574940*.sav -> にゃんごろげ
-- 98e4c6ac*.sav -> せつこ
-- d3a7451e*.sav -> mavu33
+|ファイル名|ユーザー名|
+|:-:|:-:|
+|813399f0*.sav|noma|
+|65332aeb*.sav|KOB|
+|06d842d5*.sav|sakura|
+|e74926a0*.sav|yocha-424|
+|120f57b4*.sav|pia24mo|
+|e7574940*.sav|にゃんごろげ|
+|98e4c6ac*.sav|せつこ|
+|d3a7451e*.sav|mavu33|
