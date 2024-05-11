@@ -11,47 +11,63 @@ tags: [UDP]
 ルーターがいじれないという事はインターネットからのアクセスのポートマッピング(ポート開放)ができないという事です。
 ただ、回線の速度や安定感はあるので追加で回線を契約するほどのコストをかけたくないですし、
 今までは宅内サーバーをインターネットに公開するために ngrok (HTTPやTCP) や localtonet (UDP) を利用して公開していましたが、
-localtonet は 日本サーバーが無いために、ping 値が高くなる等、歯がゆい状況でした。
+localtonet は 日本サーバーが無いために ping 値が高くなる等、歯がゆい状況でした。
 
 そこで他に方法ないかなと探していたら見つけました。
-tailscale の exitnode を利用し、インターネットからのアクセスを受けた マシン(VPS) から tailscale ネットワーク内のマシンにポートフォワーディングして、
+インターネットからのアクセスを受けた マシン(VPS) から tailscale ネットワーク内のマシンにポートフォワーディングして、
 VPS のマシンが実質ルーター代わりになるという方法
 
 [例えば yayoi_8128 さんのこんな方法](https://note.com/yayoi_8128/n/n4a35f271a57f)
 
 ポートフォワーディングについては、uredir を使わずに nginx や iptables でフォワーディングの設定をする、でもよかったんですが、以下の理由で uredir を採用してます。
 
-- uredir のコマンドが覚えやすかった (uredir :8211 フォワーディング先IP:8211)
+- uredir のコマンドが覚えやすかった (uredir :8211 フォワーディング先IP:8211)、redir と同じ
 - iptables のコマンドを覚えるのがむずかしかった
-- 実際に nginx を使用して比較しても体感できる差が感じられなかった
+- nginx を使用してフォワーディングさせて比較しても体感できる差がなかった
 
-Azure, Sakura, WebArena の VPS それぞれで パルワールドサーバーのUDP フォワーディング を試した結果、安定性や速度が異なったので感想とともに記録を残します。
+各 VPSで パルワールドサーバーの UDP フォワーディング を試した結果、安定性や速度が異なったので感想とともに記録を残します。
 
-# テスト環境の構築
+# VPS マシン側の構築
 
 OS: ubuntu 22.04 server
 
-1. tailscale をインストールして exitnode を有効化
+1. tailscale をインストール
 
 ```
 curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up --advertise-exit-node
+sudo tailscale up
 ```
 
-2. tailscale AdminConsole から "Use as exit node" にチェック
+2. VPS 管理コンソールにて ポート 8211 (palworld server) の inbound を許可
 
-![image](https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/aa7549a0-b4ad-4476-836f-2a50b91a66d9)
+3. uredir や redir 等で、tailscale 内のマシンにフォワーディングする様設定
 
-3. IPv4 フォワーディングを許可
+UDP
+
 ```
-echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
-echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
-sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+uredir :8211 サーバーマシンのtailscale内IP:8211
 ```
 
-4. その他
+TCP
 
-vps 側で 22 や 8211 の inbound を許可
+```
+redir :25565 サーバーマシンのtailscale内IP:25565
+```
+
+> 2024/05/12 追記
+>　VPS マシンの exitnode の有効化とその直後の IP フォワーディング許可設定は不要だったので削除しました。
+
+
+# サーバーマシン側の構築
+
+1. tailscale をインストール
+
+```
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+```
+
+2. サーバーを起動
 
 # 注意点
 
@@ -112,6 +128,8 @@ tailscale up したときに見覚えのないログが出た、何か改善の�
 NETDEV=$(ip route show 0/0 | cut -f5 -d' ')
 sudo ethtool -K $NETDEV rx-udp-gro-forwarding on rx-gro-list off
 ```
+
+サーバーがマインクラフトだとしてもサーバーに繋がるまでに時間がかかりました。なんでだろう
 
 ## Sakura VPS
 
@@ -213,7 +231,6 @@ Azure VM を少しマシにした様なレベルで、これで遊ぶのは厳�
 
 さくら VPS でした。安定感がどエライです。
 LIghtsail も快適だったので、こっちへの乗り換えもアリ
-Azure VM の回線速度も優秀ではあるけど、不安定すぎる
 
 ## なんで安定感に差がでるのか
 
