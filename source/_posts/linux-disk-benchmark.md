@@ -13,7 +13,7 @@ tags: [Linux]
 dd if=/dev/zero of=./test bs=1M count=10240 status=progress;rm test
 ```
 
-10 GB 分書き込んで測定します。
+10 GB 分のファイルをカレントディレクトリに書き込んで測定します。なので測定されるのはカレントディレクトリのディスクになります。
 
 Windows の CrystalDiskMark で測定した時の SEQ1M の項目と大体同じ事をしてるのだろう、と思ってます。
 
