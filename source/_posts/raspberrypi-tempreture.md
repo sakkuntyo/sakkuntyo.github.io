@@ -54,7 +54,7 @@ $ vcgencmd measure_temp
 temp=45.5'C
 ```
 
-### exit node にして速度測定中
+### tailscale の exit node にして速度測定中
 
 ```
 $ vcgencmd measure_temp
@@ -73,7 +73,7 @@ $ vcgencmd measure_temp
 temp=53.7'C
 ```
 
-### exit node にして速度測定中
+### tailscale の exit node にして速度測定中
 
 ```
 $ vcgencmd measure_temp
@@ -93,7 +93,7 @@ $ vcgencmd measure_temp
 temp=38.9'C
 ```
 
-### exit node にして速度測定中
+### tailscale の exit node にして速度測定中
 
 ```
 $ vcgencmd measure_temp
