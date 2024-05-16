@@ -101,7 +101,7 @@ temp=48.7'C
 
 [このケース](https://www.amazon.co.jp/gp/product/B0CXPH1PZH?ie=UTF8&psc=1&linkCode=ll1&tag=noma362907-22&linkId=5200b4c6e5b1fb01e380fb5931adafc2&language=ja_JP&ref_=as_li_ss_tl)とこれについてきたヒートシンク(銅)を使用
 一応[電源](https://www.amazon.co.jp/gp/product/B0CXPP468R?ie=UTF8&psc=1&linkCode=ll1&tag=noma362907-22&linkId=690f4f58d17afb0be7b633242ccbbb50&language=ja_JP&ref_=as_li_ss_tl)も書いておきます。ラズパイ5を全力で動作させられる 5V 5A 電源です。5V 5A PD なんて他の用途で使わないので家にはありませんでした。
-ただ Raspberry Pi OS を起動するだけでアッツいので今までのとは違う事がわかります。
+ただ Raspberry Pi OS を起動するだけでアッツいので今までのとは違う事がすぐにわかります。
 ギリギリ手で持てるかな、くらいの熱さ
 
 
