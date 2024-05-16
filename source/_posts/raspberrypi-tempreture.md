@@ -136,7 +136,7 @@ temp=48.7'C
 
 ### 何もしてない時
 
-ファンの回転数は 75 
+ファンの回転数に関係する pwm1 の値は 75
 
 ```
 $ cat /sys/devices/platform/cooling_fan/hwmon/hwmon3/pwm1
@@ -150,7 +150,7 @@ temp=56.0'C
 
 ### Miecraft Server 起動中
 
-ファンの回転数は 125
+ファンの回転数に関係する pwm1 の値は 125
 
 ```
 $ cat /sys/devices/platform/cooling_fan/hwmon/hwmon3/pwm1
