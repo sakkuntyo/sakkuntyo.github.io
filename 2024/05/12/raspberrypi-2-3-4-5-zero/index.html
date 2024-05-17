@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="最近何かとサーバーを立てる事が多く、今まで購入するだけして眠ってたラズパイ達が活躍し始めてるので用途を紹介 用途メモリが 1GB 以下の Raspberry Pizero 1.1 や 2 や 3 が該当  tailscale exit node や subnet routes 用 こんな用途 Home Bridge 用デスクトップ版 OS を使うとそれだけでメモリがカツカツになるので、可能であれば">
+<meta name="keywords" content="Raspberry Pi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raspberry Pi の用途">
+<meta property="og:url" content="https://sakkuntyo.github.io/2024/05/12/raspberrypi-2-3-4-5-zero/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="最近何かとサーバーを立てる事が多く、今まで購入するだけして眠ってたラズパイ達が活躍し始めてるので用途を紹介 用途メモリが 1GB 以下の Raspberry Pizero 1.1 や 2 や 3 が該当  tailscale exit node や subnet routes 用 こんな用途 Home Bridge 用デスクトップ版 OS を使うとそれだけでメモリがカツカツになるので、可能であれば">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2024-05-12T15:53:18.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Raspberry Pi の用途">
+<meta name="twitter:description" content="最近何かとサーバーを立てる事が多く、今まで購入するだけして眠ってたラズパイ達が活躍し始めてるので用途を紹介 用途メモリが 1GB 以下の Raspberry Pizero 1.1 や 2 や 3 が該当  tailscale exit node や subnet routes 用 こんな用途 Home Bridge 用デスクトップ版 OS を使うとそれだけでメモリがカツカツになるので、可能であれば">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2024/05/12/raspberrypi-2-3-4-5-zero/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Raspberry Pi の用途 | skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/05/12/raspberrypi-2-3-4-5-zero/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Raspberry Pi の用途
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-05-12T00:00:00+09:00">2024-05-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>最近何かとサーバーを立てる事が多く、今まで購入するだけして眠ってたラズパイ達が活躍し始めてるので用途を紹介</p>
+<h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><h2 id="メモリが-1GB-以下の-Raspberry-Pi"><a href="#メモリが-1GB-以下の-Raspberry-Pi" class="headerlink" title="メモリが 1GB 以下の Raspberry Pi"></a>メモリが 1GB 以下の Raspberry Pi</h2><p>zero 1.1 や 2 や 3 が該当</p>
+<ul>
+<li>tailscale exit node や subnet routes 用 <a href="https://sakkuntyo.github.io/2024/05/12/tailscale-advertise-routes/">こんな用途</a></li>
+<li><a href="https://qiita.com/zizi4n5/items/1683d3c3a62eee2cdbb2" target="_blank" rel="noopener">Home Bridge 用</a><br>デスクトップ版 OS を使うとそれだけでメモリがカツカツになるので、可能であればサーバー版 OS を使う事をおすすめ</li>
+</ul>
+<p>1GB モデルの場合<br>デスクトップ版の空きメモリ 200MB 程度<br>サーバー版の空きメモリ 700MB 程度</p>
+<p><a href="https://www.amazon.co.jp/Raspberry-Pi-Zero-WH-%25E3%2583%2598%25E3%2583%2583%25E3%2583%2580%25E3%2583%25BC%25E4%25BB%2598%25E3%2581%258D/dp/B07BHMRTTY/ref=sr_1_5?__mk_ja_JP=%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A&amp;crid=1J2TUV5FFV8MZ&amp;dib=eyJ2IjoiMSJ9.AjTkYGEWZj-JsV1QsqVMa1rWz7oawWrUTKwEMFa7HFqhvDygDJQ5qhz12F886Mt9OgwE2H9FQz2gaiBc9jE2oeXCvzAIZfBPTBBWaVliorfZ5L3JwfkTJlrUP5x4vUHP55yc_2vRAFmpow6s-GrGB3dCJvnlmvuOKlmWazHfb86hP4enwPvUoRVXDuCWiC100yHYGJzh3QC9lj9gm_04-cGf6MlhJWsx5GD-5pwPw6nRXDTFaCUN8CX96RocHpypmdW6W-k06wdusyN7OWAXddyMq1UAgUj60vgMyIGWdZg.2mcp9DB1OgHI0qC2T5aHNg8-TOTV9id_N7bWpQ5YOU4&amp;dib_tag=se&amp;keywords=raspberry+pi+zero&amp;qid=1715473067&amp;sprefix=raspberry+pi+zer%252Caps%252C175&amp;sr=8-5&_encoding=UTF8&tag=noma362907-22&linkCode=ur2&linkId=959bc239a7042ec66a439aa08b91a8cd&camp=247&creative=1211" target="_blank" rel="noopener">raspberry pi zero 購入リンク - amazon</a></p>
+<p><a href="https://www.amazon.co.jp/%25E3%2580%25902021%25E5%25B9%25B4%25E6%2596%25B0%25E5%2587%25BA%25E3%2580%2591Raspberry-%25E3%2583%25A9%25E3%2582%25BA%25E3%2583%2599%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2591%25E3%2582%25A4-W%25EF%25BC%25882%25E4%25BB%25A3%25EF%25BC%2589RAM%25E5%25AE%25B9%25E9%2587%258F-CPU%25E9%2580%259F%25E5%25BA%25A61GHz-Cortex-A53/dp/B09N8LMWLS/ref=sr_1_2?crid=3BT01N12FN5KS&amp;dib=eyJ2IjoiMSJ9.OwbalKiYU86-rquZUxojf1b3YjOcvHrZScb6VP6lVvurbQ9zPUxYJZoa10l0rt72c6KmhfHg1ftp5l8m9NNviavqAa1Bs6ZKIrYblhi0MCxgoIPch9eI3MQLLZwQcp6So9nnfTY4kM6yBT1xf4yqMrJaOESpUK8FQUcZFOhPDYVOKCrka3HsaeracIJzlrOhBP63xz15wUWHUpUOCJn0mbveNR4tFBBpBuq7javIohvoX_61jVM6LLLLlmRv7DTtf6REPpYBsihUc79ZR_OeWVrsfwffLC_sYu2Zo11efdU.CDcOs0z31uKQ3wZ7O-8c5kqVUjZysniLHYdHbTPiqrg&amp;dib_tag=se&amp;keywords=raspberry+pi+zero+2+w&amp;qid=1715473314&amp;sprefix=raspberry+pi+zero%252Caps%252C227&amp;sr=8-2&_encoding=UTF8&tag=noma362907-22&linkCode=ur2&linkId=f2ce6310144d709312b4e5e14e19a7df&camp=247&creative=1211" target="_blank" rel="noopener">raspberry pi zero 2 購入リンク - amazon</a></p>
+<h2 id="Raspberry-Pi-4-Model-B-4GB"><a href="#Raspberry-Pi-4-Model-B-4GB" class="headerlink" title="Raspberry Pi 4 Model B 4GB"></a>Raspberry Pi 4 Model B 4GB</h2><ol>
+<li>Discord bot (音楽・ラジオ再生) の常時稼働用、これは 3 でやってる時期もあった</li>
+<li>Minecraft Server も起動できるものの MOD 無しでも最初から少しモッサリする</li>
+<li>やったことないけど身近にやってる人がいた <a href="https://bowmiow.net/garage/raspi-tv2/" target="_blank" rel="noopener">地上波録画サーバ</a>、Mirakurun や EPGStation を使う</li>
+<li>Nintendo Switch のコントローラ自作、4 で USB Gadget API が使える様になって可能になった。<a href="https://youtu.be/p048VY5oUCk?si=ex6EGEeFhgzXmXvq" target="_blank" rel="noopener">スプラトゥーン3をマウスでプレイ ジャイロコンバーター [NXIC]</a> <del>ただちょっとラグかったかな</del></li>
+</ol>
+<h2 id="Raspberry-Pi-5-8GB"><a href="#Raspberry-Pi-5-8GB" class="headerlink" title="Raspberry Pi 5 8GB"></a>Raspberry Pi 5 8GB</h2><p>Minecraft Server + 工業系MOD 3-4人で結構快適</p>
+<p>スペック的に難しかった事が色々試せそう</p>
+<p><a href="https://www.amazon.co.jp/Raspberry-Development-Cortex-A76-quad-core-RAM%25EF%25BC%2589%25E3%2583%2592%25E3%2583%25BC%25E3%2583%2588%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25AF/dp/B0CQT288H2/ref=sr_1_5_pp?__mk_ja_JP=%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A&amp;crid=3J3T5LDZ74E63&amp;dib=eyJ2IjoiMSJ9.OBtTCTkPdbsi77Fp7vq1kPaFLPEDszaKRoCjQ7apwPgQr-0VO8OIW7B04s44ziT2u16Y3EYI1MJMWY8angixAd5uht_bJdbEqR5JOCSV6V39VcUch1SEZKwOyeqvyZO0Zln5t7QYtIVipenVFt3vrV1PBuCI-fpc-BrU3rWQImiqEWFertgaHftMEAzNatroBYo8nl16SsTvFn4-QeF6xM3YGDhU1KZvTkT0XPjyyl2Sau0QBM0Be61Fh980yW6WTWJmWtkXbZRLDEJqPxkgUjOCLlsF5pdCW9b-YaZ78iI.RjUGqi2lf0iUKaRW2Uy5ikIojT65LM5-dAf0N5LZJmI&amp;dib_tag=se&amp;keywords=raspberry+pi+5&amp;qid=1715473018&amp;sprefix=raspbeery+pi+%252Caps%252C176&amp;sr=8-5&_encoding=UTF8&tag=noma362907-22&linkCode=ur2&linkId=97c94075aaec1b55ed7449aa95875023&camp=247&creative=1211" target="_blank" rel="noopener">raspberry pi 5 購入リンク - amazon</a></p>
+<h1 id="強みと弱み"><a href="#強みと弱み" class="headerlink" title="強みと弱み"></a>強みと弱み</h1><h2 id="強み"><a href="#強み" class="headerlink" title="強み"></a>強み</h2><h3 id="消費電力が少ない"><a href="#消費電力が少ない" class="headerlink" title="消費電力が少ない"></a>消費電力が少ない</h3><p>大きい PC をずっと起動しておくと電気代が気になるので、何か常時稼働したい時はラズパイでできないかどうか考える様になりました。</p>
+<h3 id="安い"><a href="#安い" class="headerlink" title="安い"></a>安い</h3><p>まえはもっと安かった気がするけれども・・・<br>ナンバリングが上がる毎にスペックは大幅に上がってるので、基本的に値段以外の理由で古いのを買う理由はないと思う。</p>
+<h2 id="弱み"><a href="#弱み" class="headerlink" title="弱み"></a>弱み</h2><h3 id="arm-プロセッサに対応してないツールは使えない"><a href="#arm-プロセッサに対応してないツールは使えない" class="headerlink" title="arm プロセッサに対応してないツールは使えない"></a>arm プロセッサに対応してないツールは使えない</h3><p>例えば立てたいサーバーやアプリケーションに入れたライブラリが arm に対応していない場合、起動すらできないか、起動してもうまく動かない。<br>ただ arm に対応しているツールやライブラリは増えてきてるし、今後に期待。<br>また、box86 の様な x86 向けのツールを arm で動作させる エミュレータはある様子。</p>
+<h3 id="大容量なメモリのモデルがない"><a href="#大容量なメモリのモデルがない" class="headerlink" title="大容量なメモリのモデルがない"></a>大容量なメモリのモデルがない</h3><p>2024/5/12 時点だとラズパイ5が最新で最大メモリは 8GB みたい。<br>他の SBC の Rock5 だと 32GB モデルまであるみたいで、他のに目移り中。</p>
+<h3 id="電プチするとデータが破損する事がある"><a href="#電プチするとデータが破損する事がある" class="headerlink" title="電プチするとデータが破損する事がある"></a>電プチするとデータが破損する事がある</h3><p>電源ケーブルぶっこぬきで電源をきるとデータが破損する事があります。<br>データの破損の仕方にもよりますが、何度か起動しなくなった経験があります。<br>すぐ壊れてしまうイメージを持ちそうですが、実際に↓の様な記事も多数あり、経験上も読み取り専用で運用していればその様な問題はおきませんでした。</p>
+<p><a href="https://zenn.dev/su_/articles/97b9e25d0ae41c" target="_blank" rel="noopener">Raspberry Piは本当に壊れやすいのか</a><br><a href="https://qiita.com/ma2shita/items/45818f0872472ecacac1" target="_blank" rel="noopener">Raspberry Pi OSのrootfs ROM 化 ― RAMディスク化しつつ、好きなパッケージを後から追加する方法</a><br><a href="https://qiita.com/tomtwinkle/items/cb97bba8cd5c2748c30f" target="_blank" rel="noopener">Raspberry PiのrootFSをROM化してSD Cardの破損を防ぐメモ</a></p>
+<p>電源ケーブルを抜いて電源を落とす様な運用がしたい場合、最低でも boot パーティションの読み取り専用は必要そうです。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Raspberry-Pi/" rel="tag"># Raspberry Pi</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2024/04/17/audio-system/" rel="next" title="オーディオ環境 メモ">
+                  <i class="fa fa-chevron-left"></i> オーディオ環境 メモ
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2024/05/12/tailscale-advertise-routes/" rel="prev" title="実家のルーターを自宅から設定したい時にした事">
+                  実家のルーターを自宅から設定したい時にした事 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用途"><span class="nav-number">1.</span> <span class="nav-text">用途</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#メモリが-1GB-以下の-Raspberry-Pi"><span class="nav-number">1.1.</span> <span class="nav-text">メモリが 1GB 以下の Raspberry Pi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Raspberry-Pi-4-Model-B-4GB"><span class="nav-number">1.2.</span> <span class="nav-text">Raspberry Pi 4 Model B 4GB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Raspberry-Pi-5-8GB"><span class="nav-number">1.3.</span> <span class="nav-text">Raspberry Pi 5 8GB</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#強みと弱み"><span class="nav-number">2.</span> <span class="nav-text">強みと弱み</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#強み"><span class="nav-number">2.1.</span> <span class="nav-text">強み</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消費電力が少ない"><span class="nav-number">2.1.1.</span> <span class="nav-text">消費電力が少ない</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安い"><span class="nav-number">2.1.2.</span> <span class="nav-text">安い</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弱み"><span class="nav-number">2.2.</span> <span class="nav-text">弱み</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arm-プロセッサに対応してないツールは使えない"><span class="nav-number">2.2.1.</span> <span class="nav-text">arm プロセッサに対応してないツールは使えない</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大容量なメモリのモデルがない"><span class="nav-number">2.2.2.</span> <span class="nav-text">大容量なメモリのモデルがない</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#電プチするとデータが破損する事がある"><span class="nav-number">2.2.3.</span> <span class="nav-text">電プチするとデータが破損する事がある</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="keywords" content="IT,Nodejs,Golang,Vim,スーパーカブ,リトルカブ,ニュービートル">
+<meta property="og:type" content="website">
+<meta property="og:title" content="skt workshop">
+<meta property="og:url" content="https://sakkuntyo.github.io/page/6/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:locale" content="ja">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="skt workshop">
+  <link rel="canonical" href="https://sakkuntyo.github.io/page/6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/23/ubuntu-apache-webserver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/01/23/ubuntu-apache-webserver/" class="post-title-link" itemprop="url">UbuntuとApacheでウェブサーバを構築</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-01-23 00:54:51" itemprop="dateCreated datePublished" datetime="2020-01-23T00:54:51+09:00">2020-01-23</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu 16.04(KAGOYA VPS KVM)</li>
+</ul>
+<h1 id="Apacheって何"><a href="#Apacheって何" class="headerlink" title="Apacheって何"></a>Apacheって何</h1><ul>
+<li>ブログやホームページを公開するために使う事が出来るウェブサーバ</li>
+</ul>
+<h1 id="特徴"><a href="#特徴" class="headerlink" title="特徴"></a>特徴</h1><ul>
+<li>phpやCGIを用いた動的コンテンツの表示が出来る</li>
+<li>リバースプロキシとしても使用できる</li>
+<li>使われ始めてからの歴史が長い</li>
+</ul>
+<h1 id="初期ページを表示するまでの手順"><a href="#初期ページを表示するまでの手順" class="headerlink" title="初期ページを表示するまでの手順"></a>初期ページを表示するまでの手順</h1><h2 id="ポート解放とApacheのインストール、起動"><a href="#ポート解放とApacheのインストール、起動" class="headerlink" title="ポート解放とApacheのインストール、起動"></a>ポート解放とApacheのインストール、起動</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line"></span><br><span class="line">ufw(ファイアウォール)をインストール</span><br><span class="line">$ apt install ufw</span><br><span class="line"></span><br><span class="line">インストール直後はufwはファイアウォールとして指定されないためufwを有効化</span><br><span class="line">$ ufw enable</span><br><span class="line"></span><br><span class="line">「このコマンドを実行するとssh接続が切れるかも知れませんがいいですか？」と聞かれるので y を入力してEnter</span><br><span class="line"></span><br><span class="line">sshのポートを開く</span><br><span class="line">これを行わないとssh切断したあと接続出来なくなってしまいます！</span><br><span class="line">$ ufw allow 22</span><br><span class="line"></span><br><span class="line">Apacheが使用するポートを開く</span><br><span class="line">$ ufw allow 80</span><br><span class="line"></span><br><span class="line">Apacheをインストールする</span><br><span class="line">$ apt install apache2</span><br><span class="line"></span><br><span class="line">Apacheが稼働している事を確認する</span><br><span class="line">$ curl localhost &amp;&amp; echo success || echo failed</span><br><span class="line"></span><br><span class="line">successと表示されればApacheは起動出来ています。</span><br><span class="line">表示された長いhtmlはデフォルトページのhtmlソースです。</span><br><span class="line"></span><br><span class="line">自分のIPアドレスを確認する</span><br><span class="line">$ ifconfig | grep &quot;inet addr:&quot;</span><br><span class="line"></span><br><span class="line">192.168.1.xや127.0.0.1といったIPアドレスが表示されると思います</span><br><span class="line">これらはローカルIPや、グローバルIPと呼ばれます。</span><br><span class="line">127.0.0.1は、ループバックアドレスと呼ばれ、自分自身を表すIPアドレスとなります。</span><br></pre></td></tr></table></figure>
+
+<h2 id="実際にページを表示してみる"><a href="#実際にページを表示してみる" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、先ほど確認したローカルIP、又はグローバルIPをアドレスバーに入力します。</p>
+<p>このような画面が表示されると思います。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/3ffbc0f8-a777-8a56-1fdb-6d4a7d984857.png" alt="スクリーンショット 2018-07-02 2.04.52.png"><br>Apacheではこれが初期ページとして設定されています。</p>
+<h1 id="ページを追加、変更する"><a href="#ページを追加、変更する" class="headerlink" title="ページを追加、変更する"></a>ページを追加、変更する</h1><h2 id="ページを追加する"><a href="#ページを追加する" class="headerlink" title="ページを追加する"></a>ページを追加する</h2><p>Apacheがブラウザに送ってくれているhtmlは /var/www/html/ となっている様です。<br>ここを ドキュメントルート と呼びます。<br>ここにファイルを配置する事でApache経由で参照する事ができるようになります。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ドキュメントルートに移動する</span><br><span class="line">$ cd /var/www/html/</span><br><span class="line">新しいページのファイルを作成する、アクセスする際のページ名は「test.html」とします</span><br><span class="line">$ echo &quot;Hello World!&quot; &gt; ./test.html</span><br></pre></td></tr></table></figure>
+
+<h2 id="実際にページを表示してみる-1"><a href="#実際にページを表示してみる-1" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>他のPCからページを<br>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、下記のようにアドレスバーに入力します。</p>
+<pre><code class="IPアドレス/test.html"></code></pre>
+<p>この様な画面が表示されます。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/a7714f81-4a06-a4f4-4d12-09b361f9d3d1.png" alt="スクリーンショット 2018-07-02 0.07.53.png"><br>以上となります、Nginxが気になる方はこちら</p>
+<blockquote>
+<p><a href="https://qiita.com/noma3629/items/807f25f9eb13525eebef" target="_blank" rel="noopener">https://qiita.com/noma3629/items/807f25f9eb13525eebef</a></p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/22/ubuntu-nginx-webserver-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/01/22/ubuntu-nginx-webserver-md/" class="post-title-link" itemprop="url">UbuntuとNginxでウェブサーバを構築</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-01-22 23:16:15" itemprop="dateCreated datePublished" datetime="2020-01-22T23:16:15+09:00">2020-01-22</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu16.04(KAGOYA VPS KVM)</li>
+</ul>
+<h1 id="Nginxって何"><a href="#Nginxって何" class="headerlink" title="Nginxって何"></a>Nginxって何</h1><ul>
+<li>Apacheの代替となり得るWebサーバ</li>
+</ul>
+<h1 id="Apacheとの違い"><a href="#Apacheとの違い" class="headerlink" title="Apacheとの違い"></a>Apacheとの違い</h1><ul>
+<li>C10Kをクリアしていて静的コンテンツを返すレスポンスが早い<ul>
+<li>C10Kとは・・・クライアント一万人接続問題の事</li>
+</ul>
+</li>
+<li>イベント駆動<ul>
+<li>イベント駆動のおかげでスレッドを有効に使う事ができるため早い</li>
+<li>一応Apacheでもイベント駆動には出来るがNginxの方が早い</li>
+</ul>
+</li>
+</ul>
+<h1 id="じゃあApacheは良くないの？"><a href="#じゃあApacheは良くないの？" class="headerlink" title="じゃあApacheは良くないの？"></a>じゃあApacheは良くないの？</h1><p>Apacheの武器はそこではなく、Nginxよりも古くからユーザーに使われているため、</p>
+<p>様々なモジュールがあり、色々な用途に使う事ができます。</p>
+<blockquote>
+<p>Nginxとは？Apacheとの違いについてエンジニアに聞いてみた<br><a href="https://academy.gmocloud.com/qa/20160616/2761" target="_blank" rel="noopener">https://academy.gmocloud.com/qa/20160616/2761</a></p>
+</blockquote>
+<p>phpやCGIを使用した動的な処理をしたい場合にはApache<br>速度やアクセス数を求めたい場合にはNginx<br>といった使い方がよさそうです。<br>どっちも使って、お互いのデメリットを埋める事も出来るそうです</p>
+<h1 id="初期ページを表示するまでの手順"><a href="#初期ページを表示するまでの手順" class="headerlink" title="初期ページを表示するまでの手順"></a>初期ページを表示するまでの手順</h1><h2 id="ポート解放とNginxのインストール、起動"><a href="#ポート解放とNginxのインストール、起動" class="headerlink" title="ポート解放とNginxのインストール、起動"></a>ポート解放とNginxのインストール、起動</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line"></span><br><span class="line">ufw(ファイアウォール)をインストール</span><br><span class="line">$ apt install ufw</span><br><span class="line">インストール直後はufwはファイアウォールとして指定されないためufwを有効化</span><br><span class="line">$ ufw enable</span><br><span class="line">「このコマンドを実行するとssh接続が切れるかも知れませんがいいですか？」と聞かれるので y を入力してEnter</span><br><span class="line"></span><br><span class="line">sshのポートを開く</span><br><span class="line">これを行わないとssh切断したあと接続出来なくなってしまいます！</span><br><span class="line">$ ufw allow 22</span><br><span class="line"></span><br><span class="line">Nginxが使用するポートを開く</span><br><span class="line">$ ufw allow 80</span><br><span class="line"></span><br><span class="line">Nginxをインストールする</span><br><span class="line">$ apt install nginx</span><br><span class="line"></span><br><span class="line">Nginxが稼働している事を確認する</span><br><span class="line">$ curl localhost</span><br><span class="line">curlでウェブページにアクセスすると、そのページのhtmlの内容が帰って来ます</span><br><span class="line"></span><br><span class="line">自分のIPアドレスを確認する</span><br><span class="line">$ ifconfig | grep &quot;inet addr:&quot;</span><br><span class="line">192.168.1.xや127.0.0.1といったIPアドレスが表示されると思います</span><br><span class="line">これらはローカルIPや、グローバルIPと呼ばれます。</span><br><span class="line">127.0.0.1は、ループバックアドレスと呼ばれ、自分自身を表すIPアドレスとなります。</span><br></pre></td></tr></table></figure>
+
+<h2 id="実際にページを表示してみる"><a href="#実際にページを表示してみる" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、先ほど確認したローカルIP、又はグローバルIPをアドレスバーに入力します。</p>
+<p>このような画面が表示されると思います。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/0dc1527c-4bac-7fc5-df5a-1f8bdfebda1a.png" alt="スクリーンショット 2018-07-01 23.47.42.png"></p>
+<p>Nginxではこれが初期ページとして設定されています。</p>
+<h1 id="ページを追加、変更する"><a href="#ページを追加、変更する" class="headerlink" title="ページを追加、変更する"></a>ページを追加、変更する</h1><h2 id="ドキュメントルートを確認する"><a href="#ドキュメントルートを確認する" class="headerlink" title="ドキュメントルートを確認する"></a>ドキュメントルートを確認する</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ grep &quot;root&quot; -r /etc/nginx/ | grep &quot;html&quot;</span><br><span class="line">/etc/nginx/sites-available/default:     root /var/www/html;</span><br></pre></td></tr></table></figure>
+
+<p>私の場合はこう表示されました。<br>Nginxのバージョンなどによってパスが違う様なので、このように調べるのが確実です。<br>どうやらページとなるhtmlファイルが保存されているのは　/var/www/html　ディレクトリの様です。<br>ここを ドキュメントルート と呼びます。</p>
+<h2 id="ページを追加する"><a href="#ページを追加する" class="headerlink" title="ページを追加する"></a>ページを追加する</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ドキュメントルートに移動する</span><br><span class="line">$ cd /var/www/html/</span><br><span class="line">新しいページのファイルを作成する、アクセスする際のページ名は「test.html」とします</span><br><span class="line">$ echo &quot;Hello World!&quot; &gt; ./test.html</span><br></pre></td></tr></table></figure>
+
+<h2 id="実際にページを表示してみる-1"><a href="#実際にページを表示してみる-1" class="headerlink" title="実際にページを表示してみる"></a>実際にページを表示してみる</h2><p>他のPCからページを<br>同じネットワーク内の他のPCからウェブサーバを利用してみます。<br>ブラウザを起動し、下記のようにアドレスバーに入力します。</p>
+<pre><code class="IPアドレス/test.html"></code></pre>
+<p>この様な画面が表示されます。<br><img src="https://qiita-image-store.s3.amazonaws.com/0/266455/a7714f81-4a06-a4f4-4d12-09b361f9d3d1.png" alt="スクリーンショット 2018-07-02 0.07.53.png"><br>以上となります。</p>
+<p>Apacheが気になる方はこちら</p>
+<blockquote>
+<p><a href="https://qiita.com/noma3629/items/03742bad0f57a4f46b07" target="_blank" rel="noopener">UbuntuとApacheでウェブサーバを立てる - Qiita</a></p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/01/12/xsel-commandline-clipboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/01/12/xsel-commandline-clipboard/" class="post-title-link" itemprop="url">コマンドラインの出力をクリップボードにコピー</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-01-12 04:03:19" itemprop="dateCreated datePublished" datetime="2020-01-12T04:03:19+09:00">2020-01-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>ターミナルに出てきた文字列をコピーしたい、<br>ただしマウス触るのがめんどくさい。。。<br>そんな時に</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu18.04</li>
+</ul>
+<h1 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt update</span><br><span class="line">$ apt install xsel -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h1><h2 id="1-出力をクリップボードにコピー"><a href="#1-出力をクリップボードにコピー" class="headerlink" title="1. 出力をクリップボードにコピー"></a>1. 出力をクリップボードにコピー</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"Hellow"</span> | xsel --clipboard --input</span><br></pre></td></tr></table></figure>
+
+<p>この後右クリックやCtrl+Vで貼り付けできる様になっています。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/12/27/github-command-operation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/12/27/github-command-operation/" class="post-title-link" itemprop="url">GitHubをコマンド操作</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-12-27 20:08:43" itemprop="dateCreated datePublished" datetime="2019-12-27T20:08:43+09:00">2019-12-27</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>GitHubにリポジトリを作りたい、<br>けどそのためだけにマウスを動かすのがめんどくさい、、、<br>そんな時に行う操作です。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Ubuntu18.04</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="hubコマンドのインストール"><a href="#hubコマンドのインストール" class="headerlink" title="hubコマンドのインストール"></a>hubコマンドのインストール</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:cpick/hub</span><br><span class="line">$ sudo apt update</span><br><span class="line">$ sudo apt install hub</span><br></pre></td></tr></table></figure>
+
+<h2 id="sshの設定"><a href="#sshの設定" class="headerlink" title="sshの設定"></a>sshの設定</h2><p>hubコマンドはsshの接続名(github.com)を使用するため、<br>~/.ssh/configにgithub.comの設定を記述しておく必要があります。</p>
+<p>そのため、以下の様な内容にしておきます。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname github.com</span><br><span class="line">  IdentityFile &lt;githubに登録済の鍵のパス&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="GitHubにリポジトリを作成する"><a href="#GitHubにリポジトリを作成する" class="headerlink" title="GitHubにリポジトリを作成する"></a>GitHubにリポジトリを作成する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir <span class="built_in">test</span>-repository</span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span>-repository</span><br><span class="line">$ hub init</span><br><span class="line">以下のコマンドでgithubにリポジトリが作成されます、プライベートで作成する場合は-pオプションを付けます。</span><br><span class="line">$ hub create</span><br><span class="line">Updating origin</span><br><span class="line">created repository: sakkuntyo/<span class="built_in">test</span>-repository</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/11/16/linux-mac-windows-nodejs-install-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/11/16/linux-mac-windows-nodejs-install-js/" class="post-title-link" itemprop="url">nodejsをインストール【Windows・Mac・Linux】</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-11-16 00:33:17" itemprop="dateCreated datePublished" datetime="2019-11-16T00:33:17+09:00">2019-11-16</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="3OSで同じ手順でできます"><a href="#3OSで同じ手順でできます" class="headerlink" title="3OSで同じ手順でできます"></a>3OSで同じ手順でできます</h2><p>WindowsはWSLを入れ、WSLからコマンド操作を行います。</p>
+<h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><h3 id="nvmをインストール"><a href="#nvmをインストール" class="headerlink" title="nvmをインストール"></a>nvmをインストール</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/creationix/nvm ~/.nvm</span><br></pre></td></tr></table></figure>
+
+<h3 id="パスを通す"><a href="#パスを通す" class="headerlink" title="パスを通す"></a>パスを通す</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.nvm/nvm.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="次回ターミナル起動時に自動でパスを通す"><a href="#次回ターミナル起動時に自動でパスを通す" class="headerlink" title="次回ターミナル起動時に自動でパスを通す"></a>次回ターミナル起動時に自動でパスを通す</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"source ~/.nvm/nvm.sh"</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h3 id="nodejsとnpmをインストール"><a href="#nodejsとnpmをインストール" class="headerlink" title="nodejsとnpmをインストール"></a>nodejsとnpmをインストール</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install --lts</span><br><span class="line"><span class="comment"># バージョンを指定するのであれば --lts の代わりにバージョンを入力</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="nodejsのバージョンを確認"><a href="#nodejsのバージョンを確認" class="headerlink" title="nodejsのバージョンを確認"></a>nodejsのバージョンを確認</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="npmのバージョンを確認"><a href="#npmのバージョンを確認" class="headerlink" title="npmのバージョンを確認"></a>npmのバージョンを確認</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/11/15/linux-debian-time-adjustment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/11/15/linux-debian-time-adjustment/" class="post-title-link" itemprop="url">Linuxの時間調整【Debian系OS】</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-11-15 01:02:43" itemprop="dateCreated datePublished" datetime="2019-11-15T01:02:43+09:00">2019-11-15</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Windowsを入れている端末にLinuxをインストールすると、<br>RTCの時刻がLinuxに変更され、<br>Windowsで表示される時間がズレることがあります。<br>そんな時にいつも行う操作のメモ</p>
+<h2 id="RTCとは"><a href="#RTCとは" class="headerlink" title="RTCとは"></a>RTCとは</h2><p>マザーボードが記憶した時刻です。<br>OSを起動した際にマザーボードから時刻が取得できる場合には、<br>まず最初にRTCの時刻を取得し、使用されます。</p>
+<blockquote>
+<p><em>ポイント</em><br>インターネットに繋がる場合は、NTPを利用した時刻同期が行われます。<br>インターネットにも繋がらず、RTCからの時刻取得もできない場合には、<br>以前シャットダウンした時刻を使用する事があります。(Ubuntu14,16,18で体験)</p>
+</blockquote>
+<h2 id="何故Windowsの時刻もズレてしまうのか"><a href="#何故Windowsの時刻もズレてしまうのか" class="headerlink" title="何故Windowsの時刻もズレてしまうのか"></a>何故Windowsの時刻もズレてしまうのか</h2><p>timedatectlコマンドを実行するとわかりますが、<br>Debianは少なくとも3つの時刻にアクセスし、それぞれの時刻を変更する事ができます。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl</span><br><span class="line">                      Local time: 金 2019-11-15 01:28:34 JST</span><br><span class="line">                  Universal time: 木 2019-11-14 16:28:34 UTC</span><br><span class="line">                        RTC time: 木 2019-11-14 16:28:34</span><br><span class="line">                       Time zone: Asia/Tokyo (JST, +0900)</span><br><span class="line">       System clock synchronized: yes</span><br><span class="line">systemd-timesyncd.service active: yes</span><br><span class="line">                 RTC <span class="keyword">in</span> <span class="built_in">local</span> TZ: no</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Local Time(指定したタイムゾーンの時間)</li>
+<li>Universal Time(世界標準の時間、UTC)</li>
+<li>RTC Time(マザーボードの時間)</li>
+</ul>
+<p>Linux(例えばUbuntu)を起動した際に、<br>RTCの時刻がUTC時刻等に合わされて調整されてしまうためです。</p>
+<p>この記事を書いているのは日本時間(JST)でいうとAM 1:00ですが、<br>UTCでは9時間前の前日のPM 4:00となっています。</p>
+<p>Linuxがデフォルトで持つ時間がUTCであり、<br>それを定期的にRTCに同期を行っているため、<br>次にWindowsを起動した場合に、「時刻がズレている」という状態になります。</p>
+<h2 id="じゃあどうするのか"><a href="#じゃあどうするのか" class="headerlink" title="じゃあどうするのか"></a>じゃあどうするのか</h2><p>Linuxから２つの操作を行います。</p>
+<ul>
+<li>タイムゾーンを指定し、Local Timeを日本時間に変更</li>
+<li>Local TimeをRTCに同期する様に変更</li>
+</ul>
+<h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><p>次の操作はLinux上で行います。</p>
+<h3 id="現在の時刻と設定を確認する"><a href="#現在の時刻と設定を確認する" class="headerlink" title="現在の時刻と設定を確認する"></a>現在の時刻と設定を確認する</h3><p>timedatectlコマンドを実行し、時刻を確認します。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl</span><br><span class="line">                      Local time: 金 2019-11-15 16:28:34 UTC</span><br><span class="line">                  Universal time: 木 2019-11-14 16:28:34 UTC</span><br><span class="line">                        RTC time: 木 2019-11-14 16:28:34</span><br><span class="line">                       Time zone: UTC (UTC, +0000)</span><br><span class="line">       System clock synchronized: yes</span><br><span class="line">systemd-timesyncd.service active: yes</span><br><span class="line">                 RTC <span class="keyword">in</span> <span class="built_in">local</span> TZ: no</span><br></pre></td></tr></table></figure>
+
+<p>ここで確認したいのは</p>
+<ul>
+<li>タイムゾーン</li>
+<li>RTCへLocal Timeを同期するか</li>
+</ul>
+<p>です。</p>
+<p>タイムゾーンはUTC、RTCへLocal Timeを同期しない設定となっています。</p>
+<p>そのため、次にWindowsを起動した際にはRTCの時刻がズレた状態となります。</p>
+<h3 id="タイムゾーンをJSTにする"><a href="#タイムゾーンをJSTにする" class="headerlink" title="タイムゾーンをJSTにする"></a>タイムゾーンをJSTにする</h3><p>JSTとは日本時間の事です。</p>
+<p>次のコマンドでタイムゾーンを日本時間に変更します。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl <span class="built_in">set</span>-timezone Asia/Tokyo</span><br></pre></td></tr></table></figure>
+
+<p>念の為、設定が変わった事を確認します。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl</span><br><span class="line">                      Local time: 金 2019-11-15 01:35:59 JST</span><br><span class="line">                  Universal time: 木 2019-11-14 16:35:59 UTC</span><br><span class="line">                        RTC time: 木 2019-11-14 16:35:59</span><br><span class="line">                       Time zone: Asia/Tokyo (JST, +0900)</span><br><span class="line">       System clock synchronized: yes</span><br><span class="line">systemd-timesyncd.service active: yes</span><br><span class="line">                 RTC <span class="keyword">in</span> <span class="built_in">local</span> TZ: no</span><br></pre></td></tr></table></figure>
+
+<h3 id="RTCに同期する時刻をLocal-Timeにする"><a href="#RTCに同期する時刻をLocal-Timeにする" class="headerlink" title="RTCに同期する時刻をLocal Timeにする"></a>RTCに同期する時刻をLocal Timeにする</h3><p>次のコマンドでRTCにLocal timeを同期させる設定を行います。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl <span class="built_in">set</span>-local-rtc <span class="literal">true</span></span><br><span class="line">                      Local time: 金 2019-11-15 01:38:59 JST</span><br><span class="line">                  Universal time: 木 2019-11-14 16:38:59 UTC</span><br><span class="line">                        RTC time: 金 2019-11-15 01:38:59</span><br><span class="line">                       Time zone: Asia/Tokyo (JST, +0900)</span><br><span class="line">       System clock synchronized: yes</span><br><span class="line">systemd-timesyncd.service active: yes</span><br><span class="line">                 RTC <span class="keyword">in</span> <span class="built_in">local</span> TZ: yes</span><br><span class="line"></span><br><span class="line">Warning: The system is configured to <span class="built_in">read</span> the RTC time <span class="keyword">in</span> the <span class="built_in">local</span> time zone.</span><br><span class="line">         This mode can not be fully supported. It will create various problems</span><br><span class="line">         with time zone changes and daylight saving time adjustments. The RTC</span><br><span class="line">         time is never updated, it relies on external facilities to maintain it.</span><br><span class="line">         If at all possible, use RTC <span class="keyword">in</span> UTC by calling</span><br><span class="line">         <span class="string">'timedatectl set-local-rtc 0'</span>.</span><br></pre></td></tr></table></figure>
+
+<p>何やら注意が出ていますが、Google翻訳をかけた所は以下の様なメッセージでした。</p>
+<blockquote>
+<p>警告：システムは、ローカルタイムゾーンでRTC時間を読み取るように構成されています。<br>      このモードは完全にはサポートできません。さまざまな問題が発生します<br>      タイムゾーンの変更と夏時間の調整。<br>      RTC時間が更新されることはなく、外部の設備に依存して維持されます。<br>      可能な場合は、UTCでRTCを使用して呼び出します<br>      ‘timedatectl set-local-rtc 0’</p>
+</blockquote>
+<p>ここでWindowsの時刻がズレない設定は完了です。</p>
+<p>Ubuntu14,16,18とこの設定を使用していますが、今の所問題は見当たりません。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/11/03/laravel-build-develop-environment-debian/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/11/03/laravel-build-develop-environment-debian/" class="post-title-link" itemprop="url">Laravel開発環境構築【Debian系OS】</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-11-03 15:26:43" itemprop="dateCreated datePublished" datetime="2019-11-03T15:26:43+09:00">2019-11-03</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前提環境"><a href="#前提環境" class="headerlink" title="前提環境"></a>前提環境</h2><ul>
+<li>Linux Mint19 Mate</li>
+</ul>
+<h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><h3 id="phpをインストール"><a href="#phpをインストール" class="headerlink" title="phpをインストール"></a>phpをインストール</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br><span class="line">$ sudo apt install -y php7.2 php7.2-mbstring php7.2-xml php7.2-gd php7.2-zip</span><br><span class="line">$ sudo apt install -y sqlite3 php7.2-sqlite3 php7.2-mysql</span><br><span class="line">$ php --version</span><br><span class="line">$ php -m</span><br></pre></td></tr></table></figure>
+
+<h3 id="composerをインストール"><a href="#composerをインストール" class="headerlink" title="composerをインストール"></a>composerをインストール</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ curl -sS https://getcomposer.org/installer | php</span><br><span class="line">$ sudo mv composer.phar /usr/<span class="built_in">local</span>/bin/composer</span><br><span class="line">$ sudo chmod +x /usr/<span class="built_in">local</span>/bin/composer</span><br><span class="line">$ composer --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="Laravelをインストール"><a href="#Laravelをインストール" class="headerlink" title="Laravelをインストール"></a>Laravelをインストール</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ composer global require laravel/installer</span><br></pre></td></tr></table></figure>
+
+<h3 id="パスを通す"><a href="#パスを通す" class="headerlink" title="パスを通す"></a>パスを通す</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span> PATH=<span class="string">"~/.config/composer/vendor/bin:<span class="variable">$PATH</span>"</span> &gt;&gt; ~/.bash_profile</span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="実際に起動しブラウザで確認"><a href="#実際に起動しブラウザで確認" class="headerlink" title="実際に起動しブラウザで確認"></a>実際に起動しブラウザで確認</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ laravel new <span class="built_in">test</span></span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ php artisan --version</span><br><span class="line">$ php artisan serve --host 0.0.0.0</span><br><span class="line">Laravel development server started: http://0.0.0.0:8000</span><br></pre></td></tr></table></figure>
+
+<p>ブラウザで接続してみると以下の様な画面が表示される</p>
+<p><img src="/images/laravel-dev-create.png" alt="laravel"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/26/vagrant-up-mint19-desktop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/26/vagrant-up-mint19-desktop/" class="post-title-link" itemprop="url">VagrantでMint19デスクトップ環境を作成</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-10-26 14:21:32" itemprop="dateCreated datePublished" datetime="2019-10-26T14:21:32+09:00">2019-10-26</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="virtualboxをインストール"><a href="#virtualboxをインストール" class="headerlink" title="virtualboxをインストール"></a>virtualboxをインストール</h2><p><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">ここ</a>からダウンロードできる</p>
+<h2 id="vagrantをインストール"><a href="#vagrantをインストール" class="headerlink" title="vagrantをインストール"></a>vagrantをインストール</h2><p><a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">ここ</a>からダウンロードできる</p>
+<p>コマンドが使用できる様になっている事を確認する</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Hyper-Vを無効化する（Windowsの場合）"><a href="#Hyper-Vを無効化する（Windowsの場合）" class="headerlink" title="Hyper-Vを無効化する（Windowsの場合）"></a>Hyper-Vを無効化する（Windowsの場合）</h2><p>PowerShellを管理者権限で起動し、以下コマンドを実行する</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mint19Mateデスクトップ環境を立ち上げる"><a href="#Mint19Mateデスクトップ環境を立ち上げる" class="headerlink" title="Mint19Mateデスクトップ環境を立ち上げる"></a>Mint19Mateデスクトップ環境を立ち上げる</h2><h3 id="boxを追加する"><a href="#boxを追加する" class="headerlink" title="boxを追加する"></a>boxを追加する</h3><p>ターミナルにて以下のコマンドを実行します。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant box add antonilin/mint-19-mate</span><br></pre></td></tr></table></figure>
+
+<h3 id="プロジェクトディレクトリを作成して初期化する"><a href="#プロジェクトディレクトリを作成して初期化する" class="headerlink" title="プロジェクトディレクトリを作成して初期化する"></a>プロジェクトディレクトリを作成して初期化する</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir mint19mate</span><br><span class="line">$ <span class="built_in">cd</span> mint19mate</span><br><span class="line">$ vagrant init antonilin/mint-19-mate</span><br></pre></td></tr></table></figure>
+
+<h3 id="Mint19を起動"><a href="#Mint19を起動" class="headerlink" title="Mint19を起動"></a>Mint19を起動</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant up</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>メモ</strong><br>Windows環境では、ここでUSB2.0のサポートを無効にしろと言われたので無効にする必要がありました。</p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/20/initrd-unpack-edit-compress/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/20/initrd-unpack-edit-compress/" class="post-title-link" itemprop="url">initrdを展開・編集・作成</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-10-20 15:25:37" itemprop="dateCreated datePublished" datetime="2019-10-20T15:25:37+09:00">2019-10-20</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>UbuntuOSベースのシンクライアントを作成していた時、<br>起動時のスプラッシュロゴ表示や、ファイルシステムの復号化処理を行うため、<br>initrd内部の書き換えを行っていました</p>
+<p>なかなかプライベートで触る事は少ないため、書き残しておきます。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Linux Mint 19</li>
+</ul>
+<h1 id="initrdとは"><a href="#initrdとは" class="headerlink" title="initrdとは"></a>initrdとは</h1><p>Linuxを起動する際に、各ディストリビューションとして動作するために必要なサービスやドライバが含まれたファイル群を固めた物</p>
+<p>Linuxが起動する時には、基本的に以下の順序で読み込まれていく</p>
+<ul>
+<li>1.UEFI</li>
+<li>2.ブートローダ</li>
+<li>3.カーネル</li>
+<li>4.init</li>
+</ul>
+<p>カーネルを読み込み基本的なコマンドを使用できる状態にしてから、initrdをマウント、initrd内部の/initを実行する</p>
+<p>Linux起動時に黒画面に出現するログは、大半がinitを実行している時に出ている</p>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="initrdを作業ディレクトリにコピーする"><a href="#initrdを作業ディレクトリにコピーする" class="headerlink" title="initrdを作業ディレクトリにコピーする"></a>initrdを作業ディレクトリにコピーする</h2><p>/bootフォルダ以下に似たような名前のファイルがあるため、それをコピーしてください</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir work <span class="comment"># 作業フォルダ作成</span></span><br><span class="line">$ <span class="built_in">cd</span> work</span><br><span class="line">$ cp /boot/initrd.img-4.15.0-54-generic ./initrd</span><br></pre></td></tr></table></figure>
+
+<h2 id="zcatで復号しつつ、ファイルとして出力"><a href="#zcatで復号しつつ、ファイルとして出力" class="headerlink" title="zcatで復号しつつ、ファイルとして出力"></a>zcatで復号しつつ、ファイルとして出力</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir initrdfiles</span><br><span class="line">$ <span class="built_in">cd</span> initrdfiles</span><br><span class="line">$ zcat ../initrd | cpio -idmv</span><br></pre></td></tr></table></figure>
+
+<h2 id="ファイルを確認"><a href="#ファイルを確認" class="headerlink" title="ファイルを確認"></a>ファイルを確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">bin  conf  etc  init  lib  lib64  run  sbin  scripts  usr  var</span><br></pre></td></tr></table></figure>
+
+<h2 id="initを見てみる"><a href="#initを見てみる" class="headerlink" title="initを見てみる"></a>initを見てみる</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi init</span><br></pre></td></tr></table></figure>
+
+<p>init を見てみると shによって実行できる形で書かれている事がわかります。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Default PATH differs between shells, and is not automatically exported</span></span><br><span class="line"><span class="comment"># by klibc dash.  Make it consistent.</span></span><br><span class="line"><span class="built_in">export</span> PATH=/sbin:/usr/sbin:/bin:/usr/bin</span><br><span class="line"></span><br><span class="line">[ -d /dev ] || mkdir -m 0755 /dev</span><br><span class="line">[ -d /root ] || mkdir -m 0700 /root</span><br><span class="line">[ -d /sys ] || mkdir /sys</span><br><span class="line">[ -d /proc ] || mkdir /proc</span><br><span class="line">[ -d /tmp ] || mkdir /tmp</span><br><span class="line">mkdir -p /var/lock</span><br><span class="line">mount -t sysfs -o nodev,noexec,nosuid sysfs /sys</span><br><span class="line">mount -t proc -o nodev,noexec,nosuid proc /proc</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">" <span class="variable">$(cat /proc/cmdline)</span> "</span> <span class="keyword">in</span></span><br><span class="line">*\ quiet\ *)</span><br><span class="line">	quiet=y</span><br><span class="line">	;;</span><br><span class="line">*)</span><br><span class="line">	quiet=n</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Loading, please wait..."</span></span><br><span class="line">	;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">export</span> quiet</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note that this only becomes /dev on the real filesystem if udev's scripts</span></span><br><span class="line"><span class="comment"># are used; which they will be, but it's worth pointing out</span></span><br><span class="line">mount -t devtmpfs -o nosuid,mode=0755 udev /dev</span><br><span class="line">mkdir /dev/pts</span><br><span class="line">mount -t devpts -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || <span class="literal">true</span></span><br><span class="line">mount -t tmpfs -o <span class="string">"noexec,nosuid,size=10%,mode=0755"</span> tmpfs /run</span><br><span class="line">mkdir -m 0755 /run/initramfs</span><br><span class="line"></span><br><span class="line"><span class="comment"># Export the dpkg architecture</span></span><br><span class="line"><span class="built_in">export</span> DPKG_ARCH=</span><br><span class="line">. /conf/arch.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set modprobe env</span></span><br><span class="line"><span class="built_in">export</span> MODPROBE_OPTIONS=<span class="string">"-qb"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Export relevant variables</span></span><br><span class="line"><span class="built_in">export</span> ROOT=</span><br><span class="line"><span class="built_in">export</span> ROOTDELAY=</span><br><span class="line"><span class="built_in">export</span> ROOTFLAGS=</span><br><span class="line"><span class="built_in">export</span> ROOTFSTYPE=</span><br><span class="line"><span class="built_in">export</span> IP=</span><br><span class="line"><span class="built_in">export</span> IP6=</span><br><span class="line"><span class="built_in">export</span> BOOT=</span><br><span class="line"><span class="built_in">export</span> BOOTIF=</span><br><span class="line"><span class="built_in">export</span> UBIMTD=</span><br><span class="line"><span class="built_in">export</span> <span class="built_in">break</span>=</span><br><span class="line"><span class="built_in">export</span> init=/sbin/init</span><br><span class="line"><span class="built_in">export</span> <span class="built_in">readonly</span>=y</span><br><span class="line"><span class="built_in">export</span> rootmnt=/root</span><br><span class="line"><span class="built_in">export</span> debug=</span><br><span class="line"><span class="built_in">export</span> panic=</span><br><span class="line"><span class="built_in">export</span> blacklist=</span><br><span class="line"><span class="built_in">export</span> resume=</span><br><span class="line"><span class="built_in">export</span> resume_offset=</span><br><span class="line"><span class="built_in">export</span> drop_caps=</span><br><span class="line"><span class="built_in">export</span> fastboot=n</span><br><span class="line"><span class="built_in">export</span> forcefsck=n</span><br><span class="line"><span class="built_in">export</span> fsckfix=</span><br><span class="line"><span class="built_in">export</span> recovery=</span><br><span class="line"><span class="built_in">export</span> NETWORK_SKIP_ENSLAVED=</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># mdadm needs hostname to be set. This has to be done before the udev rules are called!</span></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="string">"/etc/hostname"</span> ]; <span class="keyword">then</span></span><br><span class="line">        /bin/hostname -F /etc/hostname &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bring in the main config</span></span><br><span class="line">. /conf/initramfs.conf</span><br><span class="line"><span class="keyword">for</span> conf <span class="keyword">in</span> conf/conf.d/*; <span class="keyword">do</span></span><br><span class="line">	[ -f <span class="variable">$&#123;conf&#125;</span> ] &amp;&amp; . <span class="variable">$&#123;conf&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">. /scripts/<span class="built_in">functions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Parse command line options</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> $(cat /proc/cmdline); <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">case</span> <span class="variable">$x</span> <span class="keyword">in</span></span><br><span class="line">	init=*)</span><br><span class="line">		init=<span class="variable">$&#123;x#init=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	root=*)</span><br><span class="line">		ROOT=<span class="variable">$&#123;x#root=&#125;</span></span><br><span class="line">		<span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$&#123;BOOT&#125;</span>"</span> ] &amp;&amp; [ <span class="string">"<span class="variable">$ROOT</span>"</span> = <span class="string">"/dev/nfs"</span> ]; <span class="keyword">then</span></span><br><span class="line">			BOOT=nfs</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">                ;;</span><br><span class="line">	rootflags=*)</span><br><span class="line">		ROOTFLAGS=<span class="string">"-o <span class="variable">$&#123;x#rootflags=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	rootfstype=*)</span><br><span class="line">		ROOTFSTYPE=<span class="string">"<span class="variable">$&#123;x#rootfstype=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	rootdelay=*)</span><br><span class="line">		ROOTDELAY=<span class="string">"<span class="variable">$&#123;x#rootdelay=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">case</span> <span class="variable">$&#123;ROOTDELAY&#125;</span> <span class="keyword">in</span></span><br><span class="line">		*[![:digit:].]*)</span><br><span class="line">			ROOTDELAY=</span><br><span class="line">			;;</span><br><span class="line">		<span class="keyword">esac</span></span><br><span class="line">		;;</span><br><span class="line">	resumedelay=*)</span><br><span class="line">		RESUMEDELAY=<span class="string">"<span class="variable">$&#123;x#resumedelay=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	loop=*)</span><br><span class="line">		LOOP=<span class="string">"<span class="variable">$&#123;x#loop=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	loopflags=*)</span><br><span class="line">		LOOPFLAGS=<span class="string">"-o <span class="variable">$&#123;x#loopflags=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	loopfstype=*)</span><br><span class="line">		LOOPFSTYPE=<span class="string">"<span class="variable">$&#123;x#loopfstype=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	cryptopts=*)</span><br><span class="line">		cryptopts=<span class="string">"<span class="variable">$&#123;x#cryptopts=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	nfsroot=*)</span><br><span class="line">		NFSROOT=<span class="string">"<span class="variable">$&#123;x#nfsroot=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	netboot=*)</span><br><span class="line">		NETBOOT=<span class="string">"<span class="variable">$&#123;x#netboot=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	ip=*)</span><br><span class="line">		IP=<span class="string">"<span class="variable">$&#123;x#ip=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	ip6=*)</span><br><span class="line">		IP6=<span class="string">"<span class="variable">$&#123;x#ip6=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	boot=*)</span><br><span class="line">		BOOT=<span class="variable">$&#123;x#boot=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	ubi.mtd=*)</span><br><span class="line">		UBIMTD=<span class="variable">$&#123;x#ubi.mtd=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	resume=*)</span><br><span class="line">		RESUME=<span class="string">"<span class="variable">$&#123;x#resume=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">case</span> <span class="variable">$RESUME</span> <span class="keyword">in</span></span><br><span class="line">	        UUID=*)</span><br><span class="line">			RESUME=<span class="string">"/dev/disk/by-uuid/<span class="variable">$&#123;RESUME#UUID=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">esac</span></span><br><span class="line">		;;</span><br><span class="line">	resume_offset=*)</span><br><span class="line">		resume_offset=<span class="string">"<span class="variable">$&#123;x#resume_offset=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	noresume)</span><br><span class="line">		noresume=y</span><br><span class="line">		;;</span><br><span class="line">	drop_capabilities=*)</span><br><span class="line">		drop_caps=<span class="string">"-d <span class="variable">$&#123;x#drop_capabilities=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	panic=*)</span><br><span class="line">		panic=<span class="string">"<span class="variable">$&#123;x#panic=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">case</span> <span class="variable">$&#123;panic&#125;</span> <span class="keyword">in</span></span><br><span class="line">		*[![:digit:].]*)</span><br><span class="line">			panic=</span><br><span class="line">			;;</span><br><span class="line">		<span class="keyword">esac</span></span><br><span class="line">		;;</span><br><span class="line">	ro)</span><br><span class="line">		<span class="built_in">readonly</span>=y</span><br><span class="line">		;;</span><br><span class="line">	rw)</span><br><span class="line">		<span class="built_in">readonly</span>=n</span><br><span class="line">		;;</span><br><span class="line">	debug)</span><br><span class="line">		debug=y</span><br><span class="line">		quiet=n</span><br><span class="line">		<span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$&#123;netconsole&#125;</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">			<span class="built_in">exec</span> &gt;/dev/kmsg 2&gt;&amp;1</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">exec</span> &gt;/run/initramfs/initramfs.debug 2&gt;&amp;1</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">		<span class="built_in">set</span> -x</span><br><span class="line">		;;</span><br><span class="line">	debug=*)</span><br><span class="line">		debug=y</span><br><span class="line">		quiet=n</span><br><span class="line">		<span class="built_in">set</span> -x</span><br><span class="line">		;;</span><br><span class="line">	<span class="built_in">break</span>=*)</span><br><span class="line">		<span class="built_in">break</span>=<span class="variable">$&#123;x#break=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	<span class="built_in">break</span>)</span><br><span class="line">		<span class="built_in">break</span>=premount</span><br><span class="line">		;;</span><br><span class="line">	blacklist=*)</span><br><span class="line">		blacklist=<span class="variable">$&#123;x#blacklist=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	netconsole=*)</span><br><span class="line">		netconsole=<span class="variable">$&#123;x#netconsole=&#125;</span></span><br><span class="line">		[ <span class="string">"x<span class="variable">$debug</span>"</span> = <span class="string">"xy"</span> ] &amp;&amp; <span class="built_in">exec</span> &gt;/dev/kmsg 2&gt;&amp;1</span><br><span class="line">		;;</span><br><span class="line">	BOOTIF=*)</span><br><span class="line">		BOOTIF=<span class="variable">$&#123;x#BOOTIF=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	hwaddr=*)</span><br><span class="line">		BOOTIF=<span class="variable">$&#123;x#hwaddr=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	fastboot|fsck.mode=skip)</span><br><span class="line">		fastboot=y</span><br><span class="line">		;;</span><br><span class="line">	forcefsck|fsck.mode=force)</span><br><span class="line">		forcefsck=y</span><br><span class="line">		;;</span><br><span class="line">	fsckfix|fsck.repair=yes)</span><br><span class="line">		fsckfix=y</span><br><span class="line">		;;</span><br><span class="line">	fsck.repair=no)</span><br><span class="line">		fsckfix=n</span><br><span class="line">		;;</span><br><span class="line">	recovery)</span><br><span class="line">		recovery=y</span><br><span class="line">		;;</span><br><span class="line">	<span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Default to BOOT=local if no boot script defined.</span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$&#123;BOOT&#125;</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	BOOT=<span class="built_in">local</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$&#123;noresume&#125;</span>"</span> ] || [ <span class="string">"<span class="variable">$RESUME</span>"</span> = none ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">export</span> noresume=y</span><br><span class="line">	<span class="built_in">unset</span> resume</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	resume=<span class="variable">$&#123;RESUME:-&#125;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">maybe_break top</span><br><span class="line"></span><br><span class="line"><span class="comment"># export BOOT variable value for compcache,</span></span><br><span class="line"><span class="comment"># so we know if we run from casper</span></span><br><span class="line"><span class="built_in">export</span> BOOT</span><br><span class="line"></span><br><span class="line"><span class="comment"># Don't do log messages here to avoid confusing graphical boots</span></span><br><span class="line">run_scripts /scripts/init-top</span><br><span class="line"></span><br><span class="line">maybe_break modules</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_begin_msg <span class="string">"Loading essential drivers"</span></span><br><span class="line">[ -n <span class="string">"<span class="variable">$&#123;netconsole&#125;</span>"</span> ] &amp;&amp; modprobe netconsole netconsole=<span class="string">"<span class="variable">$&#123;netconsole&#125;</span>"</span></span><br><span class="line">load_modules</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_end_msg</span><br><span class="line"></span><br><span class="line">maybe_break premount</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_begin_msg <span class="string">"Running /scripts/init-premount"</span></span><br><span class="line">run_scripts /scripts/init-premount</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_end_msg</span><br><span class="line"></span><br><span class="line">maybe_break mount</span><br><span class="line">log_begin_msg <span class="string">"Mounting root file system"</span></span><br><span class="line"><span class="comment"># Always load local and nfs (since these might be needed for /etc or</span></span><br><span class="line"><span class="comment"># /usr, irrespective of the boot script used to mount the rootfs).</span></span><br><span class="line">. /scripts/<span class="built_in">local</span></span><br><span class="line">. /scripts/nfs</span><br><span class="line">. /scripts/<span class="variable">$&#123;BOOT&#125;</span></span><br><span class="line">parse_numeric <span class="variable">$&#123;ROOT&#125;</span></span><br><span class="line">maybe_break mountroot</span><br><span class="line">mount_top</span><br><span class="line">mount_premount</span><br><span class="line">mountroot</span><br><span class="line">log_end_msg</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> read_fstab_entry /usr; <span class="keyword">then</span></span><br><span class="line">	log_begin_msg <span class="string">"Mounting /usr file system"</span></span><br><span class="line">	mountfs /usr</span><br><span class="line">	log_end_msg</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mount cleanup</span></span><br><span class="line">mount_bottom</span><br><span class="line">nfs_bottom</span><br><span class="line">local_bottom</span><br><span class="line"></span><br><span class="line">maybe_break bottom</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_begin_msg <span class="string">"Running /scripts/init-bottom"</span></span><br><span class="line"><span class="comment"># We expect udev's init-bottom script to move /dev to $&#123;rootmnt&#125;/dev</span></span><br><span class="line">run_scripts /scripts/init-bottom</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_end_msg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Move /run to the root</span></span><br><span class="line">mount -n -o move /run <span class="variable">$&#123;rootmnt&#125;</span>/run</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">validate_init</span></span>() &#123;</span><br><span class="line">	run-init -n <span class="string">"<span class="variable">$&#123;rootmnt&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;1&#125;</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check init is really there</span></span><br><span class="line"><span class="keyword">if</span> ! validate_init <span class="string">"<span class="variable">$init</span>"</span>; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Target filesystem doesn't have requested <span class="variable">$&#123;init&#125;</span>."</span></span><br><span class="line">	init=</span><br><span class="line">	<span class="keyword">for</span> inittest <span class="keyword">in</span> /sbin/init /etc/init /bin/init /bin/sh; <span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> validate_init <span class="string">"<span class="variable">$&#123;inittest&#125;</span>"</span>; <span class="keyword">then</span></span><br><span class="line">			init=<span class="string">"<span class="variable">$inittest</span>"</span></span><br><span class="line">			<span class="built_in">break</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># No init on rootmount</span></span><br><span class="line"><span class="keyword">if</span> ! validate_init <span class="string">"<span class="variable">$&#123;init&#125;</span>"</span> ; <span class="keyword">then</span></span><br><span class="line">	panic <span class="string">"No init found. Try passing init= bootarg."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">maybe_break init</span><br><span class="line"></span><br><span class="line"><span class="comment"># don't leak too much of env - some init(8) don't clear it</span></span><br><span class="line"><span class="comment"># (keep init, rootmnt, drop_caps)</span></span><br><span class="line"><span class="built_in">unset</span> debug</span><br><span class="line"><span class="built_in">unset</span> MODPROBE_OPTIONS</span><br><span class="line"><span class="built_in">unset</span> DPKG_ARCH</span><br><span class="line"><span class="built_in">unset</span> ROOTFLAGS</span><br><span class="line"><span class="built_in">unset</span> ROOTFSTYPE</span><br><span class="line"><span class="built_in">unset</span> ROOTDELAY</span><br><span class="line"><span class="built_in">unset</span> ROOT</span><br><span class="line"><span class="built_in">unset</span> IP</span><br><span class="line"><span class="built_in">unset</span> IP6</span><br><span class="line"><span class="built_in">unset</span> BOOT</span><br><span class="line"><span class="built_in">unset</span> BOOTIF</span><br><span class="line"><span class="built_in">unset</span> UBIMTD</span><br><span class="line"><span class="built_in">unset</span> blacklist</span><br><span class="line"><span class="built_in">unset</span> <span class="built_in">break</span></span><br><span class="line"><span class="built_in">unset</span> noresume</span><br><span class="line"><span class="built_in">unset</span> panic</span><br><span class="line"><span class="built_in">unset</span> quiet</span><br><span class="line"><span class="built_in">unset</span> <span class="built_in">readonly</span></span><br><span class="line"><span class="built_in">unset</span> resume</span><br><span class="line"><span class="built_in">unset</span> resume_offset</span><br><span class="line"><span class="built_in">unset</span> fastboot</span><br><span class="line"><span class="built_in">unset</span> forcefsck</span><br><span class="line"><span class="built_in">unset</span> fsckfix</span><br><span class="line"></span><br><span class="line"><span class="comment"># Move virtual filesystems over to the real filesystem</span></span><br><span class="line">mount -n -o move /sys <span class="variable">$&#123;rootmnt&#125;</span>/sys</span><br><span class="line">mount -n -o move /proc <span class="variable">$&#123;rootmnt&#125;</span>/proc</span><br><span class="line"></span><br><span class="line"><span class="comment"># Chain to real filesystem</span></span><br><span class="line"><span class="built_in">exec</span> run-init <span class="variable">$&#123;drop_caps&#125;</span> <span class="variable">$&#123;rootmnt&#125;</span> <span class="variable">$&#123;init&#125;</span> <span class="string">"<span class="variable">$@</span>"</span> <span class="variable">$&#123;recovery:+--startup-event=recovery&#125;</span> &lt;<span class="variable">$&#123;rootmnt&#125;</span>/dev/console &gt;<span class="variable">$&#123;rootmnt&#125;</span>/dev/console 2&gt;&amp;1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Something went badly wrong in the initramfs."</span></span><br><span class="line">panic <span class="string">"Please file a bug on initramfs-tools."</span></span><br></pre></td></tr></table></figure>
+
+<p>またこのinitを実行するタイミングではルート(/)をマウントしていないため、ルート(/)にある/binや/sbinを利用できません。</p>
+<p>代わりに、initrd内部の/binや/sbinを利用しています。</p>
+<p>そのため、ここにバイナリを配置しておく事で起動中に使用できる様になります。</p>
+<blockquote>
+<p><strong>注意</strong><br>バイナリの実行のために、別途moduleの追加が必要だったりもします。</p>
+</blockquote>
+<h2 id="initrdを作成する"><a href="#initrdを作成する" class="headerlink" title="initrdを作成する"></a>initrdを作成する</h2><p>展開後のファイルが配置されているフォルダで行います。<br>cpioによるアーカイブ化、gzipによる圧縮を同時に行い元の形式に戻します。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ find | cpio -o -H newc  | gzip -c &gt; ../initrd.img-4.15.0-54-generic</span><br></pre></td></tr></table></figure>
+
+<p>作成されたinitrdを元の/boot/initrdと入れ替えても起動する事が確認できるかと思います。</p>
+<p>initrdの編集は以上の操作で行います。</p>
+<h2 id="init実行中に処理を止める"><a href="#init実行中に処理を止める" class="headerlink" title="init実行中に処理を止める"></a>init実行中に処理を止める</h2><p>/boot/grub/grub.cfgのlinuxオプションが書かれている箇所にbreak=initとオプションを追加する事で処理が停止します。<br>initrd内のデバッグは、このタイミングで一旦止め、initrd内のリソースを使用したコマンド操作が可能です。<br>処理を進める場合には、exitコマンドを実行し、続行させる事ができます。</p>
+<blockquote>
+<p><strong>注意</strong><br>HyperV上に起動したLinuxMint19では、このタイミングではコンソールの描画が行われませんでした。<br>そのため実機で行う事をおすすめします。</p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/20/github-addkey/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/20/github-addkey/" class="post-title-link" itemprop="url">GitHubに公開鍵を追加</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-10-20 12:42:45" itemprop="dateCreated datePublished" datetime="2019-10-20T12:42:45+09:00">2019-10-20</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前提環境"><a href="#前提環境" class="headerlink" title="前提環境"></a>前提環境</h1><ul>
+<li>Ubuntu</li>
+</ul>
+<h1 id="GitHubに公開鍵を追加する理由"><a href="#GitHubに公開鍵を追加する理由" class="headerlink" title="GitHubに公開鍵を追加する理由"></a>GitHubに公開鍵を追加する理由</h1><ul>
+<li>sshを使ってリモートリポジトリの操作を出来る様になる</li>
+<li>GitHub上にあるリポジトリをsshで操作する様に作られた手順、ツールが沢山ある</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong><br>sshを使わなくてもhttpで操作する事が可能<br>ただし、その場合はGitHubアカウントのパスワード入力が多々必要になる</p>
+</blockquote>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="秘密鍵・公開鍵を作成する"><a href="#秘密鍵・公開鍵を作成する" class="headerlink" title="秘密鍵・公開鍵を作成する"></a>秘密鍵・公開鍵を作成する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/root/.ssh/id_rsa): sakkuntyo-mint <span class="comment">#鍵の名前です、今回はLinuxMint用に作成したためこの名前</span></span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): <span class="comment">#パスワード、無くても良い</span></span><br><span class="line">Enter same passphrase again: <span class="comment">#パスワードの再確認</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> sakkuntyo-mint.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> sakkuntyo-mint.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:7XG5j/GRtAxIs3/dkUxVIZDrcyG+6g7LVxqvNVK1bEg root@DESKTOP-2QSQU2N</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 2048]----+</span></span><br><span class="line"><span class="string">|           .o. .=|</span></span><br><span class="line"><span class="string">|           .  . .|</span></span><br><span class="line"><span class="string">|          oE.. . |</span></span><br><span class="line"><span class="string">|         o.*+o+ .|</span></span><br><span class="line"><span class="string">|        S Bo=+o+ |</span></span><br><span class="line"><span class="string">|         o.O.* +o|</span></span><br><span class="line"><span class="string">|       . .*oB * o|</span></span><br><span class="line"><span class="string">|      . oooo.* . |</span></span><br><span class="line"><span class="string">|       o+=o . o  |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="鍵ファイルが出来た事を確認する"><a href="#鍵ファイルが出来た事を確認する" class="headerlink" title="鍵ファイルが出来た事を確認する"></a>鍵ファイルが出来た事を確認する</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">sakkuntyo-mint sakkuntyo-mint.pub</span><br></pre></td></tr></table></figure>
+
+<p>.pubが付いているのが公開鍵<br>ついていないのが秘密鍵</p>
+<h2 id="GitHubに配置する"><a href="#GitHubに配置する" class="headerlink" title="GitHubに配置する"></a>GitHubに配置する</h2><h3 id="github-comのsettingsを開く"><a href="#github-comのsettingsを開く" class="headerlink" title="github.comのsettingsを開く"></a>github.comのsettingsを開く</h3><p><img src="/images/github-settings.png" alt="github-settings"><br><img src="/images/github-settings2.png" alt="github-settings2"></p>
+<h3 id="「SHS-and-GPG-keys」を開き、公開鍵の名前と公開鍵の内容を登録"><a href="#「SHS-and-GPG-keys」を開き、公開鍵の名前と公開鍵の内容を登録" class="headerlink" title="「SHS and GPG keys」を開き、公開鍵の名前と公開鍵の内容を登録"></a>「SHS and GPG keys」を開き、公開鍵の名前と公開鍵の内容を登録</h3><p>Titleは何でも大丈夫</p>
+<p><img src="/images/github-settings-keys.png" alt="github-settings"><br><img src="/images/github-settings-keys2.png" alt="github-settings"></p>
+<p>これで公開鍵が登録されました</p>
+<h2 id="sshクライアントにgitの設定を追加"><a href="#sshクライアントにgitの設定を追加" class="headerlink" title="sshクライアントにgitの設定を追加"></a>sshクライアントにgitの設定を追加</h2><p>~/.ssh/configを編集し、以下の4行を追加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host git</span><br><span class="line">  hostname github.com</span><br><span class="line">  user git</span><br><span class="line">  identityfile ~/.ssh/sakkuntyo-mint #秘密鍵のパス</span><br></pre></td></tr></table></figure>
+
+<p>秘密鍵をconfigで指定した場所に置きなおす</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv sakkuntyo-mint ~/.ssh/</span><br></pre></td></tr></table></figure>
+
+<p>秘密鍵の権限を自分だけが読める様に変更</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 0600 ~/.ssh/sakkuntyo-mint</span><br></pre></td></tr></table></figure>
+
+<h2 id="プライベートリポジトリをcloneしてみる"><a href="#プライベートリポジトリをcloneしてみる" class="headerlink" title="プライベートリポジトリをcloneしてみる"></a>プライベートリポジトリをcloneしてみる</h2><p>プライベートリポジトリをhttpでcloneしようとするとパスワードが求められますが<br>sshを使ってcloneした場合にはパスワードは求められなくなります</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git:sakkuntyo/private-repo</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

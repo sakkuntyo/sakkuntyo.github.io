@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改めて試してみようかなと2020/11 頃に某ゲームを多重起動するために Windows 10 で実施していましたが、その時と手順は全く変わりませんでした。 現存する仮想マシンに GPU を使ってもらう方法 DDA グラボが限定されます   Remote FX 廃止済、今はできないはず   GPU-PV(旧">
+<meta name="keywords" content="GPU,GPU-PV,GPU-V">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 11 の Hyper-V マシンに GPU を割り当てる(GPU-PV)">
+<meta property="og:url" content="https://sakkuntyo.github.io/2023/07/21/Hyper-V-windows11-GPU-PV/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改めて試してみようかなと2020/11 頃に某ゲームを多重起動するために Windows 10 で実施していましたが、その時と手順は全く変わりませんでした。 現存する仮想マシンに GPU を使ってもらう方法 DDA グラボが限定されます   Remote FX 廃止済、今はできないはず   GPU-PV(旧">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/708cfc42-4db9-4f95-a03d-e1de05d2f1b6">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/9fb5bf88-ab77-4257-94b7-2e42c21e20ee">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/452c8eda-3333-4df8-900c-af96dcdcd6f9">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/6290fd3d-3a9f-48f2-ac46-8eebe1020d47">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/3de6f240-9355-4981-8d68-145f6bcdda04">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/e8bf8e6a-7476-4e1f-b695-5a3a8a121a16">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/5696061f-fb6e-485e-a304-02cbbb8ff513">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/37358b6a-7eb8-4be8-8842-c760df63db21">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/c64c73ef-100b-4e1b-a0fe-a4cc66e2b45c">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/a4a1e2ff-2db0-4878-a658-e03cd48ffcba">
+<meta property="og:updated_time" content="2024-01-28T10:23:40.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows 11 の Hyper-V マシンに GPU を割り当てる(GPU-PV)">
+<meta name="twitter:description" content="GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改めて試してみようかなと2020/11 頃に某ゲームを多重起動するために Windows 10 で実施していましたが、その時と手順は全く変わりませんでした。 現存する仮想マシンに GPU を使ってもらう方法 DDA グラボが限定されます   Remote FX 廃止済、今はできないはず   GPU-PV(旧">
+<meta name="twitter:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/708cfc42-4db9-4f95-a03d-e1de05d2f1b6">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2023/07/21/Hyper-V-windows11-GPU-PV/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Windows 11 の Hyper-V マシンに GPU を割り当てる(GPU-PV) | skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2023/07/21/Hyper-V-windows11-GPU-PV/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Windows 11 の Hyper-V マシンに GPU を割り当てる(GPU-PV)
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2023-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-21T00:00:00+09:00">2023-07-21</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>GTX1080 から RTX 3090 に乗り換えたので、GPU-PV(旧名GPU-V) を改めて試してみようかなと<br>2020/11 頃に某ゲームを多重起動するために Windows 10 で実施していましたが、その時と手順は全く変わりませんでした。</p>
+<h1 id="現存する仮想マシンに-GPU-を使ってもらう方法"><a href="#現存する仮想マシンに-GPU-を使ってもらう方法" class="headerlink" title="現存する仮想マシンに GPU を使ってもらう方法"></a>現存する仮想マシンに GPU を使ってもらう方法</h1><ol>
+<li>DDA<ul>
+<li>グラボが限定されます</li>
+</ul>
+</li>
+<li>Remote FX<ul>
+<li>廃止済、今はできないはず</li>
+</ul>
+</li>
+<li>GPU-PV(旧名GPU-P)<ul>
+<li>今回はコレ</li>
+</ul>
+</li>
+</ol>
+<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ul>
+<li>ホストマシン<ul>
+<li>Windows 11 OSビルド 22621.1992</li>
+<li>CPU: Ryzen9 3950X (16core/32threads)</li>
+<li>GPU: RTX 3090</li>
+</ul>
+</li>
+<li>ゲストマシン<ul>
+<li>Windows 11</li>
+</ul>
+</li>
+</ul>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="0-Hyper-V-を実行するホストマシンでは事前に以下の設定をしておく"><a href="#0-Hyper-V-を実行するホストマシンでは事前に以下の設定をしておく" class="headerlink" title="0. Hyper-V を実行するホストマシンでは事前に以下の設定をしておく"></a>0. Hyper-V を実行するホストマシンでは事前に以下の設定をしておく</h2><ol>
+<li>マザーボード側で VT-x または SR-IOV を有効化しておく</li>
+<li>Windows 側で Hyper-V を有効化しておく(機能の有効化)</li>
+</ol>
+<h2 id="1-Hyper-V-で-Windows-11-マシンを作成する"><a href="#1-Hyper-V-で-Windows-11-マシンを作成する" class="headerlink" title="1. Hyper-V で Windows 11 マシンを作成する"></a>1. Hyper-V で Windows 11 マシンを作成する</h2><h2 id="2-ホスト側-で以下コマンドを実行"><a href="#2-ホスト側-で以下コマンドを実行" class="headerlink" title="2. ホスト側 で以下コマンドを実行"></a>2. ホスト側 で以下コマンドを実行</h2><p>Windows 11 マシンを停止し、管理者権限で以下 PowerShell を実行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$MachinName=&quot;Hyper-V 上のマシン名&quot;</span><br><span class="line">Add-VMGpuPartitionAdapter -VMName &quot;$&#123;MachinName&#125;&quot;</span><br><span class="line">Set-VMGpuPartitionAdapter -VMName &quot;$&#123;MachinName&#125;&quot; -MinPartitionVRAM 80000000 -MaxPartitionVRAM 100000000 -OptimalPartitionVRAM 100000000 -MinPartitionEncode 80000000 -MaxPartitionEncode 100000000 -OptimalPartitionEncode 100000000 -MinPartitionDecode 80000000 -MaxPartitionDecode 100000000 -OptimalPartitionDecode 100000000 -MinPartitionCompute 80000000 -MaxPartitionCompute 100000000 -OptimalPartitionCompute 100000000</span><br><span class="line">Set-VM -GuestControlledCacheTypes $true -VMName &quot;$&#123;MachinName&#125;&quot;</span><br><span class="line">Set-VM -LowMemoryMappedIoSpace 1GB -VMName &quot;$&#123;MachinName&#125;&quot;</span><br><span class="line">Set-VM -HighMemoryMappedIoSpace 32GB -VMName &quot;$&#123;MachinName&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-ホストマシンからゲストマシンへファイルをコピーする"><a href="#3-ホストマシンからゲストマシンへファイルをコピーする" class="headerlink" title="3. ホストマシンからゲストマシンへファイルをコピーする"></a>3. ホストマシンからゲストマシンへファイルをコピーする</h2><p>ホストからのコピー元とゲストへのコピー先のパスが異なるので別々に記載、2つのファイルがあります。</p>
+<p>以下の二つのファイルがコピー元</p>
+<ul>
+<li><ol>
+<li>PowerShell で以下を実行すると出てくるフォルダ丸ごと<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">explorer.exe &quot;$(Get-CimInstance -ClassName Win32_VideoController -Property * | Select-Object -ExpandProperty InstalledDisplayDrivers | Write-Output)&quot;.Split(&quot;,&quot;)[0].Trim(&quot;\nvldumdx.dll&quot;)</span><br><span class="line">例: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_50916785244854f2</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>C:\Windows\System32\nvapi64.dll</li>
+</ol>
+</li>
+</ul>
+<p>コピー先</p>
+<ul>
+<li><ol>
+<li>C:\Windows\System32\HostDriverStore\FileRepository\ #HostDriverStore 以下のフォルダは自身で作成してください。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>C:\Windows\System32\ #ホストと同じ場所</li>
+</ol>
+</li>
+</ul>
+<p>ここまで実施して再起動するとデバイスマネージャーに表示される<br>どこかに漏れがあるとビックリマークついてるかもしれません。</p>
+<ul>
+<li><p>うまくいった例<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/708cfc42-4db9-4f95-a03d-e1de05d2f1b6" alt="image"></p>
+</li>
+<li><p>うまくいってない例<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/9fb5bf88-ab77-4257-94b7-2e42c21e20ee" alt="image"></p>
+</li>
+</ul>
+<h1 id="どんな感じ"><a href="#どんな感じ" class="headerlink" title="どんな感じ?"></a>どんな感じ?</h1><h2 id="ゲスト側のタスクマネージャでは-GPU-表示されない"><a href="#ゲスト側のタスクマネージャでは-GPU-表示されない" class="headerlink" title="ゲスト側のタスクマネージャでは GPU 表示されない"></a>ゲスト側のタスクマネージャでは GPU 表示されない</h2><p>ゲスト側の使用率はゲスト側で見たかったんですけど見えず、0 % 表示</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/452c8eda-3333-4df8-900c-af96dcdcd6f9" alt="image"></p>
+<p>ただ FF14 ベンチが動作したので GPU は使えている様です</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/6290fd3d-3a9f-48f2-ac46-8eebe1020d47" alt="image"></p>
+<h2 id="ホスト側-FF14ベンチ-4K"><a href="#ホスト側-FF14ベンチ-4K" class="headerlink" title="ホスト側 FF14ベンチ (4K)"></a>ホスト側 FF14ベンチ (4K)</h2><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/3de6f240-9355-4981-8d68-145f6bcdda04" alt="image"></p>
+<h2 id="ホスト側-FF14ベンチ-FullHD"><a href="#ホスト側-FF14ベンチ-FullHD" class="headerlink" title="ホスト側 FF14ベンチ (FullHD)"></a>ホスト側 FF14ベンチ (FullHD)</h2><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/e8bf8e6a-7476-4e1f-b695-5a3a8a121a16" alt="image"></p>
+<h2 id="ゲスト側-FF14ベンチ-4K"><a href="#ゲスト側-FF14ベンチ-4K" class="headerlink" title="ゲスト側 FF14ベンチ (4K)"></a>ゲスト側 FF14ベンチ (4K)</h2><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/5696061f-fb6e-485e-a304-02cbbb8ff513" alt="image"></p>
+<h2 id="ゲスト側-FF14ベンチ-FullHD"><a href="#ゲスト側-FF14ベンチ-FullHD" class="headerlink" title="ゲスト側 FF14ベンチ (FullHD)"></a>ゲスト側 FF14ベンチ (FullHD)</h2><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/37358b6a-7eb8-4be8-8842-c760df63db21" alt="image"></p>
+<h2 id="ゲスト側-FF14ベンチ-4K-1"><a href="#ゲスト側-FF14ベンチ-4K-1" class="headerlink" title="ゲスト側 FF14ベンチ (4K)"></a>ゲスト側 FF14ベンチ (4K)</h2><ul>
+<li>設定値を少し変えた、わかりにくいですが、１桁あがっていたりしています。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-VMGpuPartitionAdapter -VMName &quot;HyperVマシン名&quot; -MinPartitionVRAM 1000000000 -MaxPartitionVRAM 1000000000 -OptimalPartitionVRAM 1000000000 -MinPartitionEncode 1000000000 -MaxPartitionEncode 1000000000 -OptimalPartitionEncode 100000000 -MinPartitionDecode 1000000000 -MaxPartitionDecode 1000000000 -OptimalPartitionDecode 1000000000 -MinPartitionCompute 1000000000 -MaxPartitionCompute 1000000000 -OptimalPartitionCompute 1000000000</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/c64c73ef-100b-4e1b-a0fe-a4cc66e2b45c" alt="image"></p>
+<ul>
+<li>20230725追記<br>設定値戻してもスコアがあがる事はありませんでした。何の差なんだ・・・</li>
+</ul>
+<h2 id="Surface-Laptop-3-4K"><a href="#Surface-Laptop-3-4K" class="headerlink" title="Surface Laptop 3 (4K)"></a>Surface Laptop 3 (4K)</h2><p>手元にあった Surface でもベンチしました。驚愕のスコア</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/a4a1e2ff-2db0-4878-a658-e03cd48ffcba" alt="image"></p>
+<h2 id="体感"><a href="#体感" class="headerlink" title="体感"></a>体感</h2><p>GPU-PV ないよりはいいかも、な感じ<br>-&gt; 20230725追記: 6000くらい出ている時は結構いい</p>
+<h1 id="参考にしたサイト"><a href="#参考にしたサイト" class="headerlink" title="参考にしたサイト"></a>参考にしたサイト</h1><ul>
+<li><p>今回↓見て思い出した。ハッ RTX 3090 にしてから試してなかった！<br><a href="https://qiita.com/Hyper-W/items/e189790fd4534d9d51ad" target="_blank" rel="noopener">Hyper-VでGPU(GPU-PV)を利用する方法 (Windows 10以降編)</a></p>
+</li>
+<li><p>2020年に↓見て試した、全く同じ手順だった。この時は GPU-P って名前だった、今書いていて気づいた、同じ人だった！<br><a href="https://qiita.com/Hyper-W/items/3a2c7ff1d983deb80070" target="_blank" rel="noopener">Hyper-VでGPU(3Dアクセラレーション)を利用する方法 Windows 10以降編 (GPU-P)</a></p>
+</li>
+</ul>
+<h1 id="おまけ"><a href="#おまけ" class="headerlink" title="おまけ"></a>おまけ</h1><p>これを管理者権限有効 PowerShell で実行すると拡張セッション無し解像度4Kが使える様になる</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-VMVideo -VMName &quot;HyperVマシン名&quot; -HorizontalResolution 3840 -VerticalResolution 2160 -ResolutionType Single</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/GPU/" rel="tag"># GPU</a>
+            
+              <a href="/tags/GPU-PV/" rel="tag"># GPU-PV</a>
+            
+              <a href="/tags/GPU-V/" rel="tag"># GPU-V</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2023/07/20/powershell-module-commandlist/" rel="next" title="PowerShell の コマンドの出所と出所で使えるコマンド一覧">
+                  <i class="fa fa-chevron-left"></i> PowerShell の コマンドの出所と出所で使えるコマンド一覧
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2023/09/27/vencord-translater-change-language/" rel="prev" title="vencord の translater プラグインで英語以外の言語に翻訳させる">
+                  vencord の translater プラグインで英語以外の言語に翻訳させる <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#現存する仮想マシンに-GPU-を使ってもらう方法"><span class="nav-number">1.</span> <span class="nav-text">現存する仮想マシンに GPU を使ってもらう方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前提"><span class="nav-number">2.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手順"><span class="nav-number">3.</span> <span class="nav-text">手順</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Hyper-V-を実行するホストマシンでは事前に以下の設定をしておく"><span class="nav-number">3.1.</span> <span class="nav-text">0. Hyper-V を実行するホストマシンでは事前に以下の設定をしておく</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Hyper-V-で-Windows-11-マシンを作成する"><span class="nav-number">3.2.</span> <span class="nav-text">1. Hyper-V で Windows 11 マシンを作成する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ホスト側-で以下コマンドを実行"><span class="nav-number">3.3.</span> <span class="nav-text">2. ホスト側 で以下コマンドを実行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ホストマシンからゲストマシンへファイルをコピーする"><span class="nav-number">3.4.</span> <span class="nav-text">3. ホストマシンからゲストマシンへファイルをコピーする</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#どんな感じ"><span class="nav-number">4.</span> <span class="nav-text">どんな感じ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ゲスト側のタスクマネージャでは-GPU-表示されない"><span class="nav-number">4.1.</span> <span class="nav-text">ゲスト側のタスクマネージャでは GPU 表示されない</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ホスト側-FF14ベンチ-4K"><span class="nav-number">4.2.</span> <span class="nav-text">ホスト側 FF14ベンチ (4K)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ホスト側-FF14ベンチ-FullHD"><span class="nav-number">4.3.</span> <span class="nav-text">ホスト側 FF14ベンチ (FullHD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ゲスト側-FF14ベンチ-4K"><span class="nav-number">4.4.</span> <span class="nav-text">ゲスト側 FF14ベンチ (4K)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ゲスト側-FF14ベンチ-FullHD"><span class="nav-number">4.5.</span> <span class="nav-text">ゲスト側 FF14ベンチ (FullHD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ゲスト側-FF14ベンチ-4K-1"><span class="nav-number">4.6.</span> <span class="nav-text">ゲスト側 FF14ベンチ (4K)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Surface-Laptop-3-4K"><span class="nav-number">4.7.</span> <span class="nav-text">Surface Laptop 3 (4K)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体感"><span class="nav-number">4.8.</span> <span class="nav-text">体感</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考にしたサイト"><span class="nav-number">5.</span> <span class="nav-text">参考にしたサイト</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#おまけ"><span class="nav-number">6.</span> <span class="nav-text">おまけ</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

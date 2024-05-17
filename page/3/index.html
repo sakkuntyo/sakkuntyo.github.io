@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="keywords" content="IT,Nodejs,Golang,Vim,スーパーカブ,リトルカブ,ニュービートル">
+<meta property="og:type" content="website">
+<meta property="og:title" content="skt workshop">
+<meta property="og:url" content="https://sakkuntyo.github.io/page/3/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:locale" content="ja">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="skt workshop">
+  <link rel="canonical" href="https://sakkuntyo.github.io/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/08/15/sphh-jp-custom-mechanical-keyboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/08/15/sphh-jp-custom-mechanical-keyboard/" class="post-title-link" itemprop="url">HHKB 日本語配列 を完全に模倣した自作キーボード sphh jp</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-08-15 14:21:56" itemprop="dateCreated datePublished" datetime="2021-08-15T14:21:56+09:00">2021-08-15</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="色々よくわからん"><a href="#色々よくわからん" class="headerlink" title="色々よくわからん"></a>色々よくわからん</h1><h2 id="HHKB-って何"><a href="#HHKB-って何" class="headerlink" title="HHKB って何"></a>HHKB って何</h2><p>多くのプログラマを虜にしている、独特な配列のキーボードです。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B082TXLC2B&linkId=846a6348a6af15d4ac6f30a4abac3f44"></iframe>
+
+<p>英語配列、日本語配列、無線、有線、両対応など<br>いくつか種類がありますが、わたしは 日本語配列 Hybrid Type-S (静音モデル) を使っています。</p>
+<h2 id="sphh-jp-って何"><a href="#sphh-jp-って何" class="headerlink" title="sphh jp って何"></a>sphh jp って何</h2><p>ホームページより引用</p>
+<ul>
+<li>遊舎工房 &gt; ホーム &gt; 【委託】sphh jp<br><a href="https://shop.yushakobo.jp/products/consign_sphh-jp" target="_blank" rel="noopener">https://shop.yushakobo.jp/products/consign_sphh-jp</a></li>
+</ul>
+<blockquote>
+<p>sphh jp は、多くのプロが支持する日本語配列 をベースにした「分割」キーボードです。<br>あの使い心地を、より快適に、さらに自分好みに。</p>
+</blockquote>
+<h2 id="何で-sphh-jp-を買ったのか"><a href="#何で-sphh-jp-を買ったのか" class="headerlink" title="何で sphh jp を買ったのか"></a>何で sphh jp を買ったのか</h2><p>既に数年、HHKB を使っています。<br>HHKB を使い初めてからは、独特なキー配置には慣れ、慣れただけではなく、この完成されたキー配置に中毒性さえ感じています。<br>ただ、自身の ホームポジション、キーフォームは 綺麗ではなく、改善したいなとずっと思っていました。(右手はほぼ人差し指と中指のみ稼働)</p>
+<p>そこで、キーフォームを強制するために分割キーボードがいいのでは？と思い探してみたところ、<br>sphh jp を見つけました。</p>
+<ul>
+<li>限りなく理想に近いキーボード sphh jp を手に入れた<br><a href="https://ninthsky.hatenablog.com/entry/sphh_jp_love" target="_blank" rel="noopener">https://ninthsky.hatenablog.com/entry/sphh_jp_love</a></li>
+</ul>
+<p>これが日本語配列の HHKB を使っていて、分離式キーボードを試したいと思っていた自分にとって、完全にぴったりだったからです。</p>
+<h2 id="購入からその他部品の調達"><a href="#購入からその他部品の調達" class="headerlink" title="購入からその他部品の調達"></a>購入からその他部品の調達</h2><p>自作キーボードの部類であるこのキーボードは、購入したら即使える、という物ではありません。<br>そのため、以下に記載する様な各パーツを揃える必要がありました。</p>
+<h3 id="キーボードの基盤と組み立てサービス"><a href="#キーボードの基盤と組み立てサービス" class="headerlink" title="キーボードの基盤と組み立てサービス"></a>キーボードの基盤と組み立てサービス</h3><ul>
+<li>a bit keys - sphh jp<br><a href="https://booth.pm/ja/items/2372359" target="_blank" rel="noopener">https://booth.pm/ja/items/2372359</a></li>
+</ul>
+<p>スイッチソケットや組み立て作業を自身で行う事が可能な場合には、キット本体(\14850)のみの購入で大丈夫です。</p>
+<h3 id="キースイッチ"><a href="#キースイッチ" class="headerlink" title="キースイッチ"></a>キースイッチ</h3><p>静音が好きなので静音赤軸というものにしました。</p>
+<ul>
+<li>遊舎工房 - Gateron Silent スイッチ（10個）<br><a href="https://shop.yushakobo.jp/products/a02gs" target="_blank" rel="noopener">https://shop.yushakobo.jp/products/a02gs</a></li>
+</ul>
+<p>sphh jp は 70 キーなので 10x7 個購入する必要があります。</p>
+<p>また、キースイッチは以下の様な動画を見てある程度好みの物を探す事ができます。</p>
+<ul>
+<li>【好きな軸が見つかる】キーボードスイッチテスターがめっちゃええ…<br><a href="https://www.youtube.com/watch?v=ABic-N718Bw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ABic-N718Bw</a></li>
+</ul>
+<p>この動画を見て、Aliaz 100g も気になったので購入しています。</p>
+<ul>
+<li>Kbdfans aliazサイレント触覚スイッチ5ピン60グラム/70グラム/80グラム/100グラムmxメカニカルキーボード<br><a href="https://ja.aliexpress.com/item/1005002069413821.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL" target="_blank" rel="noopener">https://ja.aliexpress.com/item/1005002069413821.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL</a></li>
+</ul>
+<h3 id="キーキャップ"><a href="#キーキャップ" class="headerlink" title="キーキャップ"></a>キーキャップ</h3><p>以下の白、無刻印を二つ購入しました。</p>
+<ul>
+<li>ホワイトブラックグレーオレンジグリーン黄色空白厚いpbt oemプロファイル62キーiso 61 ansiキーキャップ用mxスイッチメカニカルキーボード<br><a href="https://ja.aliexpress.com/item/32791605680.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL" target="_blank" rel="noopener">https://ja.aliexpress.com/item/32791605680.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL</a></li>
+</ul>
+<p>ただ、ali express で、外国からの発送という事もあり、<br>なかなか届くのが遅かった(今も２週間近く経過しているが国内にすら到着していません)ので Amazon でも以下を購入しました。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00R1BZ60K&linkId=8eaefcd4922af6958f06ee38b4aecbac"></iframe>
+
+<p>このキーキャップも最下段のキーが足りていないため、二つ購入する事が好ましいのですが、<br>テンキー分を割り当ててなんとかキーキャップは足らせています。段数により若干、キーキャップの形が違うのでよく見ると違和感があります。</p>
+<h3 id="micro-usb-ケーブル"><a href="#micro-usb-ケーブル" class="headerlink" title="micro usb ケーブル"></a>micro usb ケーブル</h3><p>これを使用して、PCに接続します。<br>大好きな Anker さんのケーブルを買いました。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B019Q4TJZC&linkId=f21d12ab56981902ce5fb9636e960360"></iframe>
+
+<h3 id="micro-usb-to-micro-usb-ケーブル"><a href="#micro-usb-to-micro-usb-ケーブル" class="headerlink" title="micro usb to micro usb ケーブル"></a>micro usb to micro usb ケーブル</h3><p>分離されたキーボード同士を接続します。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01FTF06GS&linkId=a9170773282840e83cc6bc47a67d321a"></iframe>
+
+<h4 id="カール化しました。"><a href="#カール化しました。" class="headerlink" title="カール化しました。"></a>カール化しました。</h4><p>割りばしに巻いて、沸騰したお湯に数分付ける -&gt; 冷やす という事を行います。</p>
+<ol>
+<li><p>巻く<br><img src="/images/sphh-jp-custom-mechanical-keyboard.jpg" alt="1"><br><img src="/images/sphh-jp-custom-mechanical-keyboard2.jpg" alt="1"></p>
+</li>
+<li><p>加熱する<br><img src="/images/sphh-jp-custom-mechanical-keyboard3.jpg" alt="1"></p>
+</li>
+<li><p>冷やす</p>
+</li>
+</ol>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p><img src="/images/sphh-jp-custom-mechanical-keyboard4.jpg" alt="1"></p>
+<h2 id="使ってみた感想"><a href="#使ってみた感想" class="headerlink" title="使ってみた感想"></a>使ってみた感想</h2><p>メカニカルキーボードは壊れるから、煩いから、という理由で<br>購入を避けていましたが、静音赤軸の効果は素晴らしく、HHKB Type-S よりも静かなキーボードができました。<br>また、メカニカルキーボードはキースイッチもはんだ付け作業はおろか、ネジも不要で取付出来るパーツだったんですね。<br>壊れたメカニカルキーボードを捨ててしまっていたので、ちょっともったいなかったなと思います。</p>
+<p>まだ数日しか使用してませんが、右手で叩いていた、T キー、G キー、B キーが左側に行ってしまいました。<br>現時点ではかなり違和感がありますが、この違和感は成長するために必要な物だと思って、しばらく使ってみたいと思います。 </p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/31/curl-dos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/31/curl-dos/" class="post-title-link" itemprop="url">curlで出力を消す、繰り返す</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-31 01:13:02" itemprop="dateCreated datePublished" datetime="2021-07-31T01:13:02+09:00">2021-07-31</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Webサーバーの負荷を高くした検証をする時などに</p>
+<h1 id="例"><a href="#例" class="headerlink" title="例"></a>例</h1><h2 id="出力を消す"><a href="#出力を消す" class="headerlink" title="出力を消す"></a>出力を消す</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -s -o /dev/null https://***.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="繰り返す"><a href="#繰り返す" class="headerlink" title="繰り返す"></a>繰り返す</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ while [ 1 == 1 ];do curl https://***.com;done</span><br></pre></td></tr></table></figure>
+
+<h2 id="キャッシュを使わない"><a href="#キャッシュを使わない" class="headerlink" title="キャッシュを使わない"></a>キャッシュを使わない</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ while [ 1 == 1 ];do curl -H &apos;Cache-Control: no-cache&apos; https://***.com;done</span><br></pre></td></tr></table></figure>
+
+<h2 id="出力を消して繰り返し、キャッシュは使わない"><a href="#出力を消して繰り返し、キャッシュは使わない" class="headerlink" title="出力を消して繰り返し、キャッシュは使わない"></a>出力を消して繰り返し、キャッシュは使わない</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ while [ 1 == 1 ];do curl -s -o /dev/null -H &apos;Cache-Control: no-cache&apos; https://***.com;done</span><br></pre></td></tr></table></figure>
+
+<h2 id="出力を消して繰り返し、キャッシュは使わずバックグラウンド実行"><a href="#出力を消して繰り返し、キャッシュは使わずバックグラウンド実行" class="headerlink" title="出力を消して繰り返し、キャッシュは使わずバックグラウンド実行"></a>出力を消して繰り返し、キャッシュは使わずバックグラウンド実行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ while [ 1 == 1 ];do curl -s -o /dev/null -H &apos;Cache-Control: no-cache&apos; https://***.com;done &amp;</span><br></pre></td></tr></table></figure>
+
+<p>何度も何度も実行するとその分多くリクエストが行われる。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/30/ffmpeg-no-audio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/30/ffmpeg-no-audio/" class="post-title-link" itemprop="url">ffmpegで動画の音を消す</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-30 01:38:45" itemprop="dateCreated datePublished" datetime="2021-07-30T01:38:45+09:00">2021-07-30</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="コマンド"><a href="#コマンド" class="headerlink" title="コマンド"></a>コマンド</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i output.mp4 -an output.mp4</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/22/nodejs-all-package-upgrade/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/22/nodejs-all-package-upgrade/" class="post-title-link" itemprop="url">[nodejs]プロジェクト内のパッケージをアップデート</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-22 00:30:43" itemprop="dateCreated datePublished" datetime="2021-07-22T00:30:43+09:00">2021-07-22</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="経緯"><a href="#経緯" class="headerlink" title="経緯"></a>経緯</h1><p>hexo が node v14 でうまく使えないのは hexo 3.9 が古すぎる事が原因の様で、<br>アップデートを試みました。</p>
+<h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><h3 id="ncu-コマンドをインストール"><a href="#ncu-コマンドをインストール" class="headerlink" title="ncu コマンドをインストール"></a>ncu コマンドをインストール</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install npm-check-updates</span><br></pre></td></tr></table></figure>
+
+<p>必要に応じて -g をつけましょう</p>
+<h3 id="ncu-でアップデート"><a href="#ncu-でアップデート" class="headerlink" title="ncu でアップデート"></a>ncu でアップデート</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ npx ncu -u</span><br><span class="line">Upgrading /sakkuntyo.github.io/package.json</span><br><span class="line">[====================] 16/16 100%</span><br><span class="line"></span><br><span class="line"> hexo                                   ^3.9.0  →     ^5.4.0</span><br><span class="line"> hexo-asset-link                        ^1.2.1  →     ^2.1.0</span><br><span class="line"> hexo-deployer-git                      ^2.0.0  →     ^3.0.0</span><br><span class="line"> hexo-directory-category                ^1.0.7  →     ^1.1.4</span><br><span class="line"> hexo-generator-archive                 ^0.1.5  →     ^1.0.0</span><br><span class="line"> hexo-generator-category                ^0.1.3  →     ^1.0.0</span><br><span class="line"> hexo-generator-index                   ^0.2.1  →     ^2.0.0</span><br><span class="line"> hexo-generator-seo-friendly-sitemap    0.0.25  →      0.2.1</span><br><span class="line"> hexo-generator-tag                     ^0.2.0  →     ^1.0.0</span><br><span class="line"> hexo-renderer-ejs                      ^0.3.1  →     ^1.0.0</span><br><span class="line"> hexo-renderer-marked                   ^1.0.1  →     ^4.0.0</span><br><span class="line"> hexo-renderer-stylus                   ^0.3.3  →     ^2.0.1</span><br><span class="line"> hexo-server                            ^0.3.3  →     ^2.0.0</span><br><span class="line"> netlify-cms                          ^2.10.13  →  ^2.10.148</span><br></pre></td></tr></table></figure>
+
+<p>hexo ブログ の プロジェクトだと上記の結果になった</p>
+<h3 id="node-modules-の再生成"><a href="#node-modules-の再生成" class="headerlink" title="node_modules の再生成"></a>node_modules の再生成</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rm -r node_modules/</span><br><span class="line">$ npm i</span><br></pre></td></tr></table></figure>
+
+<h3 id="正常に動くか試す"><a href="#正常に動くか試す" class="headerlink" title="正常に動くか試す"></a>正常に動くか試す</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo server -D</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/nodejs-all-package-upgrade.png" alt="1"></p>
+<p>このプロジェクトの場合、まだまだ課題はあるみたいです。<br>恐らく使用しているテーマ Next が追従できていません。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/21/sandy-bridge-friend-voice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/21/sandy-bridge-friend-voice/" class="post-title-link" itemprop="url">[ネタ]元サンディおじさんの主張</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-21 23:45:46" itemprop="dateCreated datePublished" datetime="2021-07-21T23:45:46+09:00">2021-07-21</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="サンディおじさん？"><a href="#サンディおじさん？" class="headerlink" title="サンディおじさん？"></a>サンディおじさん？</h1><p><a href="https://dic.nicovideo.jp/t/a/sandy%E3%81%A7%E5%8D%81%E5%88%86%E3%81%8A%E3%81%98%E3%81%95%E3%82%93" target="_blank" rel="noopener">Sandyで十分おじさん - 「まだ戦える」</a></p>
+<h1 id="サンディで充分おじさんの主張"><a href="#サンディで充分おじさんの主張" class="headerlink" title="サンディで充分おじさんの主張"></a>サンディで充分おじさんの主張</h1><blockquote>
+<p>最近のCPU<br><img src="/images/sandy-bridge-friend-voice1.png" alt="1"></p>
+</blockquote>
+<blockquote>
+<p>「最近のノートの i7 と同じスコアなら今のままで充分」<br><img src="/images/sandy-bridge-friend-voice2.png" alt="2"></p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/19/3950X-siyoukan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/19/3950X-siyoukan/" class="post-title-link" itemprop="url">Ryzen9 3950X を購入しました</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-19 23:25:58" itemprop="dateCreated datePublished" datetime="2021-07-19T23:25:58+09:00">2021-07-19</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="何故今更買ったのか"><a href="#何故今更買ったのか" class="headerlink" title="何故今更買ったのか"></a>何故今更買ったのか</h1><ul>
+<li>後述の良い所を持った CPU が 75000円で手に入る + 会社から手当の出る対象商品になっていたので。</li>
+<li>とあるゲームをしていて複数起動 + マクロ操作をしたかったので。</li>
+</ul>
+<p><img src="/images/3950X-siyoukan.jpg" alt="1"></p>
+<h2 id="良い所"><a href="#良い所" class="headerlink" title="良い所"></a>良い所</h2><h3 id="16-コア-32-スレッドの一般ユーザー向けCPU"><a href="#16-コア-32-スレッドの一般ユーザー向けCPU" class="headerlink" title="16 コア 32 スレッドの一般ユーザー向けCPU"></a>16 コア 32 スレッドの一般ユーザー向けCPU</h3><p>サーバー向けのマザーボードを用意する必要がないので、<br>CPU以外のパーツに選定予知がまだまだあります。</p>
+<h3 id="安い"><a href="#安い" class="headerlink" title="安い"></a>安い</h3><p>75000円です。これはかなり安い。<br>Intel の 16コアCPU の i9 9960X では 150000円近くします。<br>しかも、i9 9960X では、サーバー向けのパーツが必要になります。<br><del>ただ、もう少しお金だして 5950X を購入してもよかったかも</del></p>
+<h3 id="強い"><a href="#強い" class="headerlink" title="強い"></a>強い</h3><p>上記 Intel の 16コア CPU とベンチマークスコアの比較用</p>
+<ul>
+<li><p>AMD Ryzen9 3950X<br><img src="/images/3950X-siyoukan2.jpg" alt="2"><br><a href="https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+9+3950X&amp;id=3598" target="_blank" rel="noopener">https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+9+3950X&amp;id=3598</a></p>
+</li>
+<li><p>Intel i9 9960X<br><img src="/images/3950X-siyoukan3.jpg" alt="3"><br><a href="https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i9-9960X+%40+3.10GHz&amp;id=3405" target="_blank" rel="noopener">https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i9-9960X+%40+3.10GHz&amp;id=3405</a></p>
+</li>
+</ul>
+<h2 id="良くない所"><a href="#良くない所" class="headerlink" title="良くない所"></a>良くない所</h2><h3 id="Nested-Virtual-Machine-に非対応"><a href="#Nested-Virtual-Machine-に非対応" class="headerlink" title="Nested Virtual Machine に非対応"></a>Nested Virtual Machine に非対応</h3><p>強いマシンを持てば仮想マシンの中で仮想マシンを動作させたくなるものですが、<br>AMDのCPUの場合はまだ正式に対応していません。<br>※AMD でも Windows10 の Insider Preview バージョンを使用する事で可能です。</p>
+<h1 id="変更した構成"><a href="#変更した構成" class="headerlink" title="変更した構成"></a>変更した構成</h1><ul>
+<li>M/B: MSI MAG B550 TOMAHAWK ※Ryzen5 1600X で使用していたマザーボードが非対応だったので<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08B62MK65&linkId=56461ea1e7b746a3f2d018a28e87ac22"></iframe></li>
+<li>CPU: AMD Ryzen9 3950X<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07ZTYKLZW&linkId=5f1bea128e324a4265106ce091875a28"></iframe></li>
+<li>メモリ: Patriot Viper Steel DDR4 3600MHz 32GB x 2 ※3000MHz 以下へのダウンクロックをする事で動作<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08688GFPD&linkId=80130a81a8591587492798f4c5d9e62d"></iframe>
+
+</li>
+</ul>
+<h1 id="実際使ってみてどうか"><a href="#実際使ってみてどうか" class="headerlink" title="実際使ってみてどうか"></a>実際使ってみてどうか</h1><p>マザーボードの変更が必要になった以外は、何も不便を感じませんでした。<br>HyperV を使用して、1コア1仮想マシンのスペックで 10個のマシンを動作させ、その中でゲームの実行もしましたが、<br>冒頭の画像にもありますが、CPU使用率は50手前くらい。<br>まだまだ、余裕を見せています。素直に買ってよかったです。</p>
+<h1 id="どういう用途におすすめか"><a href="#どういう用途におすすめか" class="headerlink" title="どういう用途におすすめか"></a>どういう用途におすすめか</h1><ul>
+<li>PC スペックにロマンを求めたいけどちょっとコストも抑えたい人</li>
+<li>ゲームマクロ や RPA を並行実行したい人</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/19/hexo-memo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/19/hexo-memo/" class="post-title-link" itemprop="url">[hexo]hexo覚え書き</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-19 23:00:07" itemprop="dateCreated datePublished" datetime="2021-07-19T23:00:07+09:00">2021-07-19</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="メモ"><a href="#メモ" class="headerlink" title="メモ"></a>メモ</h1><p>久しぶりにhexoからブログを書いてみたら色々忘れていたのでメモ</p>
+<h2 id="動作環境"><a href="#動作環境" class="headerlink" title="動作環境"></a>動作環境</h2><ul>
+<li>nodejs 8.11.0</li>
+<li>nvm install 8.11.0;nvm use 8.11.0 した物</li>
+<li>nodejs 14.x.x を使用すると hexo deploy に失敗します。 </li>
+</ul>
+<h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/sakkuntyo/sakkuntyo.github.io -b edit</span><br></pre></td></tr></table></figure>
+
+<h2 id="記事を追加"><a href="#記事を追加" class="headerlink" title="記事を追加"></a>記事を追加</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo new 記事名</span><br></pre></td></tr></table></figure>
+
+<h2 id="記事をコミット"><a href="#記事をコミット" class="headerlink" title="記事をコミット"></a>記事をコミット</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add &lt;記事を追加で追加されたファイル&gt;</span><br><span class="line">$ git commit -m &quot;メッセージ&quot;</span><br><span class="line">$ git push origin</span><br></pre></td></tr></table></figure>
+
+<h2 id="記事を試しにみる"><a href="#記事を試しにみる" class="headerlink" title="記事を試しにみる"></a>記事を試しにみる</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo server -D</span><br></pre></td></tr></table></figure>
+
+<p>-D はなんだったか忘れた</p>
+<h2 id="記事をデプロイ"><a href="#記事をデプロイ" class="headerlink" title="記事をデプロイ"></a>記事をデプロイ</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo deploy -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="デプロイするとレイアウトが壊れる"><a href="#デプロイするとレイアウトが壊れる" class="headerlink" title="デプロイするとレイアウトが壊れる"></a>デプロイするとレイアウトが壊れる</h2><p>npx hexo server だと問題なく表示される場合、クリーンをすると js や css も再デプロイされるかも。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx hexo clean</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/07/19/nodejs-consolelog-all/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2021/07/19/nodejs-consolelog-all/" class="post-title-link" itemprop="url">[nodejs]request body の中身を全て表示</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-07-19 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-19T00:00:00+09:00">2021-07-19</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="リクエストボディの中身を全て表示する"><a href="#リクエストボディの中身を全て表示する" class="headerlink" title="リクエストボディの中身を全て表示する"></a>リクエストボディの中身を全て表示する</h1><p>Azure Monitor のアラートのjsonペイロードを取得する時などに</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'/webtest'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.dir(<span class="built_in">JSON</span>.stringify&#123;req.body&#125;);</span><br><span class="line">  <span class="comment">//その他処理</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/09/19/thinkpad-e14-gen2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/09/19/thinkpad-e14-gen2/" class="post-title-link" itemprop="url">ThinkPad E14 gen2を購入しました</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-09-19 01:31:38" itemprop="dateCreated datePublished" datetime="2020-09-19T01:31:38+09:00">2020-09-19</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Ryzenの4世代目Uシリーズでpassmarkが10000超えしていたので気になっていました。</p>
+<h1 id="スペック"><a href="#スペック" class="headerlink" title="スペック"></a>スペック</h1><h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p>Ryzen 5 4500U</p>
+<p><img src="https://user-images.githubusercontent.com/20591351/93623178-42cbcb80-fa19-11ea-927d-b9dad18880d9.png" alt="image"></p>
+<h2 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h2><p>256GB</p>
+<p><img src="https://user-images.githubusercontent.com/20591351/93622980-f8e2e580-fa18-11ea-9bdc-0b83e73c836e.png" alt="image"></p>
+<h2 id="メモリ"><a href="#メモリ" class="headerlink" title="メモリ"></a>メモリ</h2><p>4GB + 8GB(お家に到着後4000円のメモリを追加しました)</p>
+<p><img src="https://user-images.githubusercontent.com/20591351/93623315-8292b300-fa19-11ea-9d34-fd0a80274a98.png" alt="image"></p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B087WTPD58&linkId=59ca095a06965007b7098b1f656acc89"></iframe>
+
+<h2 id="価格"><a href="#価格" class="headerlink" title="価格"></a>価格</h2><p>63000 + 4000(メモリ代) = \67000</p>
+<h2 id="passmark"><a href="#passmark" class="headerlink" title="passmark"></a>passmark</h2><p>11233(cpubenchmarkより)</p>
+<p><a href="http://ftp.cpubenchmark.net/mobile/cpu.php?id=3702" target="_blank" rel="noopener">http://ftp.cpubenchmark.net/mobile/cpu.php?id=3702</a></p>
+<h1 id="外観"><a href="#外観" class="headerlink" title="外観"></a>外観</h1><p><img src="https://user-images.githubusercontent.com/20591351/93624507-6bed5b80-fa1b-11ea-9899-1ddc741a64b0.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/20591351/93624528-7576c380-fa1b-11ea-9cf8-3877e091ea10.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/20591351/93624553-81fb1c00-fa1b-11ea-9785-83b236510bb5.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/20591351/93624596-9212fb80-fa1b-11ea-81aa-55a33898e580.png" alt="image"></p>
+<p>メモリスロットは埋まったのですが、SSDもあと一つ付けられそうですね。</p>
+<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><p>この価格でこの性能のPCが買えるのは驚きました。<br>液晶はノングレアを使うのはかなり久しぶりでしたが、もう少し明るくなってほしかったです。<br>ThinkPadはX50あたりの時代の物を一時期使っていたくらいなので、だいぶ久しぶりでした。<br>軽くて安くて早くて良いパソコンだと思います。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2020/09/19/nodejs-get-client-id/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2020/09/19/nodejs-get-client-id/" class="post-title-link" itemprop="url">NodejsのウェブサーバーでクライアントのIPを受け取る</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2020-09-19 01:09:55" itemprop="dateCreated datePublished" datetime="2020-09-19T01:09:55+09:00">2020-09-19</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="クライアントのIPを確かめたい！"><a href="#クライアントのIPを確かめたい！" class="headerlink" title="クライアントのIPを確かめたい！"></a>クライアントのIPを確かめたい！</h1><p>そういう時はreqの情報をとる</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'/webtest'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reqdata = req.headers[<span class="string">'x-forwarded-for'</span>] || </span><br><span class="line">     req.connection.remoteAddress || </span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress;</span><br><span class="line">  <span class="built_in">console</span>.log(reqdata);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="前のページ"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

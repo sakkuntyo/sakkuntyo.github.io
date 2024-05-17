@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="UbuntuOSベースのシンクライアントを作成していた時、起動時のスプラッシュロゴ表示や、ファイルシステムの復号化処理を行うため、initrd内部の書き換えを行っていました なかなかプライベートで触る事は少ないため、書き残しておきます。 環境 Linux Mint 19  initrdとはLinuxを起動する際に、各ディストリビューションとして動作するために必要なサービスやドライバが含まれたファイ">
+<meta name="keywords" content="Linux,init">
+<meta property="og:type" content="article">
+<meta property="og:title" content="initrdを展開・編集・作成">
+<meta property="og:url" content="https://sakkuntyo.github.io/2019/10/20/initrd-unpack-edit-compress/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="UbuntuOSベースのシンクライアントを作成していた時、起動時のスプラッシュロゴ表示や、ファイルシステムの復号化処理を行うため、initrd内部の書き換えを行っていました なかなかプライベートで触る事は少ないため、書き残しておきます。 環境 Linux Mint 19  initrdとはLinuxを起動する際に、各ディストリビューションとして動作するために必要なサービスやドライバが含まれたファイ">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2024-01-28T10:23:40.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="initrdを展開・編集・作成">
+<meta name="twitter:description" content="UbuntuOSベースのシンクライアントを作成していた時、起動時のスプラッシュロゴ表示や、ファイルシステムの復号化処理を行うため、initrd内部の書き換えを行っていました なかなかプライベートで触る事は少ないため、書き残しておきます。 環境 Linux Mint 19  initrdとはLinuxを起動する際に、各ディストリビューションとして動作するために必要なサービスやドライバが含まれたファイ">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2019/10/20/initrd-unpack-edit-compress/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>initrdを展開・編集・作成 | skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2019/10/20/initrd-unpack-edit-compress/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">initrdを展開・編集・作成
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-10-20 15:25:37" itemprop="dateCreated datePublished" datetime="2019-10-20T15:25:37+09:00">2019-10-20</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>UbuntuOSベースのシンクライアントを作成していた時、<br>起動時のスプラッシュロゴ表示や、ファイルシステムの復号化処理を行うため、<br>initrd内部の書き換えを行っていました</p>
+<p>なかなかプライベートで触る事は少ないため、書き残しておきます。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Linux Mint 19</li>
+</ul>
+<h1 id="initrdとは"><a href="#initrdとは" class="headerlink" title="initrdとは"></a>initrdとは</h1><p>Linuxを起動する際に、各ディストリビューションとして動作するために必要なサービスやドライバが含まれたファイル群を固めた物</p>
+<p>Linuxが起動する時には、基本的に以下の順序で読み込まれていく</p>
+<ul>
+<li>1.UEFI</li>
+<li>2.ブートローダ</li>
+<li>3.カーネル</li>
+<li>4.init</li>
+</ul>
+<p>カーネルを読み込み基本的なコマンドを使用できる状態にしてから、initrdをマウント、initrd内部の/initを実行する</p>
+<p>Linux起動時に黒画面に出現するログは、大半がinitを実行している時に出ている</p>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><h2 id="initrdを作業ディレクトリにコピーする"><a href="#initrdを作業ディレクトリにコピーする" class="headerlink" title="initrdを作業ディレクトリにコピーする"></a>initrdを作業ディレクトリにコピーする</h2><p>/bootフォルダ以下に似たような名前のファイルがあるため、それをコピーしてください</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir work <span class="comment"># 作業フォルダ作成</span></span><br><span class="line">$ <span class="built_in">cd</span> work</span><br><span class="line">$ cp /boot/initrd.img-4.15.0-54-generic ./initrd</span><br></pre></td></tr></table></figure>
+
+<h2 id="zcatで復号しつつ、ファイルとして出力"><a href="#zcatで復号しつつ、ファイルとして出力" class="headerlink" title="zcatで復号しつつ、ファイルとして出力"></a>zcatで復号しつつ、ファイルとして出力</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir initrdfiles</span><br><span class="line">$ <span class="built_in">cd</span> initrdfiles</span><br><span class="line">$ zcat ../initrd | cpio -idmv</span><br></pre></td></tr></table></figure>
+
+<h2 id="ファイルを確認"><a href="#ファイルを確認" class="headerlink" title="ファイルを確認"></a>ファイルを確認</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">bin  conf  etc  init  lib  lib64  run  sbin  scripts  usr  var</span><br></pre></td></tr></table></figure>
+
+<h2 id="initを見てみる"><a href="#initを見てみる" class="headerlink" title="initを見てみる"></a>initを見てみる</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi init</span><br></pre></td></tr></table></figure>
+
+<p>init を見てみると shによって実行できる形で書かれている事がわかります。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Default PATH differs between shells, and is not automatically exported</span></span><br><span class="line"><span class="comment"># by klibc dash.  Make it consistent.</span></span><br><span class="line"><span class="built_in">export</span> PATH=/sbin:/usr/sbin:/bin:/usr/bin</span><br><span class="line"></span><br><span class="line">[ -d /dev ] || mkdir -m 0755 /dev</span><br><span class="line">[ -d /root ] || mkdir -m 0700 /root</span><br><span class="line">[ -d /sys ] || mkdir /sys</span><br><span class="line">[ -d /proc ] || mkdir /proc</span><br><span class="line">[ -d /tmp ] || mkdir /tmp</span><br><span class="line">mkdir -p /var/lock</span><br><span class="line">mount -t sysfs -o nodev,noexec,nosuid sysfs /sys</span><br><span class="line">mount -t proc -o nodev,noexec,nosuid proc /proc</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">" <span class="variable">$(cat /proc/cmdline)</span> "</span> <span class="keyword">in</span></span><br><span class="line">*\ quiet\ *)</span><br><span class="line">	quiet=y</span><br><span class="line">	;;</span><br><span class="line">*)</span><br><span class="line">	quiet=n</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Loading, please wait..."</span></span><br><span class="line">	;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">export</span> quiet</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note that this only becomes /dev on the real filesystem if udev's scripts</span></span><br><span class="line"><span class="comment"># are used; which they will be, but it's worth pointing out</span></span><br><span class="line">mount -t devtmpfs -o nosuid,mode=0755 udev /dev</span><br><span class="line">mkdir /dev/pts</span><br><span class="line">mount -t devpts -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || <span class="literal">true</span></span><br><span class="line">mount -t tmpfs -o <span class="string">"noexec,nosuid,size=10%,mode=0755"</span> tmpfs /run</span><br><span class="line">mkdir -m 0755 /run/initramfs</span><br><span class="line"></span><br><span class="line"><span class="comment"># Export the dpkg architecture</span></span><br><span class="line"><span class="built_in">export</span> DPKG_ARCH=</span><br><span class="line">. /conf/arch.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set modprobe env</span></span><br><span class="line"><span class="built_in">export</span> MODPROBE_OPTIONS=<span class="string">"-qb"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Export relevant variables</span></span><br><span class="line"><span class="built_in">export</span> ROOT=</span><br><span class="line"><span class="built_in">export</span> ROOTDELAY=</span><br><span class="line"><span class="built_in">export</span> ROOTFLAGS=</span><br><span class="line"><span class="built_in">export</span> ROOTFSTYPE=</span><br><span class="line"><span class="built_in">export</span> IP=</span><br><span class="line"><span class="built_in">export</span> IP6=</span><br><span class="line"><span class="built_in">export</span> BOOT=</span><br><span class="line"><span class="built_in">export</span> BOOTIF=</span><br><span class="line"><span class="built_in">export</span> UBIMTD=</span><br><span class="line"><span class="built_in">export</span> <span class="built_in">break</span>=</span><br><span class="line"><span class="built_in">export</span> init=/sbin/init</span><br><span class="line"><span class="built_in">export</span> <span class="built_in">readonly</span>=y</span><br><span class="line"><span class="built_in">export</span> rootmnt=/root</span><br><span class="line"><span class="built_in">export</span> debug=</span><br><span class="line"><span class="built_in">export</span> panic=</span><br><span class="line"><span class="built_in">export</span> blacklist=</span><br><span class="line"><span class="built_in">export</span> resume=</span><br><span class="line"><span class="built_in">export</span> resume_offset=</span><br><span class="line"><span class="built_in">export</span> drop_caps=</span><br><span class="line"><span class="built_in">export</span> fastboot=n</span><br><span class="line"><span class="built_in">export</span> forcefsck=n</span><br><span class="line"><span class="built_in">export</span> fsckfix=</span><br><span class="line"><span class="built_in">export</span> recovery=</span><br><span class="line"><span class="built_in">export</span> NETWORK_SKIP_ENSLAVED=</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># mdadm needs hostname to be set. This has to be done before the udev rules are called!</span></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="string">"/etc/hostname"</span> ]; <span class="keyword">then</span></span><br><span class="line">        /bin/hostname -F /etc/hostname &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bring in the main config</span></span><br><span class="line">. /conf/initramfs.conf</span><br><span class="line"><span class="keyword">for</span> conf <span class="keyword">in</span> conf/conf.d/*; <span class="keyword">do</span></span><br><span class="line">	[ -f <span class="variable">$&#123;conf&#125;</span> ] &amp;&amp; . <span class="variable">$&#123;conf&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">. /scripts/<span class="built_in">functions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Parse command line options</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> $(cat /proc/cmdline); <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">case</span> <span class="variable">$x</span> <span class="keyword">in</span></span><br><span class="line">	init=*)</span><br><span class="line">		init=<span class="variable">$&#123;x#init=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	root=*)</span><br><span class="line">		ROOT=<span class="variable">$&#123;x#root=&#125;</span></span><br><span class="line">		<span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$&#123;BOOT&#125;</span>"</span> ] &amp;&amp; [ <span class="string">"<span class="variable">$ROOT</span>"</span> = <span class="string">"/dev/nfs"</span> ]; <span class="keyword">then</span></span><br><span class="line">			BOOT=nfs</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">                ;;</span><br><span class="line">	rootflags=*)</span><br><span class="line">		ROOTFLAGS=<span class="string">"-o <span class="variable">$&#123;x#rootflags=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	rootfstype=*)</span><br><span class="line">		ROOTFSTYPE=<span class="string">"<span class="variable">$&#123;x#rootfstype=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	rootdelay=*)</span><br><span class="line">		ROOTDELAY=<span class="string">"<span class="variable">$&#123;x#rootdelay=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">case</span> <span class="variable">$&#123;ROOTDELAY&#125;</span> <span class="keyword">in</span></span><br><span class="line">		*[![:digit:].]*)</span><br><span class="line">			ROOTDELAY=</span><br><span class="line">			;;</span><br><span class="line">		<span class="keyword">esac</span></span><br><span class="line">		;;</span><br><span class="line">	resumedelay=*)</span><br><span class="line">		RESUMEDELAY=<span class="string">"<span class="variable">$&#123;x#resumedelay=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	loop=*)</span><br><span class="line">		LOOP=<span class="string">"<span class="variable">$&#123;x#loop=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	loopflags=*)</span><br><span class="line">		LOOPFLAGS=<span class="string">"-o <span class="variable">$&#123;x#loopflags=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	loopfstype=*)</span><br><span class="line">		LOOPFSTYPE=<span class="string">"<span class="variable">$&#123;x#loopfstype=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	cryptopts=*)</span><br><span class="line">		cryptopts=<span class="string">"<span class="variable">$&#123;x#cryptopts=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	nfsroot=*)</span><br><span class="line">		NFSROOT=<span class="string">"<span class="variable">$&#123;x#nfsroot=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	netboot=*)</span><br><span class="line">		NETBOOT=<span class="string">"<span class="variable">$&#123;x#netboot=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	ip=*)</span><br><span class="line">		IP=<span class="string">"<span class="variable">$&#123;x#ip=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	ip6=*)</span><br><span class="line">		IP6=<span class="string">"<span class="variable">$&#123;x#ip6=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	boot=*)</span><br><span class="line">		BOOT=<span class="variable">$&#123;x#boot=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	ubi.mtd=*)</span><br><span class="line">		UBIMTD=<span class="variable">$&#123;x#ubi.mtd=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	resume=*)</span><br><span class="line">		RESUME=<span class="string">"<span class="variable">$&#123;x#resume=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">case</span> <span class="variable">$RESUME</span> <span class="keyword">in</span></span><br><span class="line">	        UUID=*)</span><br><span class="line">			RESUME=<span class="string">"/dev/disk/by-uuid/<span class="variable">$&#123;RESUME#UUID=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">esac</span></span><br><span class="line">		;;</span><br><span class="line">	resume_offset=*)</span><br><span class="line">		resume_offset=<span class="string">"<span class="variable">$&#123;x#resume_offset=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	noresume)</span><br><span class="line">		noresume=y</span><br><span class="line">		;;</span><br><span class="line">	drop_capabilities=*)</span><br><span class="line">		drop_caps=<span class="string">"-d <span class="variable">$&#123;x#drop_capabilities=&#125;</span>"</span></span><br><span class="line">		;;</span><br><span class="line">	panic=*)</span><br><span class="line">		panic=<span class="string">"<span class="variable">$&#123;x#panic=&#125;</span>"</span></span><br><span class="line">		<span class="keyword">case</span> <span class="variable">$&#123;panic&#125;</span> <span class="keyword">in</span></span><br><span class="line">		*[![:digit:].]*)</span><br><span class="line">			panic=</span><br><span class="line">			;;</span><br><span class="line">		<span class="keyword">esac</span></span><br><span class="line">		;;</span><br><span class="line">	ro)</span><br><span class="line">		<span class="built_in">readonly</span>=y</span><br><span class="line">		;;</span><br><span class="line">	rw)</span><br><span class="line">		<span class="built_in">readonly</span>=n</span><br><span class="line">		;;</span><br><span class="line">	debug)</span><br><span class="line">		debug=y</span><br><span class="line">		quiet=n</span><br><span class="line">		<span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$&#123;netconsole&#125;</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">			<span class="built_in">exec</span> &gt;/dev/kmsg 2&gt;&amp;1</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">exec</span> &gt;/run/initramfs/initramfs.debug 2&gt;&amp;1</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">		<span class="built_in">set</span> -x</span><br><span class="line">		;;</span><br><span class="line">	debug=*)</span><br><span class="line">		debug=y</span><br><span class="line">		quiet=n</span><br><span class="line">		<span class="built_in">set</span> -x</span><br><span class="line">		;;</span><br><span class="line">	<span class="built_in">break</span>=*)</span><br><span class="line">		<span class="built_in">break</span>=<span class="variable">$&#123;x#break=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	<span class="built_in">break</span>)</span><br><span class="line">		<span class="built_in">break</span>=premount</span><br><span class="line">		;;</span><br><span class="line">	blacklist=*)</span><br><span class="line">		blacklist=<span class="variable">$&#123;x#blacklist=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	netconsole=*)</span><br><span class="line">		netconsole=<span class="variable">$&#123;x#netconsole=&#125;</span></span><br><span class="line">		[ <span class="string">"x<span class="variable">$debug</span>"</span> = <span class="string">"xy"</span> ] &amp;&amp; <span class="built_in">exec</span> &gt;/dev/kmsg 2&gt;&amp;1</span><br><span class="line">		;;</span><br><span class="line">	BOOTIF=*)</span><br><span class="line">		BOOTIF=<span class="variable">$&#123;x#BOOTIF=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	hwaddr=*)</span><br><span class="line">		BOOTIF=<span class="variable">$&#123;x#hwaddr=&#125;</span></span><br><span class="line">		;;</span><br><span class="line">	fastboot|fsck.mode=skip)</span><br><span class="line">		fastboot=y</span><br><span class="line">		;;</span><br><span class="line">	forcefsck|fsck.mode=force)</span><br><span class="line">		forcefsck=y</span><br><span class="line">		;;</span><br><span class="line">	fsckfix|fsck.repair=yes)</span><br><span class="line">		fsckfix=y</span><br><span class="line">		;;</span><br><span class="line">	fsck.repair=no)</span><br><span class="line">		fsckfix=n</span><br><span class="line">		;;</span><br><span class="line">	recovery)</span><br><span class="line">		recovery=y</span><br><span class="line">		;;</span><br><span class="line">	<span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Default to BOOT=local if no boot script defined.</span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$&#123;BOOT&#125;</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	BOOT=<span class="built_in">local</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$&#123;noresume&#125;</span>"</span> ] || [ <span class="string">"<span class="variable">$RESUME</span>"</span> = none ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">export</span> noresume=y</span><br><span class="line">	<span class="built_in">unset</span> resume</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	resume=<span class="variable">$&#123;RESUME:-&#125;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">maybe_break top</span><br><span class="line"></span><br><span class="line"><span class="comment"># export BOOT variable value for compcache,</span></span><br><span class="line"><span class="comment"># so we know if we run from casper</span></span><br><span class="line"><span class="built_in">export</span> BOOT</span><br><span class="line"></span><br><span class="line"><span class="comment"># Don't do log messages here to avoid confusing graphical boots</span></span><br><span class="line">run_scripts /scripts/init-top</span><br><span class="line"></span><br><span class="line">maybe_break modules</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_begin_msg <span class="string">"Loading essential drivers"</span></span><br><span class="line">[ -n <span class="string">"<span class="variable">$&#123;netconsole&#125;</span>"</span> ] &amp;&amp; modprobe netconsole netconsole=<span class="string">"<span class="variable">$&#123;netconsole&#125;</span>"</span></span><br><span class="line">load_modules</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_end_msg</span><br><span class="line"></span><br><span class="line">maybe_break premount</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_begin_msg <span class="string">"Running /scripts/init-premount"</span></span><br><span class="line">run_scripts /scripts/init-premount</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_end_msg</span><br><span class="line"></span><br><span class="line">maybe_break mount</span><br><span class="line">log_begin_msg <span class="string">"Mounting root file system"</span></span><br><span class="line"><span class="comment"># Always load local and nfs (since these might be needed for /etc or</span></span><br><span class="line"><span class="comment"># /usr, irrespective of the boot script used to mount the rootfs).</span></span><br><span class="line">. /scripts/<span class="built_in">local</span></span><br><span class="line">. /scripts/nfs</span><br><span class="line">. /scripts/<span class="variable">$&#123;BOOT&#125;</span></span><br><span class="line">parse_numeric <span class="variable">$&#123;ROOT&#125;</span></span><br><span class="line">maybe_break mountroot</span><br><span class="line">mount_top</span><br><span class="line">mount_premount</span><br><span class="line">mountroot</span><br><span class="line">log_end_msg</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> read_fstab_entry /usr; <span class="keyword">then</span></span><br><span class="line">	log_begin_msg <span class="string">"Mounting /usr file system"</span></span><br><span class="line">	mountfs /usr</span><br><span class="line">	log_end_msg</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mount cleanup</span></span><br><span class="line">mount_bottom</span><br><span class="line">nfs_bottom</span><br><span class="line">local_bottom</span><br><span class="line"></span><br><span class="line">maybe_break bottom</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_begin_msg <span class="string">"Running /scripts/init-bottom"</span></span><br><span class="line"><span class="comment"># We expect udev's init-bottom script to move /dev to $&#123;rootmnt&#125;/dev</span></span><br><span class="line">run_scripts /scripts/init-bottom</span><br><span class="line">[ <span class="string">"<span class="variable">$quiet</span>"</span> != <span class="string">"y"</span> ] &amp;&amp; log_end_msg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Move /run to the root</span></span><br><span class="line">mount -n -o move /run <span class="variable">$&#123;rootmnt&#125;</span>/run</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">validate_init</span></span>() &#123;</span><br><span class="line">	run-init -n <span class="string">"<span class="variable">$&#123;rootmnt&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;1&#125;</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check init is really there</span></span><br><span class="line"><span class="keyword">if</span> ! validate_init <span class="string">"<span class="variable">$init</span>"</span>; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Target filesystem doesn't have requested <span class="variable">$&#123;init&#125;</span>."</span></span><br><span class="line">	init=</span><br><span class="line">	<span class="keyword">for</span> inittest <span class="keyword">in</span> /sbin/init /etc/init /bin/init /bin/sh; <span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> validate_init <span class="string">"<span class="variable">$&#123;inittest&#125;</span>"</span>; <span class="keyword">then</span></span><br><span class="line">			init=<span class="string">"<span class="variable">$inittest</span>"</span></span><br><span class="line">			<span class="built_in">break</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># No init on rootmount</span></span><br><span class="line"><span class="keyword">if</span> ! validate_init <span class="string">"<span class="variable">$&#123;init&#125;</span>"</span> ; <span class="keyword">then</span></span><br><span class="line">	panic <span class="string">"No init found. Try passing init= bootarg."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">maybe_break init</span><br><span class="line"></span><br><span class="line"><span class="comment"># don't leak too much of env - some init(8) don't clear it</span></span><br><span class="line"><span class="comment"># (keep init, rootmnt, drop_caps)</span></span><br><span class="line"><span class="built_in">unset</span> debug</span><br><span class="line"><span class="built_in">unset</span> MODPROBE_OPTIONS</span><br><span class="line"><span class="built_in">unset</span> DPKG_ARCH</span><br><span class="line"><span class="built_in">unset</span> ROOTFLAGS</span><br><span class="line"><span class="built_in">unset</span> ROOTFSTYPE</span><br><span class="line"><span class="built_in">unset</span> ROOTDELAY</span><br><span class="line"><span class="built_in">unset</span> ROOT</span><br><span class="line"><span class="built_in">unset</span> IP</span><br><span class="line"><span class="built_in">unset</span> IP6</span><br><span class="line"><span class="built_in">unset</span> BOOT</span><br><span class="line"><span class="built_in">unset</span> BOOTIF</span><br><span class="line"><span class="built_in">unset</span> UBIMTD</span><br><span class="line"><span class="built_in">unset</span> blacklist</span><br><span class="line"><span class="built_in">unset</span> <span class="built_in">break</span></span><br><span class="line"><span class="built_in">unset</span> noresume</span><br><span class="line"><span class="built_in">unset</span> panic</span><br><span class="line"><span class="built_in">unset</span> quiet</span><br><span class="line"><span class="built_in">unset</span> <span class="built_in">readonly</span></span><br><span class="line"><span class="built_in">unset</span> resume</span><br><span class="line"><span class="built_in">unset</span> resume_offset</span><br><span class="line"><span class="built_in">unset</span> fastboot</span><br><span class="line"><span class="built_in">unset</span> forcefsck</span><br><span class="line"><span class="built_in">unset</span> fsckfix</span><br><span class="line"></span><br><span class="line"><span class="comment"># Move virtual filesystems over to the real filesystem</span></span><br><span class="line">mount -n -o move /sys <span class="variable">$&#123;rootmnt&#125;</span>/sys</span><br><span class="line">mount -n -o move /proc <span class="variable">$&#123;rootmnt&#125;</span>/proc</span><br><span class="line"></span><br><span class="line"><span class="comment"># Chain to real filesystem</span></span><br><span class="line"><span class="built_in">exec</span> run-init <span class="variable">$&#123;drop_caps&#125;</span> <span class="variable">$&#123;rootmnt&#125;</span> <span class="variable">$&#123;init&#125;</span> <span class="string">"<span class="variable">$@</span>"</span> <span class="variable">$&#123;recovery:+--startup-event=recovery&#125;</span> &lt;<span class="variable">$&#123;rootmnt&#125;</span>/dev/console &gt;<span class="variable">$&#123;rootmnt&#125;</span>/dev/console 2&gt;&amp;1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Something went badly wrong in the initramfs."</span></span><br><span class="line">panic <span class="string">"Please file a bug on initramfs-tools."</span></span><br></pre></td></tr></table></figure>
+
+<p>またこのinitを実行するタイミングではルート(/)をマウントしていないため、ルート(/)にある/binや/sbinを利用できません。</p>
+<p>代わりに、initrd内部の/binや/sbinを利用しています。</p>
+<p>そのため、ここにバイナリを配置しておく事で起動中に使用できる様になります。</p>
+<blockquote>
+<p><strong>注意</strong><br>バイナリの実行のために、別途moduleの追加が必要だったりもします。</p>
+</blockquote>
+<h2 id="initrdを作成する"><a href="#initrdを作成する" class="headerlink" title="initrdを作成する"></a>initrdを作成する</h2><p>展開後のファイルが配置されているフォルダで行います。<br>cpioによるアーカイブ化、gzipによる圧縮を同時に行い元の形式に戻します。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ find | cpio -o -H newc  | gzip -c &gt; ../initrd.img-4.15.0-54-generic</span><br></pre></td></tr></table></figure>
+
+<p>作成されたinitrdを元の/boot/initrdと入れ替えても起動する事が確認できるかと思います。</p>
+<p>initrdの編集は以上の操作で行います。</p>
+<h2 id="init実行中に処理を止める"><a href="#init実行中に処理を止める" class="headerlink" title="init実行中に処理を止める"></a>init実行中に処理を止める</h2><p>/boot/grub/grub.cfgのlinuxオプションが書かれている箇所にbreak=initとオプションを追加する事で処理が停止します。<br>initrd内のデバッグは、このタイミングで一旦止め、initrd内のリソースを使用したコマンド操作が可能です。<br>処理を進める場合には、exitコマンドを実行し、続行させる事ができます。</p>
+<blockquote>
+<p><strong>注意</strong><br>HyperV上に起動したLinuxMint19では、このタイミングではコンソールの描画が行われませんでした。<br>そのため実機で行う事をおすすめします。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+            
+              <a href="/tags/init/" rel="tag"># init</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/20/github-addkey/" rel="next" title="GitHubに公開鍵を追加">
+                  <i class="fa fa-chevron-left"></i> GitHubに公開鍵を追加
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/26/vagrant-up-mint19-desktop/" rel="prev" title="VagrantでMint19デスクトップ環境を作成">
+                  VagrantでMint19デスクトップ環境を作成 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#initrdとは"><span class="nav-number">2.</span> <span class="nav-text">initrdとは</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手順"><span class="nav-number">3.</span> <span class="nav-text">手順</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#initrdを作業ディレクトリにコピーする"><span class="nav-number">3.1.</span> <span class="nav-text">initrdを作業ディレクトリにコピーする</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zcatで復号しつつ、ファイルとして出力"><span class="nav-number">3.2.</span> <span class="nav-text">zcatで復号しつつ、ファイルとして出力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ファイルを確認"><span class="nav-number">3.3.</span> <span class="nav-text">ファイルを確認</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initを見てみる"><span class="nav-number">3.4.</span> <span class="nav-text">initを見てみる</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initrdを作成する"><span class="nav-number">3.5.</span> <span class="nav-text">initrdを作成する</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init実行中に処理を止める"><span class="nav-number">3.6.</span> <span class="nav-text">init実行中に処理を止める</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

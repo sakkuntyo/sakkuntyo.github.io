@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="色々よくわからんHHKB って何多くのプログラマを虜にしている、独特な配列のキーボードです。   英語配列、日本語配列、無線、有線、両対応などいくつか種類がありますが、わたしは 日本語配列 Hybrid Type-S (静音モデル) を使っています。 sphh jp って何ホームページより引用  遊舎工房 &amp;gt; ホーム &amp;gt; 【委託】sphh jphttps://shop.yushakob">
+<meta name="keywords" content="ガジェット">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HHKB 日本語配列 を完全に模倣した自作キーボード sphh jp">
+<meta property="og:url" content="https://sakkuntyo.github.io/2021/08/15/sphh-jp-custom-mechanical-keyboard/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:description" content="色々よくわからんHHKB って何多くのプログラマを虜にしている、独特な配列のキーボードです。   英語配列、日本語配列、無線、有線、両対応などいくつか種類がありますが、わたしは 日本語配列 Hybrid Type-S (静音モデル) を使っています。 sphh jp って何ホームページより引用  遊舎工房 &amp;gt; ホーム &amp;gt; 【委託】sphh jphttps://shop.yushakob">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://sakkuntyo.github.io/images/sphh-jp-custom-mechanical-keyboard.jpg">
+<meta property="og:image" content="https://sakkuntyo.github.io/images/sphh-jp-custom-mechanical-keyboard2.jpg">
+<meta property="og:image" content="https://sakkuntyo.github.io/images/sphh-jp-custom-mechanical-keyboard3.jpg">
+<meta property="og:image" content="https://sakkuntyo.github.io/images/sphh-jp-custom-mechanical-keyboard4.jpg">
+<meta property="og:updated_time" content="2024-01-28T10:23:40.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HHKB 日本語配列 を完全に模倣した自作キーボード sphh jp">
+<meta name="twitter:description" content="色々よくわからんHHKB って何多くのプログラマを虜にしている、独特な配列のキーボードです。   英語配列、日本語配列、無線、有線、両対応などいくつか種類がありますが、わたしは 日本語配列 Hybrid Type-S (静音モデル) を使っています。 sphh jp って何ホームページより引用  遊舎工房 &amp;gt; ホーム &amp;gt; 【委託】sphh jphttps://shop.yushakob">
+<meta name="twitter:image" content="https://sakkuntyo.github.io/images/sphh-jp-custom-mechanical-keyboard.jpg">
+  <link rel="canonical" href="https://sakkuntyo.github.io/2021/08/15/sphh-jp-custom-mechanical-keyboard/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>HHKB 日本語配列 を完全に模倣した自作キーボード sphh jp | skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2021/08/15/sphh-jp-custom-mechanical-keyboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HHKB 日本語配列 を完全に模倣した自作キーボード sphh jp
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2021-08-15 14:21:56" itemprop="dateCreated datePublished" datetime="2021-08-15T14:21:56+09:00">2021-08-15</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="色々よくわからん"><a href="#色々よくわからん" class="headerlink" title="色々よくわからん"></a>色々よくわからん</h1><h2 id="HHKB-って何"><a href="#HHKB-って何" class="headerlink" title="HHKB って何"></a>HHKB って何</h2><p>多くのプログラマを虜にしている、独特な配列のキーボードです。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B082TXLC2B&linkId=846a6348a6af15d4ac6f30a4abac3f44"></iframe>
+
+<p>英語配列、日本語配列、無線、有線、両対応など<br>いくつか種類がありますが、わたしは 日本語配列 Hybrid Type-S (静音モデル) を使っています。</p>
+<h2 id="sphh-jp-って何"><a href="#sphh-jp-って何" class="headerlink" title="sphh jp って何"></a>sphh jp って何</h2><p>ホームページより引用</p>
+<ul>
+<li>遊舎工房 &gt; ホーム &gt; 【委託】sphh jp<br><a href="https://shop.yushakobo.jp/products/consign_sphh-jp" target="_blank" rel="noopener">https://shop.yushakobo.jp/products/consign_sphh-jp</a></li>
+</ul>
+<blockquote>
+<p>sphh jp は、多くのプロが支持する日本語配列 をベースにした「分割」キーボードです。<br>あの使い心地を、より快適に、さらに自分好みに。</p>
+</blockquote>
+<h2 id="何で-sphh-jp-を買ったのか"><a href="#何で-sphh-jp-を買ったのか" class="headerlink" title="何で sphh jp を買ったのか"></a>何で sphh jp を買ったのか</h2><p>既に数年、HHKB を使っています。<br>HHKB を使い初めてからは、独特なキー配置には慣れ、慣れただけではなく、この完成されたキー配置に中毒性さえ感じています。<br>ただ、自身の ホームポジション、キーフォームは 綺麗ではなく、改善したいなとずっと思っていました。(右手はほぼ人差し指と中指のみ稼働)</p>
+<p>そこで、キーフォームを強制するために分割キーボードがいいのでは？と思い探してみたところ、<br>sphh jp を見つけました。</p>
+<ul>
+<li>限りなく理想に近いキーボード sphh jp を手に入れた<br><a href="https://ninthsky.hatenablog.com/entry/sphh_jp_love" target="_blank" rel="noopener">https://ninthsky.hatenablog.com/entry/sphh_jp_love</a></li>
+</ul>
+<p>これが日本語配列の HHKB を使っていて、分離式キーボードを試したいと思っていた自分にとって、完全にぴったりだったからです。</p>
+<h2 id="購入からその他部品の調達"><a href="#購入からその他部品の調達" class="headerlink" title="購入からその他部品の調達"></a>購入からその他部品の調達</h2><p>自作キーボードの部類であるこのキーボードは、購入したら即使える、という物ではありません。<br>そのため、以下に記載する様な各パーツを揃える必要がありました。</p>
+<h3 id="キーボードの基盤と組み立てサービス"><a href="#キーボードの基盤と組み立てサービス" class="headerlink" title="キーボードの基盤と組み立てサービス"></a>キーボードの基盤と組み立てサービス</h3><ul>
+<li>a bit keys - sphh jp<br><a href="https://booth.pm/ja/items/2372359" target="_blank" rel="noopener">https://booth.pm/ja/items/2372359</a></li>
+</ul>
+<p>スイッチソケットや組み立て作業を自身で行う事が可能な場合には、キット本体(\14850)のみの購入で大丈夫です。</p>
+<h3 id="キースイッチ"><a href="#キースイッチ" class="headerlink" title="キースイッチ"></a>キースイッチ</h3><p>静音が好きなので静音赤軸というものにしました。</p>
+<ul>
+<li>遊舎工房 - Gateron Silent スイッチ（10個）<br><a href="https://shop.yushakobo.jp/products/a02gs" target="_blank" rel="noopener">https://shop.yushakobo.jp/products/a02gs</a></li>
+</ul>
+<p>sphh jp は 70 キーなので 10x7 個購入する必要があります。</p>
+<p>また、キースイッチは以下の様な動画を見てある程度好みの物を探す事ができます。</p>
+<ul>
+<li>【好きな軸が見つかる】キーボードスイッチテスターがめっちゃええ…<br><a href="https://www.youtube.com/watch?v=ABic-N718Bw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ABic-N718Bw</a></li>
+</ul>
+<p>この動画を見て、Aliaz 100g も気になったので購入しています。</p>
+<ul>
+<li>Kbdfans aliazサイレント触覚スイッチ5ピン60グラム/70グラム/80グラム/100グラムmxメカニカルキーボード<br><a href="https://ja.aliexpress.com/item/1005002069413821.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL" target="_blank" rel="noopener">https://ja.aliexpress.com/item/1005002069413821.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL</a></li>
+</ul>
+<h3 id="キーキャップ"><a href="#キーキャップ" class="headerlink" title="キーキャップ"></a>キーキャップ</h3><p>以下の白、無刻印を二つ購入しました。</p>
+<ul>
+<li>ホワイトブラックグレーオレンジグリーン黄色空白厚いpbt oemプロファイル62キーiso 61 ansiキーキャップ用mxスイッチメカニカルキーボード<br><a href="https://ja.aliexpress.com/item/32791605680.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL" target="_blank" rel="noopener">https://ja.aliexpress.com/item/32791605680.html?spm=a2g0s.9042311.0.0.13384c4dkDczzL</a></li>
+</ul>
+<p>ただ、ali express で、外国からの発送という事もあり、<br>なかなか届くのが遅かった(今も２週間近く経過しているが国内にすら到着していません)ので Amazon でも以下を購入しました。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00R1BZ60K&linkId=8eaefcd4922af6958f06ee38b4aecbac"></iframe>
+
+<p>このキーキャップも最下段のキーが足りていないため、二つ購入する事が好ましいのですが、<br>テンキー分を割り当ててなんとかキーキャップは足らせています。段数により若干、キーキャップの形が違うのでよく見ると違和感があります。</p>
+<h3 id="micro-usb-ケーブル"><a href="#micro-usb-ケーブル" class="headerlink" title="micro usb ケーブル"></a>micro usb ケーブル</h3><p>これを使用して、PCに接続します。<br>大好きな Anker さんのケーブルを買いました。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B019Q4TJZC&linkId=f21d12ab56981902ce5fb9636e960360"></iframe>
+
+<h3 id="micro-usb-to-micro-usb-ケーブル"><a href="#micro-usb-to-micro-usb-ケーブル" class="headerlink" title="micro usb to micro usb ケーブル"></a>micro usb to micro usb ケーブル</h3><p>分離されたキーボード同士を接続します。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=noma362907-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01FTF06GS&linkId=a9170773282840e83cc6bc47a67d321a"></iframe>
+
+<h4 id="カール化しました。"><a href="#カール化しました。" class="headerlink" title="カール化しました。"></a>カール化しました。</h4><p>割りばしに巻いて、沸騰したお湯に数分付ける -&gt; 冷やす という事を行います。</p>
+<ol>
+<li><p>巻く<br><img src="/images/sphh-jp-custom-mechanical-keyboard.jpg" alt="1"><br><img src="/images/sphh-jp-custom-mechanical-keyboard2.jpg" alt="1"></p>
+</li>
+<li><p>加熱する<br><img src="/images/sphh-jp-custom-mechanical-keyboard3.jpg" alt="1"></p>
+</li>
+<li><p>冷やす</p>
+</li>
+</ol>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p><img src="/images/sphh-jp-custom-mechanical-keyboard4.jpg" alt="1"></p>
+<h2 id="使ってみた感想"><a href="#使ってみた感想" class="headerlink" title="使ってみた感想"></a>使ってみた感想</h2><p>メカニカルキーボードは壊れるから、煩いから、という理由で<br>購入を避けていましたが、静音赤軸の効果は素晴らしく、HHKB Type-S よりも静かなキーボードができました。<br>また、メカニカルキーボードはキースイッチもはんだ付け作業はおろか、ネジも不要で取付出来るパーツだったんですね。<br>壊れたメカニカルキーボードを捨ててしまっていたので、ちょっともったいなかったなと思います。</p>
+<p>まだ数日しか使用してませんが、右手で叩いていた、T キー、G キー、B キーが左側に行ってしまいました。<br>現時点ではかなり違和感がありますが、この違和感は成長するために必要な物だと思って、しばらく使ってみたいと思います。 </p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/ガジェット/" rel="tag"># ガジェット</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2021/07/31/curl-dos/" rel="next" title="curlで出力を消す、繰り返す">
+                  <i class="fa fa-chevron-left"></i> curlで出力を消す、繰り返す
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2021/08/15/azure-kusto-query-execution-test/" rel="prev" title="[Azure] kusto クエリをテスト実行する">
+                  [Azure] kusto クエリをテスト実行する <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#色々よくわからん"><span class="nav-number">1.</span> <span class="nav-text">色々よくわからん</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HHKB-って何"><span class="nav-number">1.1.</span> <span class="nav-text">HHKB って何</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sphh-jp-って何"><span class="nav-number">1.2.</span> <span class="nav-text">sphh jp って何</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何で-sphh-jp-を買ったのか"><span class="nav-number">1.3.</span> <span class="nav-text">何で sphh jp を買ったのか</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#購入からその他部品の調達"><span class="nav-number">1.4.</span> <span class="nav-text">購入からその他部品の調達</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#キーボードの基盤と組み立てサービス"><span class="nav-number">1.4.1.</span> <span class="nav-text">キーボードの基盤と組み立てサービス</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#キースイッチ"><span class="nav-number">1.4.2.</span> <span class="nav-text">キースイッチ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#キーキャップ"><span class="nav-number">1.4.3.</span> <span class="nav-text">キーキャップ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#micro-usb-ケーブル"><span class="nav-number">1.4.4.</span> <span class="nav-text">micro usb ケーブル</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#micro-usb-to-micro-usb-ケーブル"><span class="nav-number">1.4.5.</span> <span class="nav-text">micro usb to micro usb ケーブル</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#カール化しました。"><span class="nav-number">1.4.5.1.</span> <span class="nav-text">カール化しました。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成"><span class="nav-number">1.4.6.</span> <span class="nav-text">完成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使ってみた感想"><span class="nav-number">1.5.</span> <span class="nav-text">使ってみた感想</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
