@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://sakkuntyo.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/05/17/raspberrypi-tempreture/</loc>
+        <lastmod>2024-05-17T00:52:39.680Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/05/16/linux-disk-benchmark/</loc>
+        <lastmod>2024-05-15T22:52:16.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/05/12/raspberrypi-2-3-4-5-zero/</loc>
+        <lastmod>2024-05-12T15:53:18.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/05/12/tailscale-advertise-routes/</loc>
+        <lastmod>2024-05-11T23:19:01.352Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/02/12/udp-forwarding-tailscale-test/</loc>
+        <lastmod>2024-05-11T22:48:12.202Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/04/17/audio-system/</loc>
+        <lastmod>2024-04-17T02:56:07.230Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/02/11/PalWorld-savedata-details/</loc>
+        <lastmod>2024-02-20T16:26:05.892Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/01/27/launch-and-update-steam-game-server/</loc>
+        <lastmod>2024-02-10T08:27:29.800Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2024/01/28/localtonet/</loc>
+        <lastmod>2024-01-28T12:24:23.219Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/19/3950X-siyoukan/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2023/07/21/Hyper-V-windows11-GPU-PV/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/08/27/aliaz100g-inpre/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/05/anyenv/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/08/28/aonic215-ankerdosoundcoreliberty2pro-airpodspro-XC90-inpre/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/08/15/azure-kusto-query-execution-test/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2023/04/02/chatgpt35-curl/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/05/byobu/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/30/ffmpeg-no-audio/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/10/12/git-howto-simple/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/30/git-mingw-gcc/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/12/27/github-command-operation/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/02/go-cms-ponzu/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/10/20/github-addkey/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/31/curl-dos/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/30/hexo-generate-sitemap/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/19/hexo-memo/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/09/12/hub-command-install-ubuntu/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/12/18/hyperv-portfowarding/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/10/20/initrd-unpack-edit-compress/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2023/04/02/java-maven-app-tutorial/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/11/03/laravel-build-develop-environment-debian/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/11/15/linux-debian-time-adjustment/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/11/16/linux-mac-windows-nodejs-install-js/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/09/miniconda-python/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/12/mount-networkdrive-for-wsl/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/02/neovim-vim-lsp/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/22/nodejs-all-package-upgrade/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/19/nodejs-consolelog-all/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/06/nmon/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/09/19/nodejs-get-client-id/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/04/nodenv/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/01/npx/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/22/nslookup/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2023/07/20/powershell-module-commandlist/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/08/powershell/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/04/10/rakuten-unlimit-iphone/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/09/03/rtx-voice-noise-reduction/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/07/21/sandy-bridge-friend-voice/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/31/shell-basename/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2021/08/15/sphh-jp-custom-mechanical-keyboard/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2022/05/05/noize-filter-ground-loop-isolator/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/09/19/thinkpad-e14-gen2/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/22/ubuntu-nginx-webserver-md/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/23/ubuntu-snap/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2023/09/27/vencord-translater-change-language/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/11/wsl-mount-for-windows/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/02/13/wsl-ubuntu-byobu/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/29/wsl-ubuntu-root/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/23/ubuntu-apache-webserver/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2019/10/26/vagrant-up-mint19-desktop/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sakkuntyo.github.io/2020/01/12/xsel-commandline-clipboard/</loc>
+        <lastmod>2024-01-28T10:23:40.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

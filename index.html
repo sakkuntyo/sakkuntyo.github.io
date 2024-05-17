@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151322980-1"></script>
+  <script>
+		  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151322980-1');
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'コピー',
+      copy_success: 'コピーしました',
+      copy_failure: 'コピーに失敗しました'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="keywords" content="IT,Nodejs,Golang,Vim,スーパーカブ,リトルカブ,ニュービートル">
+<meta property="og:type" content="website">
+<meta property="og:title" content="skt workshop">
+<meta property="og:url" content="https://sakkuntyo.github.io/index.html">
+<meta property="og:site_name" content="skt workshop">
+<meta property="og:locale" content="ja">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="skt workshop">
+  <link rel="canonical" href="https://sakkuntyo.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>skt workshop</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript">
+	  !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+cfg: { // Application Insights Configuration
+	    connectionString: "InstrumentationKey=8899ab67-2c85-40b8-8885-23e4618b00c2;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/"
+	    /* ...Other Configuration Options... */
+}});
+  </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">skt workshop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/05/17/raspberrypi-tempreture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/05/17/raspberrypi-tempreture/" class="post-title-link" itemprop="url">Raspberry Pi の温度</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-05-17 00:00:00 / 修正日：09:52:39" itemprop="dateCreated datePublished" datetime="2024-05-17T00:00:00+09:00">2024-05-17</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>ラズパイ5、動作は非常にいいんですが実際に温度を見たらファンレス運用はちょっと厳しそうな気がしたのでファンを購入しました。<br>過去のラズパイでは熱なんか気にならなかったんですけどね。。。<br>普段から PC の温度は見る様にしてますが、個人的には厳しめには見てないです。<br>PC組み上げ後、明らかに異常な温度になってる事もあり、それは回避しようという発想になります。</p>
+<h2 id="温度を見るときの基準"><a href="#温度を見るときの基準" class="headerlink" title="温度を見るときの基準"></a>温度を見るときの基準</h2><ol>
+<li>スロットリングが発生する温度に到達していないかどうか</li>
+<li>他のユーザーと比べてアイドルの温度が高くないか</li>
+</ol>
+<p>1 はマストです。<br>2 以降は情報が見つからない場合もあるので優先度低</p>
+<p>例えば Ryzen 3950X はアイドル時の周波数と温度が高くなりすぎるため、コアブーストを切って 3400 Mhz で運用したりとかしてます。<br>(Ryzen 5950X ではこの問題が解決されている様なので、5950X がうらやましい) </p>
+<h1 id="各ラズパイで観測した温度"><a href="#各ラズパイで観測した温度" class="headerlink" title="各ラズパイで観測した温度"></a>各ラズパイで観測した温度</h1><p>OS : Raspberry Pi OS (bookworm)</p>
+<p>複数回コマンド実行して、外れ値ではなさそうだな、という事だけ見てます。。</p>
+<h2 id="Raspberry-Pi-Zero-W-H-ヒートシンクのみ"><a href="#Raspberry-Pi-Zero-W-H-ヒートシンクのみ" class="headerlink" title="Raspberry Pi Zero W/H (ヒートシンクのみ)"></a>Raspberry Pi Zero W/H (ヒートシンクのみ)</h2><p>ケースについてきたヒートシンクをつけています</p>
+<h3 id="Homebridge-起動中"><a href="#Homebridge-起動中" class="headerlink" title="Homebridge 起動中"></a>Homebridge 起動中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=45.5&apos;C</span><br></pre></td></tr></table></figure>
+
+<h2 id="Raspberry-Pi-2"><a href="#Raspberry-Pi-2" class="headerlink" title="Raspberry Pi 2"></a>Raspberry Pi 2</h2><p>何もつけてません。</p>
+<h3 id="特になにもさせてない時"><a href="#特になにもさせてない時" class="headerlink" title="特になにもさせてない時"></a>特になにもさせてない時</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=45.5&apos;C</span><br></pre></td></tr></table></figure>
+
+<h3 id="tailscale-の-exit-node-にして速度測定中"><a href="#tailscale-の-exit-node-にして速度測定中" class="headerlink" title="tailscale の exit node にして速度測定中"></a>tailscale の exit node にして速度測定中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=53.0&apos;C</span><br></pre></td></tr></table></figure>
+
+<h2 id="Raspberry-Pi-3-ヒートシンクつき"><a href="#Raspberry-Pi-3-ヒートシンクつき" class="headerlink" title="Raspberry Pi 3 (ヒートシンクつき)"></a>Raspberry Pi 3 (ヒートシンクつき)</h2><p>ヒートシンクはプラスチックケースについてきた黒いやつ</p>
+<h3 id="何もさせてない時"><a href="#何もさせてない時" class="headerlink" title="何もさせてない時"></a>何もさせてない時</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=53.7&apos;C</span><br></pre></td></tr></table></figure>
+
+<h3 id="tailscale-の-exit-node-にして速度測定中-1"><a href="#tailscale-の-exit-node-にして速度測定中-1" class="headerlink" title="tailscale の exit node にして速度測定中"></a>tailscale の exit node にして速度測定中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=64.5&apos;C</span><br></pre></td></tr></table></figure>
+
+<h2 id="Raspberry-Pi-4-ケースファンつき"><a href="#Raspberry-Pi-4-ケースファンつき" class="headerlink" title="Raspberry Pi 4 (ケースファンつき)"></a>Raspberry Pi 4 (ケースファンつき)</h2><p>たまたま買った<a href="https://www.amazon.co.jp/gp/product/B07VB24K9W?ie=UTF8&psc=1&linkCode=ll1&tag=noma362907-22&linkId=ab42156e7f1536101bcae681defe5910&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="noopener">このケース</a>についてきたファンで、アクティブクーラーではないです。かなり静かで作業用のデスクにおいといても気にならない<br>アクティブクーラーだと OS や ファームからコントロールできない特殊な環境では爆音になるので、<br>コントロールのしようがないこういうファンの方がいいかも。</p>
+<h3 id="何もさせてない時-1"><a href="#何もさせてない時-1" class="headerlink" title="何もさせてない時"></a>何もさせてない時</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=38.9&apos;C</span><br></pre></td></tr></table></figure>
+
+<h3 id="tailscale-の-exit-node-にして速度測定中-2"><a href="#tailscale-の-exit-node-にして速度測定中-2" class="headerlink" title="tailscale の exit node にして速度測定中"></a>tailscale の exit node にして速度測定中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=48.7&apos;C</span><br></pre></td></tr></table></figure>
+
+<h2 id="Raspberry-Pi-5-ヒートシンクのみ"><a href="#Raspberry-Pi-5-ヒートシンクのみ" class="headerlink" title="Raspberry Pi 5 (ヒートシンクのみ)"></a>Raspberry Pi 5 (ヒートシンクのみ)</h2><p><a href="https://www.amazon.co.jp/gp/product/B0CXPH1PZH?ie=UTF8&psc=1&linkCode=ll1&tag=noma362907-22&linkId=5200b4c6e5b1fb01e380fb5931adafc2&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="noopener">このケース</a>とこれについてきたヒートシンク(銅)を使用<br>一応<a href="https://www.amazon.co.jp/gp/product/B0CXPP468R?ie=UTF8&psc=1&linkCode=ll1&tag=noma362907-22&linkId=690f4f58d17afb0be7b633242ccbbb50&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="noopener">電源</a>も書いておきます。ラズパイ5を全力で動作させられる 5V 5A 電源です。5V 5A PD なんて他の用途で使わないので家にはありませんでした。<br>ただ Raspberry Pi OS を起動するだけでアッツいので今までのとは違う事がすぐにわかります。<br>ギリギリ手で持てるかな、くらいの熱さ</p>
+<h3 id="何もしてない時"><a href="#何もしてない時" class="headerlink" title="何もしてない時"></a>何もしてない時</h3><p>ファン装着後に付け替えが面倒でしていません。75’Cくらいだったかと。</p>
+<h3 id="Minecraft-Server-起動中"><a href="#Minecraft-Server-起動中" class="headerlink" title="Minecraft Server 起動中"></a>Minecraft Server 起動中</h3><p>ファン装着後に付け替えが面倒でしていません。83-90’Cくらいでした。<br>90’C 到達時はサーマルスロットリングが発生してるのでは？と思い、パフォーマンスに不満はありませんでしたがファン購入に至りました。</p>
+<h2 id="Raspberry-Pi-5-ファンつき"><a href="#Raspberry-Pi-5-ファンつき" class="headerlink" title="Raspberry Pi 5 (ファンつき)"></a>Raspberry Pi 5 (ファンつき)</h2><p><a href="https://www.amazon.co.jp/gp/product/B0CX4DFY8G?ie=UTF8&psc=1&linkCode=ll1&tag=noma362907-22&linkId=a37e14832a55eebb1836ec43d637feca&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="noopener">このアクティブ クーラー</a> を追加しました。</p>
+<p>アクティブクーラーだとファンの回転速度が温度によって自動変速します。<br>ケースと同時についてきた NVMe HAT とも同時に使えていて満足<br>ただ、ドライバ対応が微妙な Windows を起動した時は最高速度で回転しつづけていて、非常にうるさい。<br>自作PC経験上の推測・・・ファン自体が小さい事、最大回転数が高い事、このファンと一体化してるヒートシンクの距離がファンと近い事全てがうるさくなる原因だと思う。<br>ただし、NVMe ハットがケース内のスペースをとっているので、他の選択肢が見当たるわけでもない</p>
+<h3 id="何もしてない時-1"><a href="#何もしてない時-1" class="headerlink" title="何もしてない時"></a>何もしてない時</h3><p>ファンの回転数に関係する pwm1 の値は 75</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat /sys/devices/platform/cooling_fan/hwmon/hwmon3/pwm1</span><br><span class="line">75</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=56.0&apos;C</span><br></pre></td></tr></table></figure>
+
+<h3 id="Miecraft-Server-起動中"><a href="#Miecraft-Server-起動中" class="headerlink" title="Miecraft Server 起動中"></a>Miecraft Server 起動中</h3><p>ファンの回転数に関係する pwm1 の値は 125</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat /sys/devices/platform/cooling_fan/hwmon/hwmon3/pwm1</span><br><span class="line">125</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vcgencmd measure_temp</span><br><span class="line">temp=63.1&apos;C</span><br></pre></td></tr></table></figure>
+
+<h2 id="Orange-Pi-5-ファンつき"><a href="#Orange-Pi-5-ファンつき" class="headerlink" title="Orange Pi 5 (ファンつき)"></a>Orange Pi 5 (ファンつき)</h2><p>記載予定</p>
+<h1 id="気づき"><a href="#気づき" class="headerlink" title="気づき"></a>気づき</h1><p>ラズパイ5のアクティブクーラーの回転速度は 50ずつ増加・減少される様です。75, 125, 175 等<br>これは pwm1 の内容であって実際の回転速度ではない事に注意<br>pwm1 は 255 まで指定できる様で、これが購入したファンの回転数 8000 だと思います。</p>
+<h1 id="アクティブクーラーの騒音対策"><a href="#アクティブクーラーの騒音対策" class="headerlink" title="アクティブクーラーの騒音対策"></a>アクティブクーラーの騒音対策</h1><p>ラズパイ5 のアクティブクーラーの騒音について、温度が高くなるとかなりの速度でファンが回転し、結果うるさくなります。<br>↓の様なパワー系の対処をして回避しています。<br>/etc/crontab に以下を記載して、1秒に1回ファンの回転数を指定し、静かな速度(110以下)で動作させています。<br>1秒毎なので自身の環境では 一瞬 125や175になるタイミングがありました。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@reboot root while true;do sleep 1;echo 75 | tee /sys/devices/platform/cooling_fan/hwmon/hwmon3/pwm1;done</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://forums.raspberrypi.com/viewtopic.php?t=362528" target="_blank" rel="noopener">しっかりやろうとする</a>と、冷却マップの再構築と設定外出しために再コンパイルが必要になる様子、ここまではやらなくていいかな。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/05/16/linux-disk-benchmark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/05/16/linux-disk-benchmark/" class="post-title-link" itemprop="url">Linux でのディスクベンチマーク</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-05-16 00:00:00 / 修正日：07:52:16" itemprop="dateCreated datePublished" datetime="2024-05-16T00:00:00+09:00">2024-05-16</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>ラズパイで nvme を gen3 で認識させるかそうでないかで速度がどれくらい変わるのか確認のために使いました</p>
+<h1 id="コマンド"><a href="#コマンド" class="headerlink" title="コマンド"></a>コマンド</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=./test bs=1M count=10240 status=progress;rm test</span><br></pre></td></tr></table></figure>
+
+<p>10 GB 分のファイルをカレントディレクトリに書き込んで測定します。なので測定されるのはカレントディレクトリのディスクになります。</p>
+<p>Windows の CrystalDiskMark で測定した時の SEQ1M の項目と大体同じ事をしてるのだろう、と思ってます。</p>
+<h1 id="ラズパイでの実行結果例"><a href="#ラズパイでの実行結果例" class="headerlink" title="ラズパイでの実行結果例"></a>ラズパイでの実行結果例</h1><p>ラズパイでは /boot/firmware/config.txt の dtparam を nvme にするか、pciex1_gen=3 にするかで gen3 で認識するかどうかが変わるみたいです。</p>
+<h2 id="dtparam-nvme"><a href="#dtparam-nvme" class="headerlink" title="dtparam=nvme"></a>dtparam=nvme</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ dd if=/dev/zero of=./test bs=1M count=10240 status=progress;rm test</span><br><span class="line">10480517120 bytes (10 GB, 9.8 GiB) copied, 23 s, 456 MB/s</span><br><span class="line">10240+0 records in</span><br><span class="line">10240+0 records out</span><br><span class="line">10737418240 bytes (11 GB, 10 GiB) copied, 23.484 s, 457 MB/s</span><br></pre></td></tr></table></figure>
+
+<h2 id="dtparam-pciex1-gen-3"><a href="#dtparam-pciex1-gen-3" class="headerlink" title="dtparam=pciex1_gen=3"></a>dtparam=pciex1_gen=3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ dd if=/dev/zero of=./test bs=1M count=10240 status=progress;rm test</span><br><span class="line">10410262528 bytes (10 GB, 9.7 GiB) copied, 13 s, 801 MB/s</span><br><span class="line">10240+0 records in</span><br><span class="line">10240+0 records out</span><br><span class="line">10737418240 bytes (11 GB, 10 GiB) copied, 13.3776 s, 803 MB/s</span><br></pre></td></tr></table></figure>
+
+<p>ちゃんと早くなってる事が確認できました。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/05/12/tailscale-advertise-routes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/05/12/tailscale-advertise-routes/" class="post-title-link" itemprop="url">実家のルーターを自宅から設定したい時にした事</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-05-12 00:00:00 / 修正日：08:19:01" itemprop="dateCreated datePublished" datetime="2024-05-12T00:00:00+09:00">2024-05-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="きっかけ"><a href="#きっかけ" class="headerlink" title="きっかけ"></a>きっかけ</h1><p><a href="https://sakkuntyo.github.io/2024/02/12/udp-forwarding-tailscale-test/">こんな方法</a>で宅内のサーバーを公開していたんですが、<br>ふとポート開放可能な実家や別のところにラズパイでもおいて同じ事すれば VPS すら不要な事に気づきました。<br>ただその時に面倒になるのがブラウザ経由で行うルーター側のポートマッピング(ポートフォワーディング)設定、これを自宅内からアクセスできる様にする機能(Subnet routes)が tailscale にあったので試しました。</p>
+<h1 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h1><p>OS: Raspbian 12 bookworm</p>
+<ol>
+<li>tailscale をインストール</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://tailscale.com/install.sh | sh</span><br><span class="line">sudo tailscale up --accept-routes &quot;x.x.x.x/24&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>tailscale の管理コンソールからも許可</li>
+</ol>
+<p>tailscale に追加マシンの 3点リーダー &gt; Edit route settings… &gt; Subnet routes から↑で入力した IP レンジが選択できるので、選択</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/7fc43f54-ddfa-42d9-afdc-5eeacbdc9017" alt="image"></p>
+<h1 id="ルーターにアクセスできるか確認"><a href="#ルーターにアクセスできるか確認" class="headerlink" title="ルーターにアクセスできるか確認"></a>ルーターにアクセスできるか確認</h1><p>実家にいるかの様に実家のルーターのIPを指定してアクセスしてみると、表示されました。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/cdf08663-0fa9-41c1-94ac-af138872154b" alt="image"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/05/12/raspberrypi-2-3-4-5-zero/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/05/12/raspberrypi-2-3-4-5-zero/" class="post-title-link" itemprop="url">Raspberry Pi の用途</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-05-12T00:00:00+09:00">2024-05-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近何かとサーバーを立てる事が多く、今まで購入するだけして眠ってたラズパイ達が活躍し始めてるので用途を紹介</p>
+<h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><h2 id="メモリが-1GB-以下の-Raspberry-Pi"><a href="#メモリが-1GB-以下の-Raspberry-Pi" class="headerlink" title="メモリが 1GB 以下の Raspberry Pi"></a>メモリが 1GB 以下の Raspberry Pi</h2><p>zero 1.1 や 2 や 3 が該当</p>
+<ul>
+<li>tailscale exit node や subnet routes 用 <a href="https://sakkuntyo.github.io/2024/05/12/tailscale-advertise-routes/">こんな用途</a></li>
+<li><a href="https://qiita.com/zizi4n5/items/1683d3c3a62eee2cdbb2" target="_blank" rel="noopener">Home Bridge 用</a><br>デスクトップ版 OS を使うとそれだけでメモリがカツカツになるので、可能であればサーバー版 OS を使う事をおすすめ</li>
+</ul>
+<p>1GB モデルの場合<br>デスクトップ版の空きメモリ 200MB 程度<br>サーバー版の空きメモリ 700MB 程度</p>
+<p><a href="https://www.amazon.co.jp/Raspberry-Pi-Zero-WH-%25E3%2583%2598%25E3%2583%2583%25E3%2583%2580%25E3%2583%25BC%25E4%25BB%2598%25E3%2581%258D/dp/B07BHMRTTY/ref=sr_1_5?__mk_ja_JP=%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A&amp;crid=1J2TUV5FFV8MZ&amp;dib=eyJ2IjoiMSJ9.AjTkYGEWZj-JsV1QsqVMa1rWz7oawWrUTKwEMFa7HFqhvDygDJQ5qhz12F886Mt9OgwE2H9FQz2gaiBc9jE2oeXCvzAIZfBPTBBWaVliorfZ5L3JwfkTJlrUP5x4vUHP55yc_2vRAFmpow6s-GrGB3dCJvnlmvuOKlmWazHfb86hP4enwPvUoRVXDuCWiC100yHYGJzh3QC9lj9gm_04-cGf6MlhJWsx5GD-5pwPw6nRXDTFaCUN8CX96RocHpypmdW6W-k06wdusyN7OWAXddyMq1UAgUj60vgMyIGWdZg.2mcp9DB1OgHI0qC2T5aHNg8-TOTV9id_N7bWpQ5YOU4&amp;dib_tag=se&amp;keywords=raspberry+pi+zero&amp;qid=1715473067&amp;sprefix=raspberry+pi+zer%252Caps%252C175&amp;sr=8-5&_encoding=UTF8&tag=noma362907-22&linkCode=ur2&linkId=959bc239a7042ec66a439aa08b91a8cd&camp=247&creative=1211" target="_blank" rel="noopener">raspberry pi zero 購入リンク - amazon</a></p>
+<p><a href="https://www.amazon.co.jp/%25E3%2580%25902021%25E5%25B9%25B4%25E6%2596%25B0%25E5%2587%25BA%25E3%2580%2591Raspberry-%25E3%2583%25A9%25E3%2582%25BA%25E3%2583%2599%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2591%25E3%2582%25A4-W%25EF%25BC%25882%25E4%25BB%25A3%25EF%25BC%2589RAM%25E5%25AE%25B9%25E9%2587%258F-CPU%25E9%2580%259F%25E5%25BA%25A61GHz-Cortex-A53/dp/B09N8LMWLS/ref=sr_1_2?crid=3BT01N12FN5KS&amp;dib=eyJ2IjoiMSJ9.OwbalKiYU86-rquZUxojf1b3YjOcvHrZScb6VP6lVvurbQ9zPUxYJZoa10l0rt72c6KmhfHg1ftp5l8m9NNviavqAa1Bs6ZKIrYblhi0MCxgoIPch9eI3MQLLZwQcp6So9nnfTY4kM6yBT1xf4yqMrJaOESpUK8FQUcZFOhPDYVOKCrka3HsaeracIJzlrOhBP63xz15wUWHUpUOCJn0mbveNR4tFBBpBuq7javIohvoX_61jVM6LLLLlmRv7DTtf6REPpYBsihUc79ZR_OeWVrsfwffLC_sYu2Zo11efdU.CDcOs0z31uKQ3wZ7O-8c5kqVUjZysniLHYdHbTPiqrg&amp;dib_tag=se&amp;keywords=raspberry+pi+zero+2+w&amp;qid=1715473314&amp;sprefix=raspberry+pi+zero%252Caps%252C227&amp;sr=8-2&_encoding=UTF8&tag=noma362907-22&linkCode=ur2&linkId=f2ce6310144d709312b4e5e14e19a7df&camp=247&creative=1211" target="_blank" rel="noopener">raspberry pi zero 2 購入リンク - amazon</a></p>
+<h2 id="Raspberry-Pi-4-Model-B-4GB"><a href="#Raspberry-Pi-4-Model-B-4GB" class="headerlink" title="Raspberry Pi 4 Model B 4GB"></a>Raspberry Pi 4 Model B 4GB</h2><ol>
+<li>Discord bot (音楽・ラジオ再生) の常時稼働用、これは 3 でやってる時期もあった</li>
+<li>Minecraft Server も起動できるものの MOD 無しでも最初から少しモッサリする</li>
+<li>やったことないけど身近にやってる人がいた <a href="https://bowmiow.net/garage/raspi-tv2/" target="_blank" rel="noopener">地上波録画サーバ</a>、Mirakurun や EPGStation を使う</li>
+<li>Nintendo Switch のコントローラ自作、4 で USB Gadget API が使える様になって可能になった。<a href="https://youtu.be/p048VY5oUCk?si=ex6EGEeFhgzXmXvq" target="_blank" rel="noopener">スプラトゥーン3をマウスでプレイ ジャイロコンバーター [NXIC]</a> <del>ただちょっとラグかったかな</del></li>
+</ol>
+<h2 id="Raspberry-Pi-5-8GB"><a href="#Raspberry-Pi-5-8GB" class="headerlink" title="Raspberry Pi 5 8GB"></a>Raspberry Pi 5 8GB</h2><p>Minecraft Server + 工業系MOD 3-4人で結構快適</p>
+<p>スペック的に難しかった事が色々試せそう</p>
+<p><a href="https://www.amazon.co.jp/Raspberry-Development-Cortex-A76-quad-core-RAM%25EF%25BC%2589%25E3%2583%2592%25E3%2583%25BC%25E3%2583%2588%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25AF/dp/B0CQT288H2/ref=sr_1_5_pp?__mk_ja_JP=%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A&amp;crid=3J3T5LDZ74E63&amp;dib=eyJ2IjoiMSJ9.OBtTCTkPdbsi77Fp7vq1kPaFLPEDszaKRoCjQ7apwPgQr-0VO8OIW7B04s44ziT2u16Y3EYI1MJMWY8angixAd5uht_bJdbEqR5JOCSV6V39VcUch1SEZKwOyeqvyZO0Zln5t7QYtIVipenVFt3vrV1PBuCI-fpc-BrU3rWQImiqEWFertgaHftMEAzNatroBYo8nl16SsTvFn4-QeF6xM3YGDhU1KZvTkT0XPjyyl2Sau0QBM0Be61Fh980yW6WTWJmWtkXbZRLDEJqPxkgUjOCLlsF5pdCW9b-YaZ78iI.RjUGqi2lf0iUKaRW2Uy5ikIojT65LM5-dAf0N5LZJmI&amp;dib_tag=se&amp;keywords=raspberry+pi+5&amp;qid=1715473018&amp;sprefix=raspbeery+pi+%252Caps%252C176&amp;sr=8-5&_encoding=UTF8&tag=noma362907-22&linkCode=ur2&linkId=97c94075aaec1b55ed7449aa95875023&camp=247&creative=1211" target="_blank" rel="noopener">raspberry pi 5 購入リンク - amazon</a></p>
+<h1 id="強みと弱み"><a href="#強みと弱み" class="headerlink" title="強みと弱み"></a>強みと弱み</h1><h2 id="強み"><a href="#強み" class="headerlink" title="強み"></a>強み</h2><h3 id="消費電力が少ない"><a href="#消費電力が少ない" class="headerlink" title="消費電力が少ない"></a>消費電力が少ない</h3><p>大きい PC をずっと起動しておくと電気代が気になるので、何か常時稼働したい時はラズパイでできないかどうか考える様になりました。</p>
+<h3 id="安い"><a href="#安い" class="headerlink" title="安い"></a>安い</h3><p>まえはもっと安かった気がするけれども・・・<br>ナンバリングが上がる毎にスペックは大幅に上がってるので、基本的に値段以外の理由で古いのを買う理由はないと思う。</p>
+<h2 id="弱み"><a href="#弱み" class="headerlink" title="弱み"></a>弱み</h2><h3 id="arm-プロセッサに対応してないツールは使えない"><a href="#arm-プロセッサに対応してないツールは使えない" class="headerlink" title="arm プロセッサに対応してないツールは使えない"></a>arm プロセッサに対応してないツールは使えない</h3><p>例えば立てたいサーバーやアプリケーションに入れたライブラリが arm に対応していない場合、起動すらできないか、起動してもうまく動かない。<br>ただ arm に対応しているツールやライブラリは増えてきてるし、今後に期待。<br>また、box86 の様な x86 向けのツールを arm で動作させる エミュレータはある様子。</p>
+<h3 id="大容量なメモリのモデルがない"><a href="#大容量なメモリのモデルがない" class="headerlink" title="大容量なメモリのモデルがない"></a>大容量なメモリのモデルがない</h3><p>2024/5/12 時点だとラズパイ5が最新で最大メモリは 8GB みたい。<br>他の SBC の Rock5 だと 32GB モデルまであるみたいで、他のに目移り中。</p>
+<h3 id="電プチするとデータが破損する事がある"><a href="#電プチするとデータが破損する事がある" class="headerlink" title="電プチするとデータが破損する事がある"></a>電プチするとデータが破損する事がある</h3><p>電源ケーブルぶっこぬきで電源をきるとデータが破損する事があります。<br>データの破損の仕方にもよりますが、何度か起動しなくなった経験があります。<br>すぐ壊れてしまうイメージを持ちそうですが、実際に↓の様な記事も多数あり、経験上も読み取り専用で運用していればその様な問題はおきませんでした。</p>
+<p><a href="https://zenn.dev/su_/articles/97b9e25d0ae41c" target="_blank" rel="noopener">Raspberry Piは本当に壊れやすいのか</a><br><a href="https://qiita.com/ma2shita/items/45818f0872472ecacac1" target="_blank" rel="noopener">Raspberry Pi OSのrootfs ROM 化 ― RAMディスク化しつつ、好きなパッケージを後から追加する方法</a><br><a href="https://qiita.com/tomtwinkle/items/cb97bba8cd5c2748c30f" target="_blank" rel="noopener">Raspberry PiのrootFSをROM化してSD Cardの破損を防ぐメモ</a></p>
+<p>電源ケーブルを抜いて電源を落とす様な運用がしたい場合、最低でも boot パーティションの読み取り専用は必要そうです。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/04/17/audio-system/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/04/17/audio-system/" class="post-title-link" itemprop="url">オーディオ環境 メモ</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-04-17 23:25:58 / 修正日：11:56:07" itemprop="dateCreated datePublished" datetime="2024-04-17T23:25:58+09:00">2024-04-17</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>現時点の構成をメモ</p>
+<h1 id="構成"><a href="#構成" class="headerlink" title="構成"></a>構成</h1><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/9fe33f09-9389-4858-9b0d-72856290ab63" alt="image"></p>
+<p><a href="https://1drv.ms/x/s!Aur5N_a86HPviOgZTy8oslULXsX1jA?e=z8eiq2" target="_blank" rel="noopener">xlsx リンク</a></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/02/12/udp-forwarding-tailscale-test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/02/12/udp-forwarding-tailscale-test/" class="post-title-link" itemprop="url">公開用のネットワークを持つために VPS を利用するとどの VPS プロバイダが快適なのか</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-02-12 20:47:50" itemprop="dateCreated datePublished" datetime="2024-02-12T20:47:50+09:00">2024-02-12</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="きっかけ"><a href="#きっかけ" class="headerlink" title="きっかけ"></a>きっかけ</h1><p>今の自宅の回線がマンション共用の物なので、ルーターがいじれません。<br>ルーターがいじれないという事はインターネットからのアクセスのポートマッピング(ポート開放)ができないという事です。<br>ただ、回線の速度や安定感はあるので追加で回線を契約するほどのコストをかけたくないですし、<br>今までは宅内サーバーをインターネットに公開するために ngrok (HTTPやTCP) や localtonet (UDP) を利用して公開していましたが、<br>localtonet は 日本サーバーが無いために ping 値が高くなる等、歯がゆい状況でした。</p>
+<p>そこで他に方法ないかなと探していたら見つけました。<br>インターネットからのアクセスを受けた マシン(VPS) から tailscale ネットワーク内のマシンにポートフォワーディングして、<br>VPS のマシンが実質ルーター代わりになるという方法</p>
+<p><a href="https://note.com/yayoi_8128/n/n4a35f271a57f" target="_blank" rel="noopener">例えば yayoi_8128 さんのこんな方法</a></p>
+<p>ポートフォワーディングについては、uredir を使わずに nginx や iptables でフォワーディングの設定をする、でもよかったんですが、以下の理由で uredir を採用してます。</p>
+<ul>
+<li>uredir のコマンドが覚えやすかった (uredir :8211 フォワーディング先IP:8211)、redir と同じ</li>
+<li>iptables のコマンドを覚えるのがむずかしかった</li>
+<li>nginx を使用してフォワーディングさせて比較しても体感できる差がなかった</li>
+</ul>
+<p>各 VPSで パルワールドサーバーの UDP フォワーディング を試した結果、安定性や速度が異なったので感想とともに記録を残します。</p>
+<h1 id="VPS-マシン側の構築"><a href="#VPS-マシン側の構築" class="headerlink" title="VPS マシン側の構築"></a>VPS マシン側の構築</h1><p>OS: ubuntu 22.04 server</p>
+<ol>
+<li>tailscale をインストール</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://tailscale.com/install.sh | sh</span><br><span class="line">sudo tailscale up</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>VPS 管理コンソールにて ポート 8211 (palworld server) の inbound を許可</p>
+</li>
+<li><p>uredir や redir 等で、tailscale 内のマシンにフォワーディングする様設定</p>
+</li>
+</ol>
+<p>UDP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uredir :8211 サーバーマシンのtailscale内IP:8211</span><br></pre></td></tr></table></figure>
+
+<p>TCP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redir :25565 サーバーマシンのtailscale内IP:25565</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2024/05/12 追記<br>　VPS マシンの exitnode の有効化とその直後の IP フォワーディング許可設定は不要だったので削除しました。</p>
+</blockquote>
+<h1 id="サーバーマシン側の構築"><a href="#サーバーマシン側の構築" class="headerlink" title="サーバーマシン側の構築"></a>サーバーマシン側の構築</h1><ol>
+<li>tailscale をインストール</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://tailscale.com/install.sh | sh</span><br><span class="line">sudo tailscale up</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>サーバーを起動</li>
+</ol>
+<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><p>その時たまたま VPS プロバイダ側で障害があったとか、一時的な問題が起きていた可能性もあるのであくまで参考程度にしてください。</p>
+<p>条件もきっちり揃えられていません。</p>
+<h1 id="各-VPS-で試してみた"><a href="#各-VPS-で試してみた" class="headerlink" title="各 VPS で試してみた"></a>各 VPS で試してみた</h1><h2 id="Azure-VM"><a href="#Azure-VM" class="headerlink" title="Azure VM"></a>Azure VM</h2><h3 id="テストに利用したスペック"><a href="#テストに利用したスペック" class="headerlink" title="テストに利用したスペック"></a>テストに利用したスペック</h3><ul>
+<li>コア数とメモリ: 1コア1GB</li>
+<li>ネットワーク: 100Mbps</li>
+<li>金額: 1271円/月 以上</li>
+</ul>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/2a7385e9-edc7-4aff-b9c2-db9b938c47c2" alt="image"></p>
+<h3 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h3><p>速度は出ているけど、レイテンシの値が高い。<br>何故かコロンビアやインドのサーバーを利用してました。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/619e76a1-7488-42d1-8b78-a71425505937" alt="image"></p>
+<p>念のため別のサイトでも試してみる。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/0ea0ce1c-67e2-458e-a3b9-5f41b4d2eda1" alt="image"></p>
+<p>Ping も Jitter も良好</p>
+<h3 id="パルワールドを遊んでみる"><a href="#パルワールドを遊んでみる" class="headerlink" title="パルワールドを遊んでみる"></a>パルワールドを遊んでみる</h3><p>ロードがなかなか終わらない・・・</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/58523e70-1ece-4ef8-beb3-899f968a04d5" alt="image"></p>
+<p>10分程度待てば接続はされた。<br>とはいえ建築物の表示にもかなりの時間がかかるため遊ぶのはきびしそう</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/5348a238-ee87-480c-a586-4da87d6d727c" alt="image"></p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/1347118a-8921-4d15-83af-373024355511" alt="image"></p>
+<h3 id="その他気になった事"><a href="#その他気になった事" class="headerlink" title="その他気になった事"></a>その他気になった事</h3><p>tailscale up したときに見覚えのないログが出た、何か改善の余地あり？</p>
+<blockquote>
+<p>Warning: UDP GRO forwarding is suboptimally configured on eth0, UDP forwarding throughput capability will increase with a configuration change.</p>
+</blockquote>
+<p><a href="https://tailscale.com/kb/1320/performance-best-practices#ethtool-configuration" target="_blank" rel="noopener">この方法</a>で最適化されるらしいですが、残念ながら体感できず。。。</p>
+<ul>
+<li>翻訳<blockquote>
+<p>Linux 6.2 以降のカーネルで Tailscale バージョン 1.54 以降を使用すると、<a href="https://www.kernel.org/doc/html/latest/networking/segmentation-offloads.html" target="_blank" rel="noopener">トランスポート層のオフロード</a>によって UDP スループットが向上します。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NETDEV=$(ip route show 0/0 | cut -f5 -d&apos; &apos;)</span><br><span class="line">sudo ethtool -K $NETDEV rx-udp-gro-forwarding on rx-gro-list off</span><br></pre></td></tr></table></figure>
+
+<p>サーバーがマインクラフトだとしてもサーバーに繋がるまでに時間がかかりました。なんでだろう</p>
+<h2 id="Sakura-VPS"><a href="#Sakura-VPS" class="headerlink" title="Sakura VPS"></a>Sakura VPS</h2><h3 id="テストに利用したスペック-1"><a href="#テストに利用したスペック-1" class="headerlink" title="テストに利用したスペック"></a>テストに利用したスペック</h3><ul>
+<li>コア数とメモリ: 2コア1GB</li>
+<li>ネットワーク: 100Mbps</li>
+<li>金額: 990円/月</li>
+</ul>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/3584674e-7686-41ce-ac1a-6c6242b0c144" alt="image"></p>
+<h3 id="速度-1"><a href="#速度-1" class="headerlink" title="速度"></a>速度</h3><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/e2d4d5fb-c414-4210-9177-8fee6df39364" alt="image"></p>
+<h3 id="パルワールドを遊んでみる-1"><a href="#パルワールドを遊んでみる-1" class="headerlink" title="パルワールドを遊んでみる"></a>パルワールドを遊んでみる</h3><p>tailscale ネットワークだけで接続するのと体感は変わらず快適</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/f2b8f741-d22e-48bc-8119-34f9125d4aa3" alt="image"></p>
+<h2 id="WebArena-Indigo"><a href="#WebArena-Indigo" class="headerlink" title="WebArena Indigo"></a>WebArena Indigo</h2><h3 id="テストに利用したスペック-2"><a href="#テストに利用したスペック-2" class="headerlink" title="テストに利用したスペック"></a>テストに利用したスペック</h3><ul>
+<li>コア数とメモリ: 1コア1GB</li>
+<li>ネットワーク: 100Mbps</li>
+<li>金額: 449円/月</li>
+</ul>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/dc36abca-ef66-4750-942f-0f748d32afce" alt="image"></p>
+<p>安くてよさそう</p>
+<h3 id="速度-2"><a href="#速度-2" class="headerlink" title="速度"></a>速度</h3><p>ちょっと遅いかな</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/e913b1f1-c2f4-44bc-9243-83c3b22c00e8" alt="image"></p>
+<h3 id="パルワールドを遊んでみる-2"><a href="#パルワールドを遊んでみる-2" class="headerlink" title="パルワールドを遊んでみる"></a>パルワールドを遊んでみる</h3><p>なんだかパケロスが激しい</p>
+<p>接続してから数十秒の間、建築物のオブジェクトが読み込まれず、これで遊ぶのは厳しそう、と感じました。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/9d4fa4b1-1d90-43d3-8403-d4a979ba8786" alt="image"></p>
+<h2 id="Conoha-VPS"><a href="#Conoha-VPS" class="headerlink" title="Conoha VPS"></a>Conoha VPS</h2><h3 id="テストに利用したスペック-3"><a href="#テストに利用したスペック-3" class="headerlink" title="テストに利用したスペック"></a>テストに利用したスペック</h3><ul>
+<li>コア数とメモリ: 2コア1GB</li>
+<li>ネットワーク: 100Mbps(インターネット)</li>
+<li>金額: 1064円/月(時間課金)</li>
+</ul>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/69874dd2-944f-4109-bdcf-7d895b65be13" alt="image"></p>
+<h3 id="速度-3"><a href="#速度-3" class="headerlink" title="速度"></a>速度</h3><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/2f037fd9-d50d-4a0c-a5ec-47c6dd220f1c" alt="image"></p>
+<h3 id="パルワールドを遊んでみる-3"><a href="#パルワールドを遊んでみる-3" class="headerlink" title="パルワールドを遊んでみる"></a>パルワールドを遊んでみる</h3><p>ロード時間がそこそこ長くかかった</p>
+<p>建築物等がなかなか読み込まれず、表示されるまでに5分くらいかかった</p>
+<p>Azure VM を少しマシにした様なレベルで、これで遊ぶのは厳しい</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/f4089f75-87a6-4d2d-a171-823d40264232" alt="image"></p>
+<h2 id="AWS-Lightsail"><a href="#AWS-Lightsail" class="headerlink" title="AWS Lightsail"></a>AWS Lightsail</h2><h3 id="テストに利用したスペック-4"><a href="#テストに利用したスペック-4" class="headerlink" title="テストに利用したスペック"></a>テストに利用したスペック</h3><ul>
+<li>コア数とメモリ: 2コア1GB</li>
+<li>ネットワーク: 1Gbps?</li>
+<li>金額: $5/月</li>
+</ul>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/22c8d4b6-65cc-4f7b-89fa-7df77f93877b" alt="image"></p>
+<h3 id="速度-4"><a href="#速度-4" class="headerlink" title="速度"></a>速度</h3><p>シアトル経由になってしまった<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/b62b3f04-fa69-4575-973c-b8ea9078f868" alt="image"></p>
+<p>別のサイトで測るとジッターもpingも良好<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/d0e381e3-8f72-4566-8080-18034f4edbff" alt="image"></p>
+<h3 id="パルワールドを遊んでみる-4"><a href="#パルワールドを遊んでみる-4" class="headerlink" title="パルワールドを遊んでみる"></a>パルワールドを遊んでみる</h3><p>体感は Sakura と変わらない<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/ecbfe112-089c-4b39-8608-9b4e1b421310" alt="image"></p>
+<h1 id="その他"><a href="#その他" class="headerlink" title="その他"></a>その他</h1><h2 id="採用されたのは・・・"><a href="#採用されたのは・・・" class="headerlink" title="採用されたのは・・・"></a>採用されたのは・・・</h2><p>さくら VPS でした。安定感がどエライです。<br>LIghtsail も快適だったので、こっちへの乗り換えもアリ</p>
+<h2 id="なんで安定感に差がでるのか"><a href="#なんで安定感に差がでるのか" class="headerlink" title="なんで安定感に差がでるのか"></a>なんで安定感に差がでるのか</h2><p>わからないです。知ってる人いたら教えてほしいです。</p>
+<h2 id="他の-VPS-について"><a href="#他の-VPS-について" class="headerlink" title="他の VPS について"></a>他の VPS について</h2><p>他に試したい VPS もいくつかあるので試したら追記していきます。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/02/11/PalWorld-savedata-details/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/02/11/PalWorld-savedata-details/" class="post-title-link" itemprop="url">PalWorld のセーブデータを解析してわかった事</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-02-11 15:30:27" itemprop="dateCreated datePublished" datetime="2024-02-11T15:30:27+09:00">2024-02-11</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="きっかけ"><a href="#きっかけ" class="headerlink" title="きっかけ"></a>きっかけ</h1><p>サーバーにある Palworld のデータはローカルプレイで使える様に移動できるのか疑問だったので調べてわかった事をメモ。</p>
+<p><a href="https://qiita.com/ikuma0366/items/6667207285ca7de57a7a" target="_blank" rel="noopener">ikuma0366 さんの記事</a>を見て、この情報をベースにセーブデータを覗いてみました。</p>
+<h1 id="セーブデータの場所"><a href="#セーブデータの場所" class="headerlink" title="セーブデータの場所"></a>セーブデータの場所</h1><h2 id="専用サーバーで遊んだ場合"><a href="#専用サーバーで遊んだ場合" class="headerlink" title="専用サーバーで遊んだ場合"></a>専用サーバーで遊んだ場合</h2><p>専用サーバー全体のセーブデータとプレイヤー毎のセーブデータがわかれている。<br>どちらもサーバー側で保存されているので、プレイヤー側でセーブデータを探しても見つからない。</p>
+<h3 id="専用サーバーのセーブデータ"><a href="#専用サーバーのセーブデータ" class="headerlink" title="専用サーバーのセーブデータ"></a>専用サーバーのセーブデータ</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PalServer/Pal/Saved/SaveGames/0/&lt;サーバーID&gt;/Level.sav</span><br></pre></td></tr></table></figure>
+
+<h4 id="内容例"><a href="#内容例" class="headerlink" title="内容例"></a>内容例</h4><p>情報量が多く json 化すると 数GBの容量になる、中身を覗いてみて、わかった事だけメモ。</p>
+<ul>
+<li>接続した事のあるプレイヤー情報</li>
+<li>捕獲された後のパル情報</li>
+<li>各プレイヤーの最後にいた位置</li>
+<li>他にも沢山ありすぎてワロタ</li>
+<li>その他、プレイヤー毎のセーブデータ以外の情報全て</li>
+</ul>
+<h3 id="プレイヤー毎のセーブデータ"><a href="#プレイヤー毎のセーブデータ" class="headerlink" title="プレイヤー毎のセーブデータ"></a>プレイヤー毎のセーブデータ</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PalServer/Pal/Saved/SaveGames/0/&lt;サーバーID&gt;/Players/&lt;プレイヤーID※先頭8文字&gt;以降は0.sav</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ファイル名の例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">813399F0000000000000000000000000.sav</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>813399F0 という8文字目までを見れば ok</p>
+<h4 id="内容例-1"><a href="#内容例-1" class="headerlink" title="内容例"></a>内容例</h4><p>こっちは情報量が比較的少なく、json 化しても 数KBの容量、中身を覗いてみて、わかった事だけメモ</p>
+<ul>
+<li>キャラメイクの設定値</li>
+<li>レシピ アンロック情報(アンロックした事があるレシピのみ記載)</li>
+<li>ボスの討伐状況(倒した事があるパルのみ記載)</li>
+<li>パルを捕まえた数(捕まえた事があるパルのみ記載なので全て1以上)</li>
+<li>手記の入手状況(入手した事がある手記のみ記載)</li>
+</ul>
+<p>このファイル内にプレイヤー名の記載はないため Level.sav から確認するのが確実</p>
+<p>コンプリートしたデータを一つ用意できればコンプリートしたデータを他のプレイヤーにコピーする事はできそう</p>
+<h2 id="ソロで遊んだ場合"><a href="#ソロで遊んだ場合" class="headerlink" title="ソロで遊んだ場合"></a>ソロで遊んだ場合</h2><p>以下のパスにセーブデータが保存されている様ですが、この記事では、この中のセーブデータについては触れてないです。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\noma3\AppData\Local\Pal\Saved\SaveGames\&lt;ワールドのID&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="sav-の中身の見方"><a href="#sav-の中身の見方" class="headerlink" title=".sav の中身の見方"></a>.sav の中身の見方</h1><p>.sav は Unreal Engine のゲームで使われるセーブデータではあるものの、Unreal Engine 経由でないと直接中身を見る事が出来ないので、</p>
+<p><a href="https://github.com/cheahjs/palworld-save-tools/releases" target="_blank" rel="noopener">有志が作成したツール(convert.py)</a>を使って、json 化する必要がある</p>
+<p>また、Unreal Engine のゲームは .json をセーブデータとして扱わないので、もしセーブデータを書き換えて使いたいなら .sav に戻してやる必要がある。</p>
+<p>このツールの動作には python 3.9 以上が必要との事、一応 3.12 でも動作した。</p>
+<h2 id="json-化の方法"><a href="#json-化の方法" class="headerlink" title="json 化の方法"></a>json 化の方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert.py &quot;savファイルのパス&quot; --to-json</span><br></pre></td></tr></table></figure>
+
+<h2 id="sav-化の方法"><a href="#sav-化の方法" class="headerlink" title=".sav 化の方法"></a>.sav 化の方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert.py &quot;.jsonファイルのパス&quot; --from-json</span><br></pre></td></tr></table></figure>
+
+<h1 id="おまけ"><a href="#おまけ" class="headerlink" title="おまけ"></a>おまけ</h1><h2 id="Level-sav-json-からプレイヤーを探す正規表現"><a href="#Level-sav-json-からプレイヤーを探す正規表現" class="headerlink" title="Level.sav.json からプレイヤーを探す正規表現"></a>Level.sav.json からプレイヤーを探す正規表現</h2><p>vim で使った正規表現なので サクラエディタ だと少し変わるかも。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IsPlayer&quot;: &#123;\n.*\&quot;: true</span><br></pre></td></tr></table></figure>
+
+<p>これで接続したことのあるプレイヤー名を確認した。</p>
+<h2 id="筆者が管理してるサーバーのプレイヤーID-sav-対応表"><a href="#筆者が管理してるサーバーのプレイヤーID-sav-対応表" class="headerlink" title="筆者が管理してるサーバーのプレイヤーID.sav 対応表"></a>筆者が管理してるサーバーのプレイヤーID.sav 対応表</h2><table>
+<thead>
+<tr>
+<th align="center">ファイル名</th>
+<th align="center">ユーザー名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">813399f0*.sav</td>
+<td align="center">noma</td>
+</tr>
+<tr>
+<td align="center">65332aeb*.sav</td>
+<td align="center">KOB</td>
+</tr>
+<tr>
+<td align="center">06d842d5*.sav</td>
+<td align="center">sakura</td>
+</tr>
+<tr>
+<td align="center">e74926a0*.sav</td>
+<td align="center">yocha-424</td>
+</tr>
+<tr>
+<td align="center">120f57b4*.sav</td>
+<td align="center">pia24mo</td>
+</tr>
+<tr>
+<td align="center">e7574940*.sav</td>
+<td align="center">にゃんごろげ</td>
+</tr>
+<tr>
+<td align="center">98e4c6ac*.sav</td>
+<td align="center">せつこ</td>
+</tr>
+<tr>
+<td align="center">d3a7451e*.sav</td>
+<td align="center">mavu33</td>
+</tr>
+</tbody></table>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/01/28/localtonet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/01/28/localtonet/" class="post-title-link" itemprop="url">localtonet で UDP ポートフォワーディング</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-01-28 20:26:38 / 修正日：21:24:23" itemprop="dateCreated datePublished" datetime="2024-01-28T20:26:38+09:00">2024-01-28</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="必要になった経緯"><a href="#必要になった経緯" class="headerlink" title="必要になった経緯"></a>必要になった経緯</h1><p>ゲームサーバーを自宅で立てるとなると、外からでもそのサーバーにアクセスできる様にポート開放する必要がありますが、<br>引っ越しをしてからマンション共有の回線を使っているためにルーターの設定ができず、ポート開放できない環境なため別の方法を探しました。<br>ただ、回線の品質は特に悪くないので自分で回線を契約するのはちょっともったいない・・・と思い別の方法をとりました。<br>localtonet への課金もしてみましたが、複数のフォワーディングをしない限り無料枠で事足りそうな雰囲気</p>
+<h1 id="localtonet-の使い方"><a href="#localtonet-の使い方" class="headerlink" title="localtonet の使い方"></a>localtonet の使い方</h1><h2 id="localtonet-に登録"><a href="#localtonet-に登録" class="headerlink" title="localtonet に登録"></a>localtonet に登録</h2><p>とりあえず登録します。</p>
+<h2 id="token-をコピー"><a href="#token-をコピー" class="headerlink" title="token をコピー"></a>token をコピー</h2><p>ダッシュボードに表示される AuthToken をコピーしておく</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/890efed4-6373-4cf3-bc9c-8c9dd80d06c3" alt="image"></p>
+<h2 id="tunnel-を作成し起動しておく"><a href="#tunnel-を作成し起動しておく" class="headerlink" title="tunnel を作成し起動しておく"></a>tunnel を作成し起動しておく</h2><p>My Tunnels &gt; TCP - UDP から作成する</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/56a08ba0-40de-42f4-9036-97053b4273af" alt="image"></p>
+<p>Protocol Type と Server, ローカルのポートを指定して Create<br>作成されたら Start もクリックしておく<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/04745fa5-9e28-4726-bd35-824d2d5805e7" alt="image"></p>
+<h2 id="サーバー側でやる事"><a href="#サーバー側でやる事" class="headerlink" title="サーバー側でやる事"></a>サーバー側でやる事</h2><p>localtonet をインストールして次のコマンドを実行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localtonet authtoken &lt;token&gt;</span><br></pre></td></tr></table></figure>
+
+<p>すると以下の様に tunnel が表示されれば OK<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/b5ed9d2d-dd2e-4a91-a941-d50f24209cb0" alt="image"></p>
+<p>IP/Url に表示されたアドレスに接続できる様になっているはず。</p>
+<h1 id="ngrok-じゃだめ？"><a href="#ngrok-じゃだめ？" class="headerlink" title="ngrok じゃだめ？"></a>ngrok じゃだめ？</h1><p>ポートフォワーディングしてくれる有名なツールに ngrok がありますが、そちらは UDP のフォワーディングはできません。</p>
+<h1 id="その他所感"><a href="#その他所感" class="headerlink" title="その他所感"></a>その他所感</h1><h2 id="リージョンに日本がない・・・"><a href="#リージョンに日本がない・・・" class="headerlink" title="リージョンに日本がない・・・"></a>リージョンに日本がない・・・</h2><p>どこのサーバーを経由するか選べますが、日本がありません。ngrok では勝手に日本サーバー使ってくれるけど・・・<br>中国を選んで使っていて以外とラグも感じないですが、日本サーバーが使えたらよかったな</p>
+<h2 id="外部から見たポートの固定は有料でも無料でもできない"><a href="#外部から見たポートの固定は有料でも無料でもできない" class="headerlink" title="外部から見たポートの固定は有料でも無料でもできない"></a>外部から見たポートの固定は有料でも無料でもできない</h2><p>localtonet を起動する度に外部から見たポート番号が変わります。<br>なのでサーバーを複数人で利用している場合、 localtonet を再起動したあとは新しいポート番号の接続先を共有する必要が出てきます。<br>これは ngrok の有料プランだとできたとおもうので、ちょっとおしい</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2024/01/27/launch-and-update-steam-game-server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2024/01/27/launch-and-update-steam-game-server/" class="post-title-link" itemprop="url">Steam ゲームのサーバーインストールとアップデート方法</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2024-01-27 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-27T00:00:00+09:00">2024-01-27</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><p>ubuntu 22.04,20.04</p>
+<h2 id="SteamCMD-のインストール"><a href="#SteamCMD-のインストール" class="headerlink" title="SteamCMD のインストール"></a>SteamCMD のインストール</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository multiverse; sudo dpkg --add-architecture i386; sudo apt update</span><br><span class="line">sudo apt install steamcmd</span><br></pre></td></tr></table></figure>
+
+<h2 id="ゲームサーバーのインストール・アップデート"><a href="#ゲームサーバーのインストール・アップデート" class="headerlink" title="ゲームサーバーのインストール・アップデート"></a>ゲームサーバーのインストール・アップデート</h2><p>インストールもアップデートも以下コマンドでできる</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">steamcmd +login anonymous +app_update &lt;appid&gt; validate +quit</span><br></pre></td></tr></table></figure>
+
+<p>※ appid は <a href="https://steamdb.info/app/2394010/info/" target="_blank" rel="noopener">SteamDB</a> で確認、例えば 2394010 は palworld</p>
+<p>このコマンドを実行すると、以下のディレクトリが作成される</p>
+<ul>
+<li>~/Steam</li>
+</ul>
+<p>以下のディレクトリ以下に指定したゲームのサーバーファイルが保存される</p>
+<ul>
+<li>~/Steam/steamapps/common/</li>
+</ul>
+<p>例えば palworld は以下になるが、さらにそれより下のファイルはゲームにより異なる</p>
+<ul>
+<li>~/Steam/steamapps/common/PalServer</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://sakkuntyo.github.io/2023/09/27/vencord-translater-change-language/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="佐々木 大輔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="skt workshop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2023/09/27/vencord-translater-change-language/" class="post-title-link" itemprop="url">vencord の translater プラグインで英語以外の言語に翻訳させる</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2023-09-27 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-27T00:00:00+09:00">2023-09-27</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="vencord-ってなに"><a href="#vencord-ってなに" class="headerlink" title="vencord ってなに"></a>vencord ってなに</h1><p>以前から改造版 Discord クライアントとして主流な BetterDiscord がありましたが、<br>最近出てきた(私が見かける様になった)新しい 改造版 Discord クライアントです。</p>
+<h1 id="導入方法"><a href="#導入方法" class="headerlink" title="導入方法"></a>導入方法</h1><p>ここを見て Discord PTB をインストールし、Discord PTB に Vencord を適用しました。Canary も前に入れてるので、3ついれてる。</p>
+<p><a href="https://unicode.hatenablog.jp/entry/vencord" target="_blank" rel="noopener">【BetterDiscord超え】新改造版Discord、”Vencord”の入れ方とおすすめプラグイン - その1</a></p>
+<p>Vencord を導入したら 設定 &gt; Plugins から Translater を有効化しましょう。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/40ec9123-6825-435f-a679-96d7ac2ab709" alt="image"></p>
+<h1 id="あれ、日本語にならない。。。"><a href="#あれ、日本語にならない。。。" class="headerlink" title="あれ、日本語にならない。。。"></a>あれ、日本語にならない。。。</h1><p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/dd887822-0523-4825-a636-61e50948bb64" alt="image"></p>
+<h1 id="日本語に翻訳させる方法"><a href="#日本語に翻訳させる方法" class="headerlink" title="日本語に翻訳させる方法"></a>日本語に翻訳させる方法</h1><p>プラグインを有効化する時に設定画面を開くこともできるのですが、ここには変換先の言語を選べる所がないんですよね。。。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/4c224a41-fa9f-4b43-b05f-7e71cc07da67" alt="image"></p>
+<p>でも、プラグインのソースコードを漁っていたらなんだか変更できたりしちゃいそうな書き方になっている。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/3af950c6-ac5d-4623-8d94-6e617c76484c" alt="image"></p>
+<p>色々みていた結果、設定 &gt; Plugin の画面で変更しているのはこのファイルの様でした。</p>
+<p>%appdata%\Vencord\settings\settings.json</p>
+<p>translate の設定部分も見つかったので見てみると、ありました。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/6584b704-f202-470f-8ecf-0c94c2fff348" alt="image"></p>
+<p>receivedOutput を ja にして保存しましょう。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"Translate": &#123;</span><br><span class="line">    "enabled": true,</span><br><span class="line">    "autoTranslate": false,</span><br><span class="line">    "receivedInput": "auto",</span><br><span class="line">    "receivedOutput": "ja"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>また、英語の発言を右クリックして translate すると、できた。</p>
+<p><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/290c5e03-ddba-4ccd-b5f1-61929b97d576" alt="image"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">佐々木 大輔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">タグ</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">佐々木 大輔</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
