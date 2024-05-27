@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://sakkuntyo.github.io/2024/02/12/udp-forwarding-tailscale-test/</loc>
+        <lastmod>2024-05-27T15:00:39.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sakkuntyo.github.io/2024/05/17/raspberrypi-tempreture/</loc>
         <lastmod>2024-05-17T00:52:39.680Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -34,14 +42,6 @@
     <url>
         <loc>https://sakkuntyo.github.io/2024/05/12/tailscale-advertise-routes/</loc>
         <lastmod>2024-05-11T23:19:01.352Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://sakkuntyo.github.io/2024/02/12/udp-forwarding-tailscale-test/</loc>
-        <lastmod>2024-05-11T22:48:12.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

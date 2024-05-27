@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://sakkuntyo.github.io/tags/UDP/</loc>
+        <lastmod>2024-05-27T15:00:39.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sakkuntyo.github.io/tags/Raspberry-Pi/</loc>
         <lastmod>2024-05-17T00:52:39.680Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,13 +26,6 @@
     <url>
         <loc>https://sakkuntyo.github.io/tags/tailscale/</loc>
         <lastmod>2024-05-11T23:19:01.352Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sakkuntyo.github.io/tags/UDP/</loc>
-        <lastmod>2024-05-11T22:48:12.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

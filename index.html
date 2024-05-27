@@ -698,6 +698,8 @@ cfg: { // Application Insights Configuration
 <li>iptables のコマンドを覚えるのがむずかしかった</li>
 <li>nginx を使用してフォワーディングさせて比較しても体感できる差がなかった</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2025/05/27 追記</span><br><span class="line">uredir が arm 非対応なため、ラズパイ等の SBC を活用し始めた段階でまた結局 iptables を使う必要が出てきました。</span><br></pre></td></tr></table></figure>
+
 <p>各 VPSで パルワールドサーバーの UDP フォワーディング を試した結果、安定性や速度が異なったので感想とともに記録を残します。</p>
 <h1 id="VPS-マシン側の構築"><a href="#VPS-マシン側の構築" class="headerlink" title="VPS マシン側の構築"></a>VPS マシン側の構築</h1><p>OS: ubuntu 22.04 server</p>
 <ol>
