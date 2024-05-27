@@ -77,7 +77,8 @@
 <meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/56a08ba0-40de-42f4-9036-97053b4273af">
 <meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/04745fa5-9e28-4726-bd35-824d2d5805e7">
 <meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/b5ed9d2d-dd2e-4a91-a941-d50f24209cb0">
-<meta property="og:updated_time" content="2024-01-28T12:24:23.219Z">
+<meta property="og:image" content="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/dd55f108-79ed-4d18-8b63-6c23f878f1ad">
+<meta property="og:updated_time" content="2024-05-27T17:22:04.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="localtonet で UDP ポートフォワーディング">
 <meta name="twitter:description" content="必要になった経緯ゲームサーバーを自宅で立てるとなると、外からでもそのサーバーにアクセスできる様にポート開放する必要がありますが、引っ越しをしてからマンション共有の回線を使っているためにルーターの設定ができず、ポート開放できない環境なため別の方法を探しました。ただ、回線の品質は特に悪くないので自分で回線を契約するのはちょっともったいない・・・と思い別の方法をとりました。localtonet への課金">
@@ -251,7 +252,7 @@ cfg: { // Application Insights Configuration
                 
               
 
-              <time title="作成日：2024-01-28 20:26:38 / 修正日：21:24:23" itemprop="dateCreated datePublished" datetime="2024-01-28T20:26:38+09:00">2024-01-28</time>
+              <time title="作成日：2024-01-28 20:26:38" itemprop="dateCreated datePublished" datetime="2024-01-28T20:26:38+09:00">2024-01-28</time>
             </span>
           
 
@@ -280,7 +281,9 @@ cfg: { // Application Insights Configuration
 <p>IP/Url に表示されたアドレスに接続できる様になっているはず。</p>
 <h1 id="ngrok-じゃだめ？"><a href="#ngrok-じゃだめ？" class="headerlink" title="ngrok じゃだめ？"></a>ngrok じゃだめ？</h1><p>ポートフォワーディングしてくれる有名なツールに ngrok がありますが、そちらは UDP のフォワーディングはできません。</p>
 <h1 id="その他所感"><a href="#その他所感" class="headerlink" title="その他所感"></a>その他所感</h1><h2 id="リージョンに日本がない・・・"><a href="#リージョンに日本がない・・・" class="headerlink" title="リージョンに日本がない・・・"></a>リージョンに日本がない・・・</h2><p>どこのサーバーを経由するか選べますが、日本がありません。ngrok では勝手に日本サーバー使ってくれるけど・・・<br>中国を選んで使っていて以外とラグも感じないですが、日本サーバーが使えたらよかったな</p>
+<p>2024/05/27 追記<br>日本が選べる様になってました!!<br><img src="https://github.com/sakkuntyo/sakkuntyo.github.io/assets/20591351/dd55f108-79ed-4d18-8b63-6c23f878f1ad" alt="image"></p>
 <h2 id="外部から見たポートの固定は有料でも無料でもできない"><a href="#外部から見たポートの固定は有料でも無料でもできない" class="headerlink" title="外部から見たポートの固定は有料でも無料でもできない"></a>外部から見たポートの固定は有料でも無料でもできない</h2><p>localtonet を起動する度に外部から見たポート番号が変わります。<br>なのでサーバーを複数人で利用している場合、 localtonet を再起動したあとは新しいポート番号の接続先を共有する必要が出てきます。<br>これは ngrok の有料プランだとできたとおもうので、ちょっとおしい</p>
+<h2 id="Arm-対応"><a href="#Arm-対応" class="headerlink" title="Arm 対応"></a>Arm 対応</h2><p>最近ラズパイを活躍させようとしてるのでこれは非常にありがたい</p>
 
     </div>
 
@@ -355,7 +358,7 @@ cfg: { // Application Insights Configuration
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#必要になった経緯"><span class="nav-number">1.</span> <span class="nav-text">必要になった経緯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#localtonet-の使い方"><span class="nav-number">2.</span> <span class="nav-text">localtonet の使い方</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#localtonet-に登録"><span class="nav-number">2.1.</span> <span class="nav-text">localtonet に登録</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token-をコピー"><span class="nav-number">2.2.</span> <span class="nav-text">token をコピー</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tunnel-を作成し起動しておく"><span class="nav-number">2.3.</span> <span class="nav-text">tunnel を作成し起動しておく</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#サーバー側でやる事"><span class="nav-number">2.4.</span> <span class="nav-text">サーバー側でやる事</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ngrok-じゃだめ？"><span class="nav-number">3.</span> <span class="nav-text">ngrok じゃだめ？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#その他所感"><span class="nav-number">4.</span> <span class="nav-text">その他所感</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#リージョンに日本がない・・・"><span class="nav-number">4.1.</span> <span class="nav-text">リージョンに日本がない・・・</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部から見たポートの固定は有料でも無料でもできない"><span class="nav-number">4.2.</span> <span class="nav-text">外部から見たポートの固定は有料でも無料でもできない</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#必要になった経緯"><span class="nav-number">1.</span> <span class="nav-text">必要になった経緯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#localtonet-の使い方"><span class="nav-number">2.</span> <span class="nav-text">localtonet の使い方</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#localtonet-に登録"><span class="nav-number">2.1.</span> <span class="nav-text">localtonet に登録</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token-をコピー"><span class="nav-number">2.2.</span> <span class="nav-text">token をコピー</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tunnel-を作成し起動しておく"><span class="nav-number">2.3.</span> <span class="nav-text">tunnel を作成し起動しておく</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#サーバー側でやる事"><span class="nav-number">2.4.</span> <span class="nav-text">サーバー側でやる事</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ngrok-じゃだめ？"><span class="nav-number">3.</span> <span class="nav-text">ngrok じゃだめ？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#その他所感"><span class="nav-number">4.</span> <span class="nav-text">その他所感</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#リージョンに日本がない・・・"><span class="nav-number">4.1.</span> <span class="nav-text">リージョンに日本がない・・・</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部から見たポートの固定は有料でも無料でもできない"><span class="nav-number">4.2.</span> <span class="nav-text">外部から見たポートの固定は有料でも無料でもできない</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arm-対応"><span class="nav-number">4.3.</span> <span class="nav-text">Arm 対応</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->

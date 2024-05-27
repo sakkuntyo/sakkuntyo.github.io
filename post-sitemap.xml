@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://sakkuntyo.github.io/2024/01/28/localtonet/</loc>
+        <lastmod>2024-05-27T17:22:04.348Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sakkuntyo.github.io/2024/05/17/raspberrypi-tempreture/</loc>
         <lastmod>2024-05-27T15:05:46.448Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,14 +74,6 @@
     <url>
         <loc>https://sakkuntyo.github.io/2024/01/27/launch-and-update-steam-game-server/</loc>
         <lastmod>2024-02-10T08:27:29.800Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://sakkuntyo.github.io/2024/01/28/localtonet/</loc>
-        <lastmod>2024-01-28T12:24:23.219Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
