@@ -153,7 +153,51 @@ temp=63.1'C
 ```
 ## Orange Pi 5 (ファンつき)
 
-記載予定
+[ケースとヒートシンクはこれ](https://amzn.to/4bRghj8)にしました。安いしアクティブクーラーじゃないの助かる
+
+os は ubuntu 22 jammy、以下コマンドで温度を確認しました。
+
+```
+watch -n 2 sensors
+```
+
+### 何もしてない時
+
+```
+Every 2.0s: sensors                                                                                                                                                                               orangepi5plus-ssd: Mon May 27 23:05:13 2024
+npu_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+
+center_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+
+bigcore1_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+
+soc_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+
+tcpm_source_psy_6_0022-i2c-6-22
+Adapter: rk3x-i2c
+in0:           0.00 V  (min =  +0.00 V, max =  +0.00 V)
+curr1:         0.00 A  (max =  +0.00 A)
+
+gpu_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+
+littlecore_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+
+bigcore0_thermal-virtual-0
+Adapter: Virtual device
+temp1:        +32.4°C  (crit = +115.0°C)
+```
 
 # 気づき
 
